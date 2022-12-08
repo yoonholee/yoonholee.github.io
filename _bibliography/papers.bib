@@ -1,83 +1,298 @@
----
----
+% Encoding: UTF-8
 
-@string{aps = {American Physical Society,}}
-
-@book{einstein1956investigations,
-  bibtex_show={true},
-  title={Investigations on the Theory of the Brownian Movement},
-  author={Einstein, Albert},
-  year={1956},
-  publisher={Courier Corporation,},
-  preview={brownian-motion.gif}
+@article{kim2019learning,
+  abbr     = {NeurIPS},
+  title    = {Learning Dynamics of Attention: Human Prior for Interpretable Machine Reasoning},
+  author   = {Kim, Wonjae and Lee, Yoonho},
+  journal  = {NeurIPS 2019},
+  year     = {2019},
+  month    = {6},
+  paper    = {https://arxiv.org/abs/1905.11666},
+  code     = {https://github.com/kakao/DAFT},
+  tldr     = {Smooth and interpretable attention using Neural ODEs.},
+  abstract = {Without relevant human priors, neural networks may learn uninterpretable features. We propose Dynamics of Attention for Focus Transition (DAFT) as a human prior for machine reasoning. DAFT is a novel method that regularizes attention-based reasoning by modelling it as a continuous dynamical system using neural ordinary differential equations. As a proof of concept, we augment a state-of-the-art visual reasoning model with DAFT. Our experiments reveal that applying DAFT yields similar performance to the original model while using fewer reasoning steps, showing that it implicitly learns to skip unnecessary steps. We also propose a new metric, Total Length of Transition (TLT), which represents the effective reasoning step size by quantifying how much a given model's focus drifts while reasoning about a question. We show that adding DAFT results in lower TLT, demonstrating that our method indeed obeys the human prior towards shorter reasoning paths in addition to producing more interpretable attention maps.},
+  bib      = {@inproceedings\{kim2019daft,
+  title     = \{Learning Dynamics of Attention: Human Prior for Interpretable Machine Reasoning\},
+  author    = \{Kim, Wonjae and Yoonho Lee\},
+  booktitle = \{Advances in Neural Information Processing Systems (NeurIPS)\},
+  year      = \{2019\}
+\}}
 }
 
-@article{einstein1950meaning,
-  abbr={AJP},
-  bibtex_show={true},
-  title={The meaning of relativity},
-  author={Einstein, Albert and Taub, AH},
-  journal={American Journal of Physics,},
-  volume={18},
-  number={6},
-  pages={403--404},
-  year={1950},
-  publisher={American Association of Physics Teachers,}
+@article{lee2018gradient,
+  abbr     = {ICML},
+  author   = {Lee, Yoonho and Choi, Seungjin},
+  title    = {Gradient-based Meta-learning with Learned Layerwise Metric and Subspace},
+  journal  = {ICML 2018},
+  year     = {2018},
+  paper    = {http://proceedings.mlr.press/v80/lee18a/lee18a.pdf},
+  code     = {https://github.com/yoonholee/MT-net},
+  tldr     = {Improving MAML by fixing some weights during task adaptation.},
+  abstract = {
+    Gradient-based meta-learning methods leverage gradient descent to learn the commonalities among various tasks. 
+    While previous such methods have been successful in meta-learning tasks, they resort to simple gradient descent during meta-testing. 
+    Our primary contribution is the MT-net, which enables the meta-learner to learn on each layer's activation space a subspace that the task-specific learner performs gradient descent on. 
+    Additionally, a task-specific learner of an MT-net performs gradient descent with respect to a meta-learned distance metric, which warps the activation space to be more sensitive to task identity. 
+    We demonstrate that the dimension of this learned subspace reflects the complexity of the task-specific learner's adaptation task, and also that our model is less sensitive to the choice of initial learning rates than previous gradient-based meta-learning methods. 
+    Our method achieves state-of-the-art or comparable performance on few-shot classification and regression tasks.},
+  video    = {https://youtu.be/skcErc5DBYM?t=2904},
+  selected = {yes},
+  bib      = {@inproceedings\{lee2018mtnet,
+  title     = \{Gradient-based Meta-learning with Learned Layerwise Metric and Subspace\},
+  author    = \{Yoonho Lee and Seungjin Choi\},
+  booktitle = \{International Conference on Machine Learning (ICML)\},
+  year      = \{2018\}
+\}}
 }
 
-@article{PhysRev.47.777,
-  abbr={PhysRev},
-  title={Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author={Einstein, A. and Podolsky, B. and Rosen, N.},
-  abstract={In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.},
-  journal={Phys. Rev.,},
-  volume={47},
-  issue={10},
-  pages={777--780},
-  numpages={0},
-  year={1935},
-  month={May},
-  publisher=aps,
-  doi={10.1103/PhysRev.47.777},
-  url={http://link.aps.org/doi/10.1103/PhysRev.47.777},
-  html={https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-  pdf={example_pdf.pdf},
-  altmetric={248277},
-  selected={true}
+@article{lee2019deep,
+  abbr     = {NeurIPS-W},
+  author   = {Juho Lee and Yoonho Lee and Yee Whye Teh},
+  title    = {Deep Amortized Clustering},
+  year     = {2019},
+  month    = {9},
+  journal  = {NeurIPS 2019 Sets and Parts Workshop (oral)},
+  paper    = {https://arxiv.org/abs/1909.13433},
+  tldr     = {Learning to cluster by identifying one cluster at a time.},
+  abstract = {We propose Deep Amortized Clustering (DAC), a framework in which a neural network learns to cluster datasets efficiently using a few forward passes through a deep neural network. DAC implicitly learns what makes a cluster, how to group data points into clusters, and how to count the number of clusters in datasets. DAC is meta-learned in a data-driven way, using only clustered datasets and their partitions. This framework differs from traditional clustering algorithms, which usually require user-specified prior knowledge about the shape or structure of clusters. We empirically show on both synthetic and image data that DAC can efficiently and accurately cluster novel datasets.},
+  bib      = {@article\{lee2019dac,
+  title     = \{Deep Amortized Clustering\},
+  author    = \{Juho Lee and Yoonho Lee and Yee Whye Teh\},
+  booktitle = \{Sets and Parts Workshop @ NeurIPS\},
+  year      = \{2019\}
+\}}
 }
 
-@article{einstein1905molekularkinetischen,
-  title={{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
-  author={Einstein, A.},
-  journal={Annalen der physik,},
-  volume={322},
-  number={8},
-  pages={549--560},
-  year={1905},
-  publisher={Wiley Online Library}
+@article{lee2019discrete,
+  abbr     = {Entropy},
+  journal  = {Entropy Special Issue "Theory and Applications of Information Processing Algorithms"},
+  title    = {Discrete Infomax Codes for Supervised Representation Learning},
+  author   = {Lee, Yoonho and Kim, Wonjae and Park, Wonpyo and Choi, Seungjin},
+  year     = {2022},
+  month    = {03},
+  paper    = {https://www.mdpi.com/1099-4300/24/4/501},
+  tldr     = {Regularizing few-shot classification using compact discrete codes.},
+  abstract = {Learning compact discrete representations of data is a key task on its own or for facilitating subsequent processing of data. In this paper we present a model that produces Discrete InfoMax COdes (DIMCO); we learn a probabilistic encoder that yields k-way d-dimensional codes associated with input data. Our model’s learning objective is to maximize the mutual information between codes and labels with a regularization, which enforces entries of a codeword to be as independent as possible. We show that the infomax principle also justiﬁes previous loss functions (e.g., cross-entropy) as its special cases. Our analysis also shows that using shorter codes, as DIMCO does, reduces overﬁtting in the conext of few-shot classiﬁcation. Through experiments in various domains, we observe this implicit meta-regularization effect of DIMCO. Furthermore, we show that the codes learned by DIMCO are efﬁcient in terms of both memory and retrieval time compared to previous methods.},
+  selected = {yes},
+  bib      = {@article\{lee2019dimco,
+  title         = \{Discrete Infomax Codes for Supervised Representation Learning\},
+  author        = \{Yoonho Lee and Wonjae Kim and Wonpyo Park and Seungjin Choi\},
+  year          = \{2022\},
+  journal       = \{Entropy\},
+  volume        = \{24\},
+  DOI           = \{10.3390/e24040501\}
+\}}
 }
 
-@article{einstein1905movement,
-  abbr={Ann. Phys.},
-  title={Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
-  author={Einstein, A.},
-  journal={Ann. Phys.,},
-  volume={17},
-  pages={549--560},
-  year={1905}
+@article{lee2020bootstrapping,
+  abbr     = {NeurIPS},
+  title    = {Bootstrapping Neural Processes},
+  author   = {Juho Lee* and Yoonho Lee* and Jungtaek Kim and Eunho Yang and Sung Ju Hwang and Yee Whye Teh},
+  journal  = {NeurIPS 2020},
+  year     = {2020},
+  month    = {8},
+  paper    = {https://arxiv.org/abs/2008.02956},
+  code     = {https://github.com/juho-lee/bnp},
+  tldr     = {Improved uncertainty estimates in Neural Processes using bootstrapping.},
+  abstract = {Unlike in the traditional statistical modeling for which a user typically hand-specify a prior, Neural Processes (NPs) implicitly define a broad class of stochastic processes with neural networks. Given a data stream, NP learns a stochastic process that best describes the data. While this "data-driven" way of learning stochastic processes has proven to handle various types of data, NPs still rely on an assumption that uncertainty in stochastic processes is modeled by a single latent variable, which potentially limits the flexibility. To this end, we propose the Boostrapping Neural Process (BNP), a novel extension of the NP family using the bootstrap. The bootstrap is a classical data-driven technique for estimating uncertainty, which allows BNP to learn the stochasticity in NPs without assuming a particular form. We demonstrate the efficacy of BNP on various types of data and its robustness in the presence of model-data mismatch.},
+  video    = {https://crossminds.ai/video/5fce48f0d78d8048ceb6e3be/},
+  bib      = {@inproceedings\{lee2020bnp,
+  title     = \{Bootstrapping Neural Processes\},
+  author    = \{Juho Lee* and Yoonho Lee* and Jungtaek Kim and Eunho Yang and Sung Ju Hwang and Yee Whye Teh\},
+  booktitle = \{Advances in Neural Information Processing Systems (NeurIPS)\},
+  year      = \{2020\}
+\}}
 }
 
-@article{einstein1905electrodynamics,
-  title={On the electrodynamics of moving bodies},
-  author={Einstein, A.},
-  year={1905}
+@article{lee2020neural,
+  abbr     = {NeurIPS},
+  title    = {Neural Complexity Measures},
+  author   = {Yoonho Lee and Juho Lee and Sung Ju Hwang and Eunho Yang and Seungjin Choi},
+  journal  = {NeurIPS 2020},
+  year     = {2020},
+  month    = {8},
+  paper    = {https://arxiv.org/abs/2008.02953},
+  code     = {https://github.com/yoonholee/neural-complexity},
+  blog     = {/blog/2020/neural-complexity-measures/},
+  tldr     = {A meta-learning framework for predicting generalization.},
+  abstract = {While various complexity measures for deep neural networks exist, specifying an appropriate measure capable of predicting and explaining generalization in deep networks has proven challenging. We propose Neural Complexity (NC), a meta-learning framework for predicting generalization. Our model learns a scalar complexity measure through interactions with many heterogeneous tasks in a data-driven way. The trained NC model can be added to the standard training loss to regularize any task learner in a standard supervised learning scenario. We contrast NC's approach against existing manually-designed complexity measures and other meta-learning models, and we validate NC's performance on multiple regression and classification tasks.},
+  video    = {https://crossminds.ai/video/5fce4f33d78d8048ceb6e3c5/},
+  bib      = {@inproceedings\{lee2020nc,
+  title     = \{Neural Complexity Measures\},
+  author    = \{Yoonho Lee and Juho Lee and Sung Ju Hwang and Eunho Yang and Seungjin Choi\},
+  booktitle = \{Advances in Neural Information Processing Systems (NeurIPS)\},
+  year      = \{2020\}
+\}}
 }
 
-@book{przibram1967letters,
-  bibtex_show={true},
-  title={Letters on wave mechanics},
-  author={Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},
-  year={1967},
-  publisher={Vision},
-  preview={wave-mechanics.gif}
+@article{pakman2020ACP,
+  title    = {Amortized Probabilistic Detection of Communities in Graphs},
+  author   = {Yueqi Wang* and Yoonho Lee* and Pallab Basu and Juho Lee and Yee Whye Teh and Liam Paninski, and Ari Pakman},
+  year     = {2021},
+  month    = {3},
+  paper    = {https://arxiv.org/abs/2010.15727},
+  code     = {https://github.com/aripakman/attentive_clustering_processes},
+  tldr     = {An attention-based method for probabilistically detecting communities within graphs.},
+  abstract = {Learning community structures in graphs has broad applications across scientific domains. While graph neural networks (GNNs) have been successful in encoding graph structures, existing GNN-based methods for community detection are limited by requiring knowledge of the number of communities in advance, in addition to lacking a proper probabilistic formulation to handle uncertainty. We propose a simple framework for amortized community detection, which addresses both of these issues by combining the expressive power of GNNs with recent methods for amortized clustering. Our models consist of a graph representation backbone that extracts structural information and an amortized clustering network that naturally handles variable numbers of clusters. Both components combine into well-defined models of the posterior distribution of graph communities and are jointly optimized given labeled graphs. At inference time, the models yield parallel samples from the posterior of community labels, quantifying uncertainty in a principled way. We evaluate several models from our framework on synthetic and real datasets and demonstrate superior performance to previous methods. As a separate contribution, we extend recent amortized probabilistic clustering architectures by adding attention modules, which yield further improvements on community detection tasks.},
+  bib      = {@article\{pakman2020acp,
+  title         = \{Amortized Probabilistic Detection of Communities in Graphs\},
+  author        = \{Ari Pakman and Yueqi Wang and Yoonho Lee and Pallab Basu and Juho Lee and Yee Whye Teh and Liam Paninski\},
+  year          = \{2021\},
+  archiveprefix = \{arXiv\},
+  primaryclass  = \{stat.ML\},
+  eprint        = \{2010.15727\}
+\}}
 }
+
+@article{pmlr-v97-lee19d,
+  abbr     = {ICML},
+  author   = {Lee, Juho and Lee, Yoonho and Kim, Jungtaek and Kosiorek, Adam and Choi, Seungjin and Teh, Yee Whye},
+  title    = {Set Transformer: A Framework for Attention-based Permutation-Invariant Neural Networks},
+  journal  = {ICML 2019},
+  year     = {2019},
+  month    = {2},
+  paper    = {http://proceedings.mlr.press/v97/lee19d/lee19d.pdf},
+  code     = {https://github.com/juho-lee/set_transformer},
+  tldr     = {Self-attention for sets using inducing points. O(N) feedforward complexity.},
+  abstract = {Many machine learning tasks such as multiple instance learning, 3D shape recognition, and few-shot image classification are defined on sets of instances. Since solutions to such problems do not depend on the order of elements of the set, models used to address them should be permutation invariant. We present an attention-based neural network module, the Set Transformer, specifically designed to model interactions among elements in the input set. The model consists of an encoder and a decoder, both of which rely on attention mechanisms. In an effort to reduce computational complexity, we introduce an attention scheme inspired by inducing point methods from sparse Gaussian process literature. It reduces the computation time of self-attention from quadratic to linear in the number of elements in the set. We show that our model is theoretically attractive and we evaluate it on a range of tasks, demonstrating the state-of-the-art performance compared to recent methods for set-structured data.},
+  bib      = {@inproceedings\{lee2019st,
+  title     = \{Set Transformer: A Framework for Attention-based Permutation-invariant Neural Networks\},
+  author    = \{Juho Lee and Yoonho Lee and Jungtaek Kim and Adam Kosiorek and Seungjin Choi and Yee Whye Teh\},
+  booktitle = \{International Conference on Machine Learning (ICML)\},
+  year      = \{2019\}
+\}}
+}
+
+@article{seo2021ckd,
+  abbr     = {UAI},
+  journal  = {UAI 2021},
+  title    = {On the Distribution of Penultimate Activations of Classification Networks},
+  author   = {Seo*, Minkyo and Lee*, Yoonho and Kwak, Suha},
+  year     = {2021},
+  month    = {1},
+  paper    = {https://arxiv.org/abs/2107.01900},
+  tldr     = {Final FC layer weights contain information about class relations.},
+  abstract = {
+    This paper studies the probability distributions of penultimate activations of classification networks. Specifically, we show that, when a classification network is trained with the cross-entropy loss, its final classification layer forms a Generative-Discriminative pair with a generative classifier based on a specific distribution of penultimate activations. More importantly, the distribution is parameterized by the weights of the final fully-connected layer, and can be considered as a generative model that synthesizes the penultimate activations without feeding input data. We empirically demonstrate that this generative model enables stable knowledge distillation in the presence of domain shift, and can also transfer knowledge from a classifier to variational autoencoders and generative adversarial networks for class-conditional image generation.
+    },
+  bib      = {@inproceedings\{seo2021ckd,
+  title     = \{On the Distribution of Penultimate Activations of Classification Networks\},
+  author    = \{Seo*, Minkyo and Lee*, Yoonho and Kwak, Suha\},
+  booktitle = \{Conference on Uncertainty in Artificial Intelligence (UAI)\},
+  year      = \{2021\}
+\}}
+}
+
+@article{nam2021diversity,
+  abbr     = {NeurIPS},
+  journal  = {NeurIPS 2021},
+  title    = {Diversity Matters When Learning From Ensembles},
+  author   = {Giung Nam* and Jongmin Yoon* and Yoonho Lee and Juho Lee},
+  year     = {2021},
+  month    = {4},
+  paper    = {https://arxiv.org/abs/2110.14149},
+  code     = {https://github.com/cs-giung/giung2/tree/main/projects/Diversity-Matters},
+  tldr     = {To distill from deep ensembles, use inputs that ensemble members disagree on.},
+  abstract = {
+    Deep ensembles excel in large-scale image classification tasks both in terms of prediction accuracy and calibration. Despite being simple to train, the computation and memory cost of deep ensembles limits their practicability. While some recent works propose to distill an ensemble model into a single model to reduce such costs, there is still a performance gap between the ensemble and distilled models. We propose a simple approach for reducing this gap, i.e., making the distilled performance close to the full ensemble. Our key assumption is that a distilled model should absorb as much function diversity inside the ensemble as possible. We first empirically show that the typical distillation procedure does not effectively transfer such diversity, especially for complex models that achieve near-zero training error. To fix this, we propose an augmentation-based distillation strategy that reveals diversity by seeking inputs for which ensemble member outputs disagree. We empirically show that a model distilled with such augmented samples indeed exhibits enhanced diversity, leading to improved performance.
+    },
+  bib      = {@inproceedings\{nam2021diversity,
+  title     = \{Diversity Matters When Learning From Ensembles\},
+  author    = \{Nam, Giung and Yoon, Jongmin and Lee, Yoonho and Lee, Juho\},
+  booktitle = \{Advances in Neural Information Processing Systems (NeurIPS)\},
+  year      = \{2021\}
+\}}
+}
+
+%article{lee2021risknet,
+  title    = {Efficient Checkpoint-Based Meta-Learning With Gradient Matching},
+  author   = {Yoonho Lee and Juho Lee},
+  year     = {2021},
+  month    = {5},
+  tldr     = {A neural network that mimics the test loss, both in value and gradients.},
+  abstract = {
+    Meta-learning methods optimize components inside a learning algorithm to achieve low validation loss after task learning. Typically, such methods backpropagate through the entire learning procedure. Although such an approach can successfully learn to learn small tasks, they are fundamentally unable to scale to tasks involving large datasets or requiring long training runs. We propose a meta-learning method that does not suffer from such issues: we first save a set of model checkpoints obtained during regular task learning. Then, we use these checkpoints to train a separate neural network, which we call RiskNet, to mimic the risk functional's value while also producing the same gradients for task learner parameters. We show that our gradient matching component is critical to sample efficiency and performance through experiments in few-shot regression and image classification benchmarks. Furthermore, the resulting model is shown to faithfully mimic the target gradients.
+    }
+}
+
+@article{lee2022divdis,
+  abbr     = {ICML-W},
+  title    = {Diversify and Disambiguate: Out-of-Distribution Robustness via Disagreement},
+  author   = {Yoonho Lee and Huaxiu Yao and Chelsea Finn},
+  journal  = {ICML 2022 Principles of Distribution Shift Workshop <br>
+  ICML 2022 Spurious Correlations, Invariance, and Stability Workshop
+  },
+  year     = {2022},
+  month    = {4},
+  paper    = {https://arxiv.org/abs/2202.03418},
+  website  = {https://sites.google.com/view/diversify-and-disambiguate},
+  tldr     = {Given underspecified data, (1) find a diverse set of solutions and (2) choose the best one.},
+  code     = {https://github.com/yoonholee/DivDis},
+  abstract = {
+    Many datasets are underspecified: there exist multiple equally viable solutions to a given task. Underspecification can be problematic for methods that learn a single hypothesis because different functions that achieve low training loss can focus on different predictive features and thus produce widely varying predictions on out-of-distribution data. We propose DivDis, a simple two-stage framework that first learns a diverse collection of hypotheses for a task by leveraging unlabeled data from the test distribution. We then disambiguate by selecting one of the discovered hypotheses using minimal additional supervision, in the form of additional labels or inspection of function visualization. We demonstrate the ability of DivDis to find hypotheses that use robust features in image classification and natural language processing problems with underspecification.
+    },
+  bib      = {@inproceedings\{lee2022divdis,
+  title     = \{Diversify and Disambiguate: Out-of-Distribution Robustness via Disagreement\},
+  author    = \{Lee, Yoonho and Yao, Huaxiu and Finn, Chelsea\},
+  year      = \{2022\}
+\}}
+}
+
+% To uncomment, replace % with @
+@article{kim2022,
+  abbr     = {NeurIPS},
+  title    = {On Divergence Measures for Bayesian Pseudocoresets},
+  author   = {Balhae Kim and Jungwon Choi and Seanie Lee and Yoonho Lee and Jung-Woo Ha and Juho Lee},
+  journal  = {NeurIPS 2022},
+  year     = {2022},
+  month    = {5},
+  paper    = {https://arxiv.org/abs/2210.06205},
+  code     = {https://github.com/balhaekim/BPC-Divergences},
+  tldr     = {An exploration of the choice of divergence for learning a Bayesian pseudocoreset.},
+  abstract = {A Bayesian pseudocoreset is a small synthetic dataset for which the posterior over parameters approximates that of the original dataset. While promising, the scalability of Bayesian pseudocoresets is not yet validated in large-scale problems such as image classification with deep neural networks. On the other hand, dataset distillation methods similarly construct a small dataset such that the optimization with the synthetic dataset converges to a solution similar to optimization with full data. Although dataset distillation has been empirically verified in large-scale settings, the framework is restricted to point estimates, and their adaptation to Bayesian inference has not been explored. This paper casts two representative dataset distillation algorithms as approximations to methods for constructing pseudocoresets by minimizing specific divergence measures: reverse KL divergence and Wasserstein distance. Furthermore, we provide a unifying view of such divergence measures in Bayesian pseudocoreset construction. Finally, we propose a novel Bayesian pseudocoreset algorithm based on minimizing forward KL divergence. Our empirical results demonstrate that the pseudocoresets constructed from these methods reflect the true posterior even in large-scale Bayesian inference problems.}
+}
+
+@article{yao2022wildtime,
+  abbr     = {NeurIPS},
+  title    = {Wild-Time: A Benchmark of in-the-Wild Distribution Shift over Time},
+  author   = {Huaxiu Yao* and Caroline Choi* and Bochuan Cao and Yoonho Lee and Pang Wei Koh and Chelsea Finn},
+  journal  = {NeurIPS 2022 Datasets & Benchmarks Track <br>
+  ICML 2022 Shift Happens Workshop},
+  year     = {2022},
+  month    = {6},
+  tldr     = {A benchmark of distribution shifts over time.},
+  paper    = {https://arxiv.org/abs/2211.14238},
+  code     = {https://github.com/huaxiuyao/Wild-Time},
+  abstract = {Distribution shifts occur when the test distribution differs from the training distribution, and can considerably degrade performance of machine learning models deployed in the real world. While recent works have studied robustness to distribution shifts, distribution shifts arising from the passage of time have the additional structure of timestamp metadata. Real-world examples of such shifts are underexplored, and it is unclear whether existing models can leverage trends in past distribution shifts to reliably extrapolate into the future. To address this gap, we curate Wild-Time, a benchmark of 7 datasets that reflect temporal distribution shifts arising in a variety of real-world applications. On these datasets, we systematically benchmark 9 approaches with various inductive biases. Our experiments demonstrate that existing methods are limited in tackling temporal distribution shift: across all settings, we observe an average performance drop of 21\% from in-distribution to out-of-distribution data.}
+}
+
+@article{lee2022ood,
+  abbr     = {NeurIPS-W},
+  title    = {Surgical Fine-Tuning Improves Adaptation to Distribution Shifts},
+  author   = {Yoonho Lee* and Annie Chen* and Fahim Tajwar and Ananya Kumar and Huaxiu Yao and Percy Liang and Chelsea Finn},
+  year     = {2022},
+  month    = {9},
+  paper    = {https://arxiv.org/abs/2210.11466},
+  journal  = {
+    NeurIPS 2022 Workshop on Distribution Shifts <br>
+    NeurIPS 2022 I Can't Believe It's Not Better Workshop
+    },
+  tldr     = {The best layer to fine-tune reflects the nature of the distribution shift.},
+  abstract = {A common approach to transfer learning under distribution shift is to fine-tune the last few layers of a pre-trained model, preserving learned features while also adapting to the new task. This paper shows that in such settings, selectively fine-tuning a subset of layers (which we term surgical fine-tuning) matches or outperforms commonly used fine-tuning approaches. Moreover, the type of distribution shift influences which subset is more effective to tune: for example, for image corruptions, fine-tuning only the first few layers works best. We validate our findings systematically across seven real-world data tasks spanning three types of distribution shifts. Theoretically, we prove that for two-layer neural networks in an idealized setting, first-layer tuning can outperform fine-tuning all layers. Intuitively, fine-tuning more parameters on a small target dataset can cause information learned during pre-training to be forgotten, and the relevant information depends on the type of shift.}
+}
+
+% To uncomment, replace % with @
+@article{lee2022ksf,
+  abbr     = {NeurIPS-W},
+  title    = {Relaxing the Kolmogorov Structure Function for Realistic Computational Constraints},
+  author   = {Yoonho Lee and Chelsea Finn and Stefano Ermon},
+  year     = {2022},
+  month    = {9},
+  paper    = {https://openreview.net/forum?id=I1bW14EvUF7},
+  journal  = {NeurIPS 2022 Workshop on Information-Theoretic Principles in Cognitive Systems},
+  tldr     = {An efficient relaxation of the Kolmogorov Structure Function that can leverage neural networks.},
+  abstract = {The degree to which a task is learnable given different computational constraints shows the amount of usable information at different scales. An instantiation of this idea is the Kolmogorov Structure Function (KSF), which shows how the fit of an optimal $k$-bit description of a given string improves for increasing values of $k$. While conceptually appealing, computing the KSF is infeasible in practice due to the exponentially large search space of all descriptions of a given length, in addition to the unbounded time complexity. This paper proposes the Constrained Structure Function (CSF), a generalization of the KSF that can be computed efficiently by taking into account realistic computational constraints. In addition to being feasible to compute, the CSF of a dataset can be expressed as the sum of datapoint-wise functions which reflect the degree to which each datapoint is typical in the context of the dataset. Empirically, we demonstrate that the CSF can be used for detecting individual datapoints with characteristics such as being easy, mislabeled, or belonging to a hidden subgroup.}
+}
+
+
+@Comment{jabref-meta: databaseType:bibtex;}

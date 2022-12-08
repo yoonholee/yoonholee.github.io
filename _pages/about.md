@@ -1,25 +1,31 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+# description: <a href="#">Affiliations</a>. Address. Contacts. Moto. Etc.
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
 
-news: true  # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true  # includes social icons at the bottom of the page
+news: false
+selected_papers: false # includes a list of papers marked as "selected={true}"
+social: true
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I'm a CS Ph.D. student at Stanford, advised by [Chelsea Finn](https://ai.stanford.edu/~cbfinn/) and part of the [IRIS Lab](https://irislab.stanford.edu//index.html).
+My research is supported by the [KFAS Doctoral Fellowship](https://eng.kfas.or.kr/theme/kfaschanel/intl_scholarship_5.php).
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Previously, as alternative military service for the South Korean army, I worked as a research scientist at [Kakao](https://www.kakaocorp.com/) and [AITRICS](https://www.aitrics.com/), working with [Juho Lee](https://juho-lee.github.io/).
+Before that, I completed my master's (CS, advised by [Seungjin Choi](http://mlg.postech.ac.kr/~seungjin)) and undergraduate (math) degrees at [POSTECH](https://www.postech.ac.kr/eng/).
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+My research interest is in developing models capable of **learning and decision-making in changing environments**.
+To do so, I believe we should go beyond the independent and identically distributed (i.i.d.) paradigm and account for the variability of real-world conditions in our learning procedures.
+Two alternative problem formulations of interest to me are _meta-learning_ and _distribution-shift robustness_, which encode the non-static nature of data generating processes through notions of _tasks_ and _domains_.
+
+My publications grouped by topic:
+
+- Robustness [[arxiv22](/publications/#lee2022divdis), [NeurIPS22](/publications/#yao2022wildtime)]
+- Meta-learning [[ICML18](/publications/#lee2018gradient), [NeurIPS20a](/publications/#lee2020neural), [NeurIPS20b](/publications/#lee2020bootstrapping), [Entropy22](/publications/#lee2019discrete), [NeurIPS22](/publications/#kim2022)]
+- Attention [[ICML19](/publications/#pmlr-v97-lee19d), [NeurIPS19](/publications/#kim2019learning), [NeurIPS19-W](/publications/#lee2019deep), [arxiv21](/publications/#pakman2021ACP)]
+- Distillation [[UAI21](/publications/#seo2021ckd), [NeurIPS21](/publications/#nam2021diversity)]

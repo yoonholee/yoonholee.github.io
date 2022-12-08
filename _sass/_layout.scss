@@ -18,12 +18,13 @@ body.fixed-top-nav {
 }
 
 body.sticky-bottom-footer {
-  // Remove padding below footer.
-  padding-bottom: 0;
+  padding-bottom: 0; // Remove padding below footer.
 }
 
 .container {
-  max-width: $max-content-width;
+  max-width: 800px;
+  position: relative;
+  min-height: calc(100% - 15rem); // Footer=10rem, margin=5rem
 }
 
 // Profile
