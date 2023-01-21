@@ -215,29 +215,6 @@
     }
 }
 
-@article{lee2022divdis,
-  abbr     = {ICML-W},
-  title    = {Diversify and Disambiguate: Out-of-Distribution Robustness via Disagreement},
-  author   = {Yoonho Lee and Huaxiu Yao and Chelsea Finn},
-  journal  = {ICML 2022 Principles of Distribution Shift Workshop <br>
-  ICML 2022 Spurious Correlations, Invariance, and Stability Workshop
-  },
-  year     = {2022},
-  month    = {4},
-  paper    = {https://arxiv.org/abs/2202.03418},
-  website  = {https://sites.google.com/view/diversify-and-disambiguate},
-  tldr     = {Given underspecified data, (1) find a diverse set of solutions and (2) choose the best one.},
-  code     = {https://github.com/yoonholee/DivDis},
-  abstract = {
-    Many datasets are underspecified: there exist multiple equally viable solutions to a given task. Underspecification can be problematic for methods that learn a single hypothesis because different functions that achieve low training loss can focus on different predictive features and thus produce widely varying predictions on out-of-distribution data. We propose DivDis, a simple two-stage framework that first learns a diverse collection of hypotheses for a task by leveraging unlabeled data from the test distribution. We then disambiguate by selecting one of the discovered hypotheses using minimal additional supervision, in the form of additional labels or inspection of function visualization. We demonstrate the ability of DivDis to find hypotheses that use robust features in image classification and natural language processing problems with underspecification.
-    },
-  bib      = {@inproceedings\{lee2022divdis,
-  title     = \{Diversify and Disambiguate: Out-of-Distribution Robustness via Disagreement\},
-  author    = \{Lee, Yoonho and Yao, Huaxiu and Finn, Chelsea\},
-  year      = \{2022\}
-\}}
-}
-
 % To uncomment, replace % with @
 @article{kim2022,
   abbr     = {NeurIPS},
@@ -267,19 +244,45 @@
 }
 
 @article{lee2022ood,
-  abbr     = {NeurIPS-W},
+  abbr     = {ICLR},
   title    = {Surgical Fine-Tuning Improves Adaptation to Distribution Shifts},
-  author   = {Yoonho Lee* and Annie Chen* and Fahim Tajwar and Ananya Kumar and Huaxiu Yao and Percy Liang and Chelsea Finn},
-  year     = {2022},
-  month    = {9},
+  author   = {Yoonho Lee* and Annie S. Chen* and Fahim Tajwar and Ananya Kumar and Huaxiu Yao and Percy Liang and Chelsea Finn},
+  year     = {2023},
+  month    = {5},
   paper    = {https://arxiv.org/abs/2210.11466},
   journal  = {
+
+    ICLR 2023 <br>
     NeurIPS 2022 Workshop on Distribution Shifts <br>
     NeurIPS 2022 I Can't Believe It's Not Better Workshop
     },
   tldr     = {The best layer to fine-tune reflects the nature of the distribution shift.},
   abstract = {A common approach to transfer learning under distribution shift is to fine-tune the last few layers of a pre-trained model, preserving learned features while also adapting to the new task. This paper shows that in such settings, selectively fine-tuning a subset of layers (which we term surgical fine-tuning) matches or outperforms commonly used fine-tuning approaches. Moreover, the type of distribution shift influences which subset is more effective to tune: for example, for image corruptions, fine-tuning only the first few layers works best. We validate our findings systematically across seven real-world data tasks spanning three types of distribution shifts. Theoretically, we prove that for two-layer neural networks in an idealized setting, first-layer tuning can outperform fine-tuning all layers. Intuitively, fine-tuning more parameters on a small target dataset can cause information learned during pre-training to be forgotten, and the relevant information depends on the type of shift.}
 }
+
+@article{lee2022divdis,
+  abbr     = {ICLR},
+  title    = {Diversify and Disambiguate: Out-of-Distribution Robustness via Disagreement},
+  author   = {Yoonho Lee and Huaxiu Yao and Chelsea Finn},
+  journal  = {ICLR 2023 <br> ICML 2022 Principles of Distribution Shift Workshop <br>
+  ICML 2022 Spurious Correlations, Invariance, and Stability Workshop
+  },
+  year     = {2023},
+  month    = {5},
+  paper    = {https://arxiv.org/abs/2202.03418},
+  website  = {https://sites.google.com/view/diversify-and-disambiguate},
+  tldr     = {Given underspecified data, (1) find a diverse set of solutions and (2) choose the best one.},
+  code     = {https://github.com/yoonholee/DivDis},
+  abstract = {
+    Many datasets are underspecified: there exist multiple equally viable solutions to a given task. Underspecification can be problematic for methods that learn a single hypothesis because different functions that achieve low training loss can focus on different predictive features and thus produce widely varying predictions on out-of-distribution data. We propose DivDis, a simple two-stage framework that first learns a diverse collection of hypotheses for a task by leveraging unlabeled data from the test distribution. We then disambiguate by selecting one of the discovered hypotheses using minimal additional supervision, in the form of additional labels or inspection of function visualization. We demonstrate the ability of DivDis to find hypotheses that use robust features in image classification and natural language processing problems with underspecification.
+    },
+  bib      = {@inproceedings\{lee2022divdis,
+  title     = \{Diversify and Disambiguate: Out-of-Distribution Robustness via Disagreement\},
+  author    = \{Lee, Yoonho and Yao, Huaxiu and Finn, Chelsea\},
+  year      = \{2022\}
+\}}
+}
+
 
 % To uncomment, replace % with @
 @article{lee2022ksf,
