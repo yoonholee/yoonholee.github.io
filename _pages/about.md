@@ -25,7 +25,10 @@ Two alternative problem formulations of interest to me are _meta-learning_ and _
 
 My publications grouped by topic:
 
-- Robustness [[arxiv22](/publications/#lee2022divdis), [NeurIPS22](/publications/#yao2022wildtime)]
+- Robustness [[NeurIPS22](/publications/#yao2022wildtime),
+[ICLR23a](/publications/#lee2022divdis), 
+[ICLR23b](/publications/#lee2022surgical), 
+[pre23](/publications/#chen2023pro2)]
 - Meta-learning [[ICML18](/publications/#lee2018gradient), [NeurIPS20a](/publications/#lee2020neural), [NeurIPS20b](/publications/#lee2020bootstrapping), [Entropy22](/publications/#lee2019discrete), [NeurIPS22](/publications/#kim2022)]
 - Attention [[ICML19](/publications/#pmlr-v97-lee19d), [NeurIPS19](/publications/#kim2019learning), [NeurIPS19-W](/publications/#lee2019deep), [arxiv21](/publications/#pakman2021ACP)]
 - Distillation [[UAI21](/publications/#seo2021ckd), [NeurIPS21](/publications/#nam2021diversity)]
