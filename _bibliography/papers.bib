@@ -299,15 +299,34 @@
 }
 
 @article{chen2023pro2,
+  abbr     = {ICLR-W},
   title    = {Project and Probe: Sample-Efficient Domain Adaptation by Interpolating Orthogonal Features},
   author   = {Annie S. Chen* and Yoonho Lee* and Amrith Setlur and Sergey Levine and Chelsea Finn},
-  journal  = {preprint},
+  journal  = {
+  ICLR 2023 TrustML-(un)Limited Workshop (<b>Oral presentation</b>) <br>
+  ICLR 2023 Workshop on Mathematical and Empirical Understanding of Foundation Models},
   year     = {2023},
   month    = {3},
   paper    = {https://arxiv.org/abs/2302.05441},
-  tldr     = {We propose Project and Probe, a lightweight, sample-efficient approach that learns a diverse set of predictive features and adapts to a target distribution by interpolating among them with a small target dataset.},
+  tldr     = {A lightweight and sample-efficient approach that learns diverse linear features and adapts to a target distribution by interpolating among them with a small target dataset.},
   abstract = {
     Conventional approaches to robustness try to learn a model based on causal features. However, identifying maximally robust or causal features may be difficult in some scenarios, and in others, non-causal "shortcut" features may actually be more predictive. We propose a lightweight, sample-efficient approach that learns a diverse set of features and adapts to a target distribution by interpolating these features with a small target dataset. Our approach, Project and Probe (Pro2), first learns a linear projection that maps a pre-trained embedding onto orthogonal directions while being predictive of labels in the source dataset. The goal of this step is to learn a variety of predictive features, so that at least some of them remain useful after distribution shift. Pro2 then learns a linear classifier on top of these projected features using a small target dataset. We theoretically show that Pro2 learns a projection matrix that is optimal for classification in an information-theoretic sense, resulting in better generalization due to a favorable bias-variance tradeoff. Our experiments on four datasets, with multiple distribution shift settings for each, show that Pro2 improves performance by 5-15% when given limited target data compared to prior methods such as standard linear probing.
+    }
+}
+
+@article{choi2023tcm,
+  abbr     = {ICLR-W},
+  title    = {Conservative Prediction via Transductive Confidence Minimization},
+  author   = {Caroline Choi* and Fahim Tajwar* and Yoonho Lee* and Huaxiu Yao and Ananya Kumar and Chelsea Finn},
+  journal  = {
+  ICLR 2023 TrustML-(un)Limited Workshop <br>
+  ICLR 2023 Workshop on Mathematical and Empirical Understanding of Foundation Models},
+  year     = {2023},
+  month    = {4},
+  paper    = {https://openreview.net/forum?id=pQ-dJqyf9GI},
+  tldr     = {Conservative prediction by reducing confidence on an unlabeled uncertainty set.},
+  abstract = {
+    Errors of machine learning models can be prohibitively costly, especially in safety-critical settings such as healthcare. However, machine learning may be applicable to such scenarios if the learned model can abstain and defer to a human on difficult examples instead of making errors. In safety-critical settings, we prefer conservative models that defer to humans at the cost of some overall accuracy. Unfortunately, selective classification and out-of-distribution detection are notably difficult as it is hard to anticipate all possible examples. To mitigate this challenge, we focus on the transductive setting, where unlabeled examples from the test distribution are available during training. We propose transductive confidence minimization (TCM), which minimizes prediction confidence on unlabeled test examples while simultaneously optimizing the training objective. We theoretically show that TCM learns a lower bound on the true confidence, and that this property can be leveraged to provably detect examples that are sufficiently different from training examples, regardless of what distribution they came from. In our experiments, TCM consistently shows high performance, achieving the highest OOD detection performance compared to 6 other methods on 9 out of 10 ID->OOD pairs and consistently outperforming methods for selective classification in settings where we test on data from a previously unseen distribution.
     }
 }
 
