@@ -20,6 +20,7 @@
 }
 
 @article{lee2018gradient,
+  selected = {true},
   abbr     = {ICML},
   author   = {Lee, Yoonho and Choi, Seungjin},
   title    = {Gradient-based Meta-learning with Learned Layerwise Metric and Subspace},
@@ -36,7 +37,6 @@
     We demonstrate that the dimension of this learned subspace reflects the complexity of the task-specific learner's adaptation task, and also that our model is less sensitive to the choice of initial learning rates than previous gradient-based meta-learning methods. 
     Our method achieves state-of-the-art or comparable performance on few-shot classification and regression tasks.},
   video    = {https://youtu.be/skcErc5DBYM?t=2904},
-  selected = {yes},
   bib      = {@inproceedings\{lee2018mtnet,
   title     = \{Gradient-based Meta-learning with Learned Layerwise Metric and Subspace\},
   author    = \{Yoonho Lee and Seungjin Choi\},
@@ -51,7 +51,7 @@
   title    = {Deep Amortized Clustering},
   year     = {2019},
   month    = {9},
-  journal  = {NeurIPS 2019 Sets and Parts Workshop (oral)},
+  journal  = {NeurIPS 2019 Sets and Parts Workshop (<b>oral</b>)},
   paper    = {https://arxiv.org/abs/1909.13433},
   tldr     = {Learning to cluster by identifying one cluster at a time.},
   abstract = {We propose Deep Amortized Clustering (DAC), a framework in which a neural network learns to cluster datasets efficiently using a few forward passes through a deep neural network. DAC implicitly learns what makes a cluster, how to group data points into clusters, and how to count the number of clusters in datasets. DAC is meta-learned in a data-driven way, using only clustered datasets and their partitions. This framework differs from traditional clustering algorithms, which usually require user-specified prior knowledge about the shape or structure of clusters. We empirically show on both synthetic and image data that DAC can efficiently and accurately cluster novel datasets.},
@@ -73,7 +73,6 @@
   paper    = {https://www.mdpi.com/1099-4300/24/4/501},
   tldr     = {Regularizing few-shot classification using compact discrete codes.},
   abstract = {Learning compact discrete representations of data is a key task on its own or for facilitating subsequent processing of data. In this paper we present a model that produces Discrete InfoMax COdes (DIMCO); we learn a probabilistic encoder that yields k-way d-dimensional codes associated with input data. Our model’s learning objective is to maximize the mutual information between codes and labels with a regularization, which enforces entries of a codeword to be as independent as possible. We show that the infomax principle also justiﬁes previous loss functions (e.g., cross-entropy) as its special cases. Our analysis also shows that using shorter codes, as DIMCO does, reduces overﬁtting in the conext of few-shot classiﬁcation. Through experiments in various domains, we observe this implicit meta-regularization effect of DIMCO. Furthermore, we show that the codes learned by DIMCO are efﬁcient in terms of both memory and retrieval time compared to previous methods.},
-  selected = {yes},
   bib      = {@article\{lee2019dimco,
   title         = \{Discrete Infomax Codes for Supervised Representation Learning\},
   author        = \{Yoonho Lee and Wonjae Kim and Wonpyo Park and Seungjin Choi\},
@@ -145,6 +144,7 @@
 }
 
 @article{pmlr-v97-lee19d,
+  selected = {true},
   abbr     = {ICML},
   author   = {Lee, Juho and Lee, Yoonho and Kim, Jungtaek and Kosiorek, Adam and Choi, Seungjin and Teh, Yee Whye},
   title    = {Set Transformer: A Framework for Attention-based Permutation-Invariant Neural Networks},
@@ -244,6 +244,7 @@
 }
 
 @article{lee2022surgical,
+  selected = {true},
   abbr     = {ICLR},
   title    = {Surgical Fine-Tuning Improves Adaptation to Distribution Shifts},
   author   = {Yoonho Lee* and Annie S. Chen* and Fahim Tajwar and Ananya Kumar and Huaxiu Yao and Percy Liang and Chelsea Finn},
@@ -253,19 +254,19 @@
   journal  = {
 
     ICLR 2023 <br>
-    NeurIPS 2022 Workshop on Distribution Shifts <br>
-    NeurIPS 2022 I Can't Believe It's Not Better Workshop
+    NeurIPS 2022 Workshops: DistShift, ICBINB
     },
   tldr     = {The best layer to fine-tune reflects the nature of the distribution shift.},
   abstract = {A common approach to transfer learning under distribution shift is to fine-tune the last few layers of a pre-trained model, preserving learned features while also adapting to the new task. This paper shows that in such settings, selectively fine-tuning a subset of layers (which we term surgical fine-tuning) matches or outperforms commonly used fine-tuning approaches. Moreover, the type of distribution shift influences which subset is more effective to tune: for example, for image corruptions, fine-tuning only the first few layers works best. We validate our findings systematically across seven real-world data tasks spanning three types of distribution shifts. Theoretically, we prove that for two-layer neural networks in an idealized setting, first-layer tuning can outperform fine-tuning all layers. Intuitively, fine-tuning more parameters on a small target dataset can cause information learned during pre-training to be forgotten, and the relevant information depends on the type of shift.}
 }
 
 @article{lee2022divdis,
+  selected = {true},
   abbr     = {ICLR},
   title    = {Diversify and Disambiguate: Out-of-Distribution Robustness via Disagreement},
   author   = {Yoonho Lee and Huaxiu Yao and Chelsea Finn},
-  journal  = {ICLR 2023 <br> ICML 2022 Principles of Distribution Shift Workshop <br>
-  ICML 2022 Spurious Correlations, Invariance, and Stability Workshop
+  journal  = {ICLR 2023 <br> 
+  ICML workshops: PODS, SCIS
   },
   year     = {2023},
   month    = {1},
@@ -284,13 +285,17 @@
 }
 
 @article{mitchell2023detectgpt,
+  selected = {true},
+  abbr     = {ICML},
   title    = {DetectGPT: Zero-Shot Machine-Generated Text Detection using Probability Curvature},
   author   = {Eric Mitchell and Yoonho Lee and Alexander Khazatsky and Christopher D Manning and Chelsea Finn},
-  journal  = {preprint},
+  journal  = {ICML 2023 (<b>oral</b>)},
   year     = {2023},
-  month    = {2},
+  month    = {6},
   paper    = {https://arxiv.org/abs/2301.11305},
   website  = {https://ericmitchell.ai/detectgpt/},
+  demo     = {https://detectgpt.ericmitchell.ai/},
+  code     = {https://github.com/eric-mitchell/detect-gpt},
   tldr     = {We develop a method that can detect if a passage is generated by a particular language model. Our method is based on the hypothesis that a passage is likely model-generated if it is near a local maximum in the model's predictive probability space.
 },
   abstract = {
@@ -299,12 +304,10 @@
 }
 
 @article{chen2023pro2,
-  abbr     = {ICLR-W},
+  selected = {true},
   title    = {Project and Probe: Sample-Efficient Domain Adaptation by Interpolating Orthogonal Features},
   author   = {Annie S. Chen* and Yoonho Lee* and Amrith Setlur and Sergey Levine and Chelsea Finn},
-  journal  = {
-  ICLR 2023 TrustML-(un)Limited Workshop (<b>Oral presentation</b>) <br>
-  ICLR 2023 Workshop on Mathematical and Empirical Understanding of Foundation Models},
+  journal  = {ICLR 2023 workshops: TrustML (<b>oral</b>), ME-FoMo},
   year     = {2023},
   month    = {3},
   paper    = {https://arxiv.org/abs/2302.05441},
@@ -315,12 +318,10 @@
 }
 
 @article{choi2023tcm,
-  abbr     = {ICLR-W},
+  selected = {true},
   title    = {Conservative Prediction via Transductive Confidence Minimization},
   author   = {Caroline Choi* and Fahim Tajwar* and Yoonho Lee* and Huaxiu Yao and Ananya Kumar and Chelsea Finn},
-  journal  = {
-  ICLR 2023 TrustML-(un)Limited Workshop <br>
-  ICLR 2023 Workshop on Mathematical and Empirical Understanding of Foundation Models},
+  journal  = {ICLR 2023 workshops: TrustML, ME-FoMo},
   year     = {2023},
   month    = {4},
   paper    = {https://openreview.net/forum?id=pQ-dJqyf9GI},
@@ -333,7 +334,6 @@
 
 % To uncomment, replace % with @
 @article{lee2022ksf,
-  abbr     = {NeurIPS-W},
   title    = {Relaxing the Kolmogorov Structure Function for Realistic Computational Constraints},
   author   = {Yoonho Lee and Chelsea Finn and Stefano Ermon},
   year     = {2022},
