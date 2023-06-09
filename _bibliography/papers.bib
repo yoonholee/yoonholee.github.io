@@ -291,7 +291,7 @@
   author   = {Eric Mitchell and Yoonho Lee and Alexander Khazatsky and Christopher D Manning and Chelsea Finn},
   journal  = {ICML 2023 (<b>oral</b>)},
   year     = {2023},
-  month    = {6},
+  month    = {2},
   paper    = {https://arxiv.org/abs/2301.11305},
   website  = {https://ericmitchell.ai/detectgpt/},
   demo     = {https://detectgpt.ericmitchell.ai/},
@@ -324,7 +324,7 @@
   journal  = {ICLR 2023 workshops: TrustML, ME-FoMo},
   year     = {2023},
   month    = {4},
-  paper    = {https://openreview.net/forum?id=pQ-dJqyf9GI},
+  paper    = {https://arxiv.org/abs/2306.04974},
   tldr     = {Conservative prediction by reducing confidence on an unlabeled uncertainty set.},
   abstract = {
     Errors of machine learning models can be prohibitively costly, especially in safety-critical settings such as healthcare. However, machine learning may be applicable to such scenarios if the learned model can abstain and defer to a human on difficult examples instead of making errors. In safety-critical settings, we prefer conservative models that defer to humans at the cost of some overall accuracy. Unfortunately, selective classification and out-of-distribution detection are notably difficult as it is hard to anticipate all possible examples. To mitigate this challenge, we focus on the transductive setting, where unlabeled examples from the test distribution are available during training. We propose transductive confidence minimization (TCM), which minimizes prediction confidence on unlabeled test examples while simultaneously optimizing the training objective. We theoretically show that TCM learns a lower bound on the true confidence, and that this property can be leveraged to provably detect examples that are sufficiently different from training examples, regardless of what distribution they came from. In our experiments, TCM consistently shows high performance, achieving the highest OOD detection performance compared to 6 other methods on 9 out of 10 ID->OOD pairs and consistently outperforming methods for selective classification in settings where we test on data from a previously unseen distribution.

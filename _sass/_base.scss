@@ -10,9 +10,20 @@ p, h1, h2, h3, h4, h5, h6, em, div, li, span, strong {
 
 html, body {
   font-family: Avenir, Tahoma, "Open Sans", sans-serif;
-  font-weight: 200;
-  color: #2e2d29;
+  font-size: 1.04rem;
+  font-weight: 400;
   height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  word-break: break-word;
+  text-justify: inter-word;
+  hyphens: auto;
+  text-underline-position: under;
+  text-size-adjust: 100%;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
 }
 
 b,
@@ -42,14 +53,47 @@ table {
   }
 }
 
-a, table.table a {
+span a, p a {
   color: var(--global-theme-color);
+
   &:hover {
-    color: var(--global-theme-color);
-    text-decoration: underline;
+    color: var(--global-hover-color);
+    background-color: var(--global-hover-bg-color);
+    border-radius: 0.1rem;
+    font-weight: 400;
+    transition: font-weight 0s;
   }
   &:hover:after :not(.nav-item.dropdown) {
     width: 100%;
+  }
+}
+
+.selected-papers {
+  margin-top: 4rem;
+  .paper{
+    margin: 1.2rem 0;
+
+    a {
+      color: var(--global-theme-color-dark);
+      font-size: 1.05rem;
+      font-weight: 500;
+      &:hover {
+        color: var(--global-hover-color);
+        background-color: var(--global-hover-bg-color);
+        border-radius: 0.1rem;
+        transition: font-weight 0s;
+      }
+    }
+    .authors {
+      font-size: 0.95rem;
+      color: var(--global-text-color-dark);
+      margin: 0;
+    }
+    .venue {
+      font-size: 0.95rem;
+      color: var(--global-text-color-lighter);
+      margin: 0;
+    }
   }
 }
 
@@ -558,6 +602,7 @@ footer.sticky-bottom {
 
         &:hover {
           color: $text-color;
+          background-color: white;
           text-decoration: underline;
         }
       }
