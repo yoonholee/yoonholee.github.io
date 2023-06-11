@@ -13,23 +13,23 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true
 ---
 
-I'm a second-year CS Ph.D. student at Stanford, advised by [Chelsea Finn](https://ai.stanford.edu/~cbfinn/) and part of [IRIS](https://irislab.stanford.edu/).
+I'm a second-year CS Ph.D. student at Stanford, advised by [Chelsea Finn](https://ai.stanford.edu/~cbfinn/) and part of the [IRIS lab](https://irislab.stanford.edu/).
 I am affiliated with [SAIL](https://ai.stanford.edu/), [CRFM](https://crfm.stanford.edu/), and the [ML Group](http://ml.stanford.edu/).
 My research is supported by [KFAS](https://eng.kfas.or.kr/theme/kfaschanel/intl_scholarship_5.php).
 
 Previously, as alternative military service for the South Korean army, I worked as a research scientist at [Kakao](https://www.kakaocorp.com/) and [AITRICS](https://www.aitrics.com/), working with [Juho Lee](https://juho-lee.github.io/).
 Before that, I completed my master's (CS, advised by [Seungjin Choi](http://mlg.postech.ac.kr/~seungjin)) and undergraduate (math) degrees at [POSTECH](https://www.postech.ac.kr/eng/).
 
-Real-world conditions are not static but rather nonstationary.
+Real-world conditions are **nonstationary** rather than static.
 My research interest is in building **reliable machine learning systems** that can navigate and make sound decisions in such perpetually changing environments.
-Some specific key questions that guide my research:
+Here are some key questions that guide my research:
 
 - **Adaptation**: How can we build systems that can quickly and robustly adapt in changing conditions?
 - **Understanding fine-tuning**: How can we better conceptualize fine-tuning as applied in practice? What knowledge is present in foundation models, and what factors influence how much knowledge is preserved during fine-tuning?
+- **Underspecification**: No dataset fully specifies its intended task. How can we make models recognize and represent the multitude of possible realities consistent with given data?
 - **De-risking errors**: What strategies can we employ to handle the reality of machine learning systems generating potentially erroneous outputs?
+- **Usable information**: How can we formalize and quantify the amount of information in a dataset that is (1) learnable by a neural network and/or is (2) pertinent to a given task?
 <!-- - **Better teaching**: Most ML models learn through passive observations or by imitating input/output pairs. Is there a more efficient or robust way to teach machines, so that they more directly "understand" the underlying concepts? -->
-- **Usable information**: Can we quantify the amount of information in a dataset that is both (1) learnable by a neural network and (2) is pertinent to the task at hand?
-- **Underspecification**: No dataset fully specifies the intended task. How can we make models recognize and represent the multitude of possible realities consistent with the dataset?
 
 <div class="selected-papers">
 <h3>Selected Papers</h3>
