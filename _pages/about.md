@@ -29,7 +29,7 @@ Here are some key questions that guide my research:
 - **Underspecification**: No dataset fully specifies its intended task. How can we make models recognize and represent the multitude of possible realities consistent with given data?
 - **De-risking errors**: What strategies can we employ to handle the reality of machine learning systems generating potentially erroneous outputs?
 - **Usable information**: How can we formalize and quantify the amount of information in a dataset that is (1) learnable by a neural network and/or is (2) pertinent to a given task?
-<!-- - **Better teaching**: Most ML models learn through passive observations or by imitating input/output pairs. Is there a more efficient or robust way to teach machines, so that they more directly "understand" the underlying concepts? -->
+- **Better teaching**: Is there a more efficient or robust way to teach machines, beyond passive observation or imitation, so that they more easily "understand" the underlying concepts?
 
 <div class="selected-papers">
 <h3>Selected Papers</h3>
