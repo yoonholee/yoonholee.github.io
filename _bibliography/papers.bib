@@ -251,6 +251,7 @@
   year     = {2023},
   month    = {1},
   paper    = {https://arxiv.org/abs/2210.11466},
+  code     = {https://github.com/anniesch/surgical-finetuning},
   journal  = {
 
     ICLR 2023 <br>
@@ -319,15 +320,28 @@
 
 @article{choi2023tcm,
   selected = {true},
-  title    = {Conservative Prediction via Transductive Confidence Minimization},
+  title    = {Conservative Prediction via Data-Driven Confidence Minimization},
   author   = {Caroline Choi* and Fahim Tajwar* and Yoonho Lee* and Huaxiu Yao and Ananya Kumar and Chelsea Finn},
   journal  = {ICLR 2023 workshops: TrustML, ME-FoMo},
   year     = {2023},
   month    = {4},
   paper    = {https://arxiv.org/abs/2306.04974},
-  tldr     = {Conservative prediction by reducing confidence on an unlabeled uncertainty set.},
+  code     = {https://github.com/tajwarfahim/dcm},
+  tldr     = {Conservative prediction by reducing confidence on relevant hard examples.},
   abstract = {
     Errors of machine learning models can be prohibitively costly, especially in safety-critical settings such as healthcare. However, machine learning may be applicable to such scenarios if the learned model can abstain and defer to a human on difficult examples instead of making errors. In safety-critical settings, we prefer conservative models that defer to humans at the cost of some overall accuracy. Unfortunately, selective classification and out-of-distribution detection are notably difficult as it is hard to anticipate all possible examples. To mitigate this challenge, we focus on the transductive setting, where unlabeled examples from the test distribution are available during training. We propose transductive confidence minimization (TCM), which minimizes prediction confidence on unlabeled test examples while simultaneously optimizing the training objective. We theoretically show that TCM learns a lower bound on the true confidence, and that this property can be leveraged to provably detect examples that are sufficiently different from training examples, regardless of what distribution they came from. In our experiments, TCM consistently shows high performance, achieving the highest OOD detection performance compared to 6 other methods on 9 out of 10 ID->OOD pairs and consistently outperforming methods for selective classification in settings where we test on data from a previously unseen distribution.
+    }
+}
+
+@article{chen2023cosmos,
+  title    = {Confidence-Based Model Selection: When to Take Shortcuts for Subpopulation Shifts},
+  author   = {Annie S. Chen and Yoonho Lee and Amrith Setlur and Sergey Levine and Chelsea Finn},
+  year     = {2023},
+  month    = {6},
+  paper    = {https://arxiv.org/abs/2306.11120},
+  tldr     = {Per-sample model selection based for selectively choosing between robust and non-robust models.},
+  abstract = {
+    Effective machine learning models learn both robust features that directly determine the outcome of interest (e.g., an object with wheels is more likely to be a car), and shortcut features (e.g., an object on a road is more likely to be a car). The latter can be a source of error under distributional shift, when the correlations change at test-time. The prevailing sentiment in the robustness literature is to avoid such correlative shortcut features and learn robust predictors. However, while robust predictors perform better on worst-case distributional shifts, they often sacrifice accuracy on majority subpopulations. In this paper, we argue that shortcut features should not be entirely discarded. Instead, if we can identify the subpopulation to which an input belongs, we can adaptively choose among models with different strengths to achieve high performance on both majority and minority subpopulations. We propose COnfidence-baSed MOdel Selection (CosMoS), where we observe that model confidence can effectively guide model selection. Notably, CosMoS does not require any target labels or group annotations, either of which may be difficult to obtain or unavailable. We evaluate CosMoS on four datasets with spurious correlations, each with multiple test sets with varying levels of data distribution shift. We find that CosMoS achieves 2-5% lower average regret across all subpopulations, compared to using only robust predictors or other model aggregation methods.
     }
 }
 

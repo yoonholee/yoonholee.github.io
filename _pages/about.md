@@ -83,7 +83,7 @@ ICLR 2023
 </div>
 
 <div class="paper">
-<a main-paper-link href="https://arxiv.org/abs/2302.05441">
+<a main-paper-link href="https://arxiv.org/abs/2202.03418">
 Diversify and Disambiguate: Out-of-Distribution Robustness via Disagreement
 </a>
 <p class="authors"> 
