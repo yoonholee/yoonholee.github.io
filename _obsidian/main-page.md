@@ -1,8 +1,9 @@
 ---
-title: main-page
-layout: page
+title: Main Page
+layout: obsidian
+read_time: 1 mins
 ---
-# Main Page
+
 Blog main page
 
 fej908j290fj0

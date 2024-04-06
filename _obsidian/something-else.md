@@ -1,10 +1,14 @@
 ---
-title: something-else
-layout: page
+title: something else
+layout: obsidian
+read_time: 1 mins
+linked_mentions:
+  - title: Bidirectional Link
+    url: /obsidian/bidirectional-link
+    thumbnail: aaaa
+  - title: Main Page
+    url: /obsidian/main-page
+    thumbnail: Blog main page
 ---
-# something else
-jfa89ij239082frh0
 
-<div>Linked mentions</div>
-<div><a href="/obsidian/bidirectional-link">Bidirectional Link</a>
-<a href="/obsidian/main-page">Main Page</a></div>
+jfa89ij239082frh0

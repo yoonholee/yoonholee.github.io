@@ -4,11 +4,23 @@
 
 // Typography
 
-p, h1, h2, h3, h4, h5, h6, em, div, li, span, strong {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+div,
+li,
+span,
+strong {
   color: var(--global-text-color);
 }
 
-html, body {
+html,
+body {
   font-family: Avenir, Tahoma, "Open Sans", sans-serif;
   font-size: 1.04rem;
   font-weight: 400;
@@ -45,24 +57,27 @@ hr {
 }
 
 table {
-  td, th {
+  td,
+  th {
     color: var(--global-text-color);
   }
+
   td {
     font-size: 1rem;
   }
 }
 
-span a, p a {
+span a,
+p a {
   color: var(--global-theme-color);
 
   &:hover {
     color: var(--global-hover-color);
-    background-color: var(--global-hover-bg-color);
-    border-radius: 0.1rem;
-    font-weight: 400;
+    font-weight: 500;
     transition: font-weight 0s;
+    text-decoration: underline;
   }
+
   &:hover:after :not(.nav-item.dropdown) {
     width: 100%;
   }
@@ -70,25 +85,29 @@ span a, p a {
 
 .selected-papers {
   margin-top: 4rem;
-  .paper{
+
+  .paper {
     margin: 1.2rem 0;
 
     a {
-      color: var(--global-theme-color-dark);
+      color: var(--global-theme-color);
       font-size: 1.05rem;
       font-weight: 500;
+
       &:hover {
         color: var(--global-hover-color);
-        background-color: var(--global-hover-bg-color);
         border-radius: 0.1rem;
         transition: font-weight 0s;
+        text-decoration: underline;
       }
     }
+
     .authors {
       font-size: 0.95rem;
       color: var(--global-text-color-dark);
       margin: 0;
     }
+
     .venue {
       font-size: 0.95rem;
       color: var(--global-text-color-lighter);
@@ -97,7 +116,8 @@ span a, p a {
   }
 }
 
-figure, img {
+figure,
+img {
   max-width: 90vw;
 }
 
@@ -151,7 +171,8 @@ blockquote {
 
 // Citation
 
-.citation, .citation-number {
+.citation,
+.citation-number {
   color: var(--global-theme-color);
 }
 
@@ -164,16 +185,19 @@ blockquote {
     margin-bottom: 5px;
     margin-top: 5px;
     font-family: monospace;
+
     p {
       display: inline-block;
       margin: 0;
     }
   }
 }
-.profile.float-right{
+
+.profile.float-right {
   margin-left: 1.5rem;
 }
-.profile.float-left{
+
+.profile.float-left {
   margin-right: 1.5rem;
 }
 
@@ -182,7 +206,9 @@ blockquote {
     width: 18%;
 
     .address {
-      p { display: block; }
+      p {
+        display: block;
+      }
     }
   }
 }
@@ -190,15 +216,16 @@ blockquote {
 .post-description {
   margin-bottom: 2rem;
   font-size: 0.875rem;
+
   a {
     color: inherit;
+
     &:hover {
       color: var(--global-theme-color);
       text-decoration: none;
     }
   }
 }
-
 
 // Navbar customization
 
@@ -208,61 +235,76 @@ blockquote {
   background-color: var(--global-bg-color);
   opacity: 0.95;
 }
+
 .navbar .dropdown-menu {
   background-color: var(--global-bg-color);
   border: 1px solid var(--global-divider-color);
+
   a:not(.active) {
     color: var(--global-text-color);
   }
+
   a:hover {
     color: var(--global-hover-color);
   }
+
   .dropdown-divider {
     border-top: 1px solid var(--global-divider-color) !important;
   }
 }
+
 .dropdown-item {
   color: var(--global-text-color);
-    &:hover {
-      color: var(--global-hover-color);
-      background-color: var(--global-bg-color);
-    }
+
+  &:hover {
+    color: var(--global-hover-color);
+    background-color: var(--global-bg-color);
+  }
 }
+
 .navbar.navbar-light {
   a {
     &:hover {
       text-decoration: none;
     }
   }
+
   .navbar-brand {
     font-size: 1.8rem;
-    padding: .2rem 0;
-    font-weight: 600!important;
+    padding: 0.2rem 0;
+    font-weight: 600 !important;
     color: var(--global-text-color);
   }
+
   .navbar-nav .nav-item .nav-link {
     color: var(--global-text-color);
+
     &:hover {
       color: var(--global-hover-color);
     }
   }
-  .navbar-nav .nav-item.active>.nav-link {
-      background-color: inherit;
-      font-weight: bolder;
-      color: var(--global-theme-color);
-      &:hover {
-        color: var(--global-hover-color);
-      }
+
+  .navbar-nav .nav-item.active > .nav-link {
+    background-color: inherit;
+    font-weight: bolder;
+    color: var(--global-theme-color);
+
+    &:hover {
+      color: var(--global-hover-color);
+    }
   }
+
   .navbar-brand.social {
     padding-bottom: 0;
     padding-top: 0;
     font-size: 1.7rem;
+
     a {
       i::before {
         color: var(--global-text-color);
         transition-property: all 0.2s ease-in-out;
       }
+
       &:hover {
         i::before {
           color: var(--global-theme-color);
@@ -282,13 +324,16 @@ blockquote {
     margin-bottom: 4px;
     transition: all 0.2s;
   }
+
   .top-bar {
     transform: rotate(45deg);
     transform-origin: 10% 10%;
   }
+
   .middle-bar {
     opacity: 0;
   }
+
   .bottom-bar {
     transform: rotate(-45deg);
     transform-origin: 10% 90%;
@@ -299,9 +344,11 @@ blockquote {
   .top-bar {
     transform: rotate(0);
   }
+
   .middle-bar {
     opacity: 1;
   }
+
   .bottom-bar {
     transform: rotate(0);
   }
@@ -312,6 +359,7 @@ blockquote {
   border: 0;
   background-color: inherit;
   color: var(--global-text-color);
+
   &:hover {
     color: var(--global-hover-color);
   }
@@ -348,18 +396,20 @@ blockquote {
   }
 }
 
-
 // Footer
 footer.fixed-bottom {
   background-color: var(--global-footer-bg-color);
   font-size: 0.75rem;
+
   .container {
     color: var(--global-footer-text-color);
     padding-top: 9px;
     padding-bottom: 8px;
   }
+
   a {
     color: var(--global-footer-link-color);
+
     &:hover {
       color: var(--global-theme-color);
       text-decoration: none;
@@ -377,11 +427,11 @@ footer.sticky-bottom {
 
 .cv {
   margin-bottom: 40px;
-  
+
   .card {
     background-color: var(--global-card-bg-color);
     border: 1px solid var(--global-divider-color);
-    
+
     .list-group-item {
       background-color: inherit;
       border-color: var(--global-divider-color);
@@ -409,6 +459,7 @@ footer.sticky-bottom {
   text-align: center;
   padding-top: 2rem;
   padding-bottom: 3rem;
+
   h1 {
     color: var(--global-theme-color);
     font-size: 5rem;
@@ -424,7 +475,8 @@ footer.sticky-bottom {
     justify-content: center;
     display: flow-root;
 
-    p, li {
+    p,
+    li {
       list-style: none;
       display: inline-block;
       padding: 1rem 0.5rem;
@@ -437,25 +489,30 @@ footer.sticky-bottom {
   margin: 0;
   margin-bottom: 40px;
   padding: 0;
+
   li {
     border-bottom: 1px solid var(--global-divider-color);
     list-style: none;
     padding-top: 2rem;
     padding-bottom: 2rem;
+
     .post-meta {
       color: var(--global-text-color-light);
       font-size: 0.875rem;
       margin-bottom: 0;
     }
+
     .post-tags {
       color: var(--global-text-color-light);
       font-size: 0.875rem;
       padding-top: 0.25rem;
       padding-bottom: 0;
     }
+
     a {
       color: var(--global-text-color);
       text-decoration: none;
+
       &:hover {
         color: var(--global-theme-color);
       }
@@ -467,20 +524,22 @@ footer.sticky-bottom {
   .page-item {
     .page-link {
       color: var(--global-text-color);
+
       &:hover {
         color: $black-color;
       }
     }
+
     &.active .page-link {
       color: $white-color;
       background-color: var(--global-theme-color);
+
       &:hover {
         background-color: var(--global-theme-color);
       }
     }
   }
 }
-
 
 // Distill
 
@@ -490,7 +549,6 @@ footer.sticky-bottom {
     text-decoration: none;
   }
 }
-
 
 // Projects
 
@@ -521,7 +579,8 @@ footer.sticky-bottom {
     }
   }
 
-  .grid-sizer, .grid-item {
+  .grid-sizer,
+  .grid-item {
     width: 250px;
     margin-bottom: 10px;
   }
@@ -535,7 +594,6 @@ footer.sticky-bottom {
     text-align: right;
   }
 }
-
 
 // Publications
 .publications {
@@ -583,7 +641,7 @@ footer.sticky-bottom {
           }
         }
 
-        >em {
+        > em {
           border-bottom: 1px solid;
           font-style: normal;
         }
@@ -609,7 +667,6 @@ footer.sticky-bottom {
     }
   }
 }
-
 
 // Collapsible Abstract
 .publications .bibliography .publication-row {
@@ -670,7 +727,9 @@ pre {
   background-color: var(--global-code-bg-color);
   border-radius: 6px;
   padding: 6px 12px;
-  pre, code {
+
+  pre,
+  code {
     background-color: transparent;
     border-radius: 0;
     padding: 0;
@@ -684,7 +743,6 @@ code {
   padding: 3px 3px;
 }
 
-
 // Transitioning Themes
 html.transition,
 html.transition *,
@@ -695,26 +753,30 @@ html.transition *:after {
 }
 
 // Extra Markdown style (post Customization)
-.post{
-  .post-meta{
+.post {
+  .post-meta {
     color: var(--global-text-color-light);
     font-size: 0.875rem;
     margin-bottom: 0;
   }
-  .post-tags{
+
+  .post-tags {
     color: var(--global-text-color-light);
     font-size: 0.875rem;
     padding-top: 0.25rem;
     padding-bottom: 1rem;
+
     a {
       color: var(--global-text-color-light);
       text-decoration: none;
+
       &:hover {
         color: var(--global-theme-color);
       }
     }
   }
-  .post-content{
+
+  .post-content {
     blockquote {
       border-left: 5px solid var(--global-theme-color);
       padding: 8px;
@@ -723,56 +785,150 @@ html.transition *:after {
 }
 
 progress {
-     /* Positioning */
-     position: fixed;
-     left: 0;
-     top: 56px;
-     z-index: 10;
-   
-     /* Dimensions */
-     width: 100%;
-     height: 1px;
-   
-     /* Reset the appearance */
-     -webkit-appearance: none;
-        -moz-appearance: none;
-             appearance: none;
-   
-     /* Get rid of the default border in Firefox/Opera. */
-     border: none;
-   
-     /* Progress bar container for Firefox/IE10  */
-     background-color: transparent;
-   
-     /* Progress bar value for IE10  */
-     color: var(--global-theme-color);
- }
- 
- progress::-webkit-progress-bar {
-     background-color: transparent;
- }
-   
- progress::-webkit-progress-value {
-     background-color: var(--global-theme-color);
- }
-   
- progress::-moz-progress-bar {
-     background-color: var(--global-theme-color);
- }
- 
- .progress-container {
-     width: 100%;
-     background-color: transparent;
-     position: fixed;
-     top: 56px;
-     left: 0;
-     height: 5px;
-     display: block;
- }
- 
- .progress-bar {
-     background-color: var(--global-theme-color);
-     width: 0%;
-     display: block;
-     height: inherit;
- }
+  /* Positioning */
+  position: fixed;
+  left: 0;
+  top: 56px;
+  z-index: 10;
+
+  /* Dimensions */
+  width: 100%;
+  height: 1px;
+
+  /* Reset the appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Get rid of the default border in Firefox/Opera. */
+  border: none;
+
+  /* Progress bar container for Firefox/IE10  */
+  background-color: transparent;
+
+  /* Progress bar value for IE10  */
+  color: var(--global-theme-color);
+}
+
+progress::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--global-theme-color);
+}
+
+progress::-moz-progress-bar {
+  background-color: var(--global-theme-color);
+}
+
+.progress-container {
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  height: 5px;
+  display: block;
+}
+
+.progress-bar {
+  background-color: var(--global-theme-color);
+  width: 0%;
+  display: block;
+  height: inherit;
+}
+
+//  Obsidian
+.post-header {
+  margin-top: 5em;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.post-title {
+  font-size: 2.5em;
+  margin-bottom: 0.2em;
+  color: #333333;
+}
+
+.post-meta {
+  color: #898989;
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+
+.post-content {
+  line-height: 1.6;
+  color: #444444;
+  font-size: 1.1em;
+
+  p,
+  ul {
+    margin-bottom: 1.5em;
+  }
+
+  ul {
+    margin-left: 1.5em;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+
+  a {
+    color: $theme-color;
+    text-decoration: none;
+
+  }
+}
+
+.post-footer {
+  margin-top: 2em;
+  color: #999999;
+  padding-top: 1.5em;
+
+  h3 {
+    font-size: 1.6em;
+    font-weight: 400;
+    margin-bottom: 1em;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+  }
+
+  li {
+    background-color: #fcf9f9;
+    border: 1.2px solid #e9e9e9;
+    padding: 1em;
+    margin-bottom: 0;
+
+  }
+
+  li:hover a {
+    color: $theme-color;
+  }
+
+  a {
+    color: #333333;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    font-size: 0.9em;
+    color: #666666;
+    margin: 0;
+  }
+
+  span {
+    color: #999999; /* Light gray */
+  }
+}

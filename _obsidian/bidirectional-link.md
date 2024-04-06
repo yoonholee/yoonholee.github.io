@@ -1,11 +1,13 @@
 ---
-title: bidirectional-link
-layout: page
+title: Bidirectional Link
+layout: obsidian
+read_time: 1 mins
+linked_mentions:
+  - title: Main Page
+    url: /obsidian/main-page
+    thumbnail: Blog main page
 ---
-# Bidirectional Link
+
 aaaa
 
 [something else](/obsidian/something-else)
-
-<div>Linked mentions</div>
-<div><a href="/obsidian/main-page">Main Page</a></div>

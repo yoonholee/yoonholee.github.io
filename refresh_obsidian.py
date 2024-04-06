@@ -24,31 +24,42 @@ def find_obsidian_links(content):
     pattern = r"\[\[(.*?)\]\]"
     return re.findall(pattern, content)
 
+def get_read_time_md(content):
+    words = content.split()
+    mins = len(words) // 200 + 1
+    return f"\nread_time: {mins} mins"
 
-def get_header(name):
+
+def get_backlinks_md(links):
+    md = "\nlinked_mentions:"
+    for link in links:
+        url = f"{obsidian_root}/{get_flat_name(link)}"
+        content = content_dict[link][1]
+        thumbnail = content.split("\n")[0].strip()[:50]
+        filter_chars = ["#", "!", "[", "]", "(", ")", ":", "*", "_", "-"]
+        thumbnail = "".join(c for c in thumbnail if c not in filter_chars)
+        md += f"\n  - title: {link}\n    url: {url}\n    thumbnail: {thumbnail}"
+    return md
+
+
+def get_header(name, links, content):
     header = f"""---
-title: {flat_name_dict[name]}
-layout: page
----
-# {name}
-"""
+title: {name}
+layout: obsidian"""
+    header += get_read_time_md(content)
+    if links:
+        header += get_backlinks_md(links)
+    header += "\n---\n\n"
     return header
 
-
-def get_backlinks_html(links):
-    backlinks = "\n".join(
-        f'<a href="{obsidian_root}/{get_flat_name(link)}">{link}</a>' for link in links
-    )
-    backlinks_html = f"\n\n<div>Linked mentions</div>\n<div>{backlinks}</div>"
-    return backlinks_html
-
-
-def convert_obsidian_links(content, flat_name_dict):
+    
+def convert_obsidian_links(content):
     pattern = r"\[\[(.*?)\]\]"
 
     def replacer(match):
         link_text = match.group(1)
-        link_target = flat_name_dict.get(link_text, link_text)
+        link_target = get_flat_name(link_text)
+        # link_target = flat_name_dict.get(link_text, link_text)
         return f"[{link_text}]({obsidian_root}/{link_target})"
 
     return re.sub(pattern, replacer, content)
@@ -82,23 +93,29 @@ for name, links in outgoing_dict.items():
         backlink_dict[link].append(name)
 print(f"Found {sum(len(links) for links in backlink_dict.values())} backlinks")
 
+# Populate empty files for links that don't have content
+all_links = [l for links in outgoing_dict.values() for l in links]
+empty_links = set(all_links) - set(content_dict.keys())
+for link in empty_links:
+    content = "This note is empty."
+    header = get_header(link, backlink_dict[link], content)
+    print(get_flat_name(link))
+    with open(f"{dst_dir}/{get_flat_name(link)}.md", "w") as file:
+        file.write(header + content)
 
 for name, (filepath, content) in content_dict.items():
-    content = convert_obsidian_links(content, flat_name_dict)
-    if backlink_dict[name]:
-        backlinks_html = get_backlinks_html(backlink_dict[name])
-        content = content + backlinks_html
-    header = get_header(name)
+    content = convert_obsidian_links(content)
+    header = get_header(name, backlink_dict[name], content)
     content = header + content
     with open(filepath, "w") as file:
         file.write(content)
     shutil.move(filepath, new_filepath_dict[name])
 
 root_header = """---
-title: root
-layout: page
+title: Root
+layout: obsidian
+read_time: 1 mins
 ---
-All Pages
 """
 root_content = "\n".join(
     f'- [{name}]({obsidian_root}/{flat_name_dict[name]})'
