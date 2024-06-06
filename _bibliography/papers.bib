@@ -335,11 +335,11 @@
 
 @article{choi2023tcm,
   selected = {true},
-  abbr     = {NeurIPS-W},
+  abbr     = {TMLR},
   title    = {Conservative Prediction via Data-Driven Confidence Minimization},
   author   = {Caroline Choi* and Fahim Tajwar* and Yoonho Lee* and Huaxiu Yao and Ananya Kumar and Chelsea Finn},
-  journal  = {ICLR 2023 workshops: TrustML, ME-FoMo},
-  year     = {2023},
+  journal  = {TMLR 2024<br>ICLR 2023 workshops: TrustML, ME-FoMo},
+  year     = {2024},
   month    = {4},
   paper    = {https://arxiv.org/abs/2306.04974},
   code     = {https://github.com/tajwarfahim/dcm},
@@ -369,18 +369,17 @@
   author   = {Yoonho Lee and Michelle Lam and Helena Vasconcelos and Michael S. Bernstein and Chelsea Finn},
   year     = {2024},
   month    = {3},
-  paper    = {https://openreview.net/forum?id=bGsW1wSIxQ},
   journal  = {NeurIPS 2023 Workshops: XAIA, ICBINB},
   tldr     = {A natural language interface for high-level feedback on model misconceptions; works at ImageNet scale.},
   paper    = {https://arxiv.org/abs/2402.03715},
   abstract = {
-    Foundation models encode rich representations that can be adapted to downstream tasks by fine-tuning. However, fine-tuning a model on one data distribution often degrades performance under distribution shifts. Current approaches to robust fine-tuning use hand-crafted regularization techniques to constrain the fine-tuning process towards the pretrained model. Yet, it is hard to specify how to adapt relevant characteristics of the foundation model during fine-tuning, as this depends on how the pre-training, fine-tuning, and test data distributions relate to each other. We propose AutoFT, a data-driven approach for robust fine-tuning. Given a task, AutoFT searches for a fine-tuning procedure that enhances out-of-distribution (OOD) generalization. Specifically, AutoFT uses bi-level optimization to search for an objective function and hyperparameters that maximize post-adaptation performance on a small OOD validation set. We evaluate AutoFT on nine natural distribution shifts. Our experiments show that AutoFT significantly improves generalization to new OOD data, outperforming existing robust fine-tuning methods. Notably, \ours{} achieves a new state-of-the-art on the WILDS iWildCam and FMoW benchmarks, outperforming the previous best methods by 6.0% and 1.5%, respectively.
+    The standard way to teach models is by feeding them lots of data. However, this approach often teaches models incorrect ideas because they pick up on misleading signals in the data. To prevent such misconceptions, we must necessarily provide additional information beyond the training data. Prior methods incorporate forms of additional instance-level supervision, such as labels for misleading features or additional labels for debiased data. However, such strategies require a large amount of labeler effort. We hypothesize that people are good at providing textual feedback at the level of concepts, a capability which existing frameworks for teaching do not leverage. We propose Clarify, a novel interface and method for interactively correcting model misconceptions. Through Clarify, users need only provide a short text description to describe a model's consistent failure patterns. Then, in an entirely automated way, we use such descriptions to improve the training process. Our user studies show that non-expert users can successfully describe model misconceptions via Clarify, leading to increased worst-case performance in two datasets. We additionally conduct a case study on a large-scale image dataset, ImageNet, where we use Clarify to find and rectify 31 novel hard subpopulations.
     }
 }
 
 @article{choi2024autoft,
   abbr      = {NeurIPS-W},
-  title    = {AutoFT: Robust Fine-Tuning by Optimizing Hyperparameters on OOD Data},
+  title    = {Robust Fine-Tuning by Learning the Objective with Bi-Level Optimization},
   author   = {Caroline Choi* and Yoonho Lee* and Annie S. Chen and Allan Zhou and Aditi Raghunathan and Chelsea Finn},
   year     = {2024},
   month    = {3},
@@ -389,7 +388,22 @@
   code     = {https://github.com/cchoi1/auto-ft},
   tldr     = {Robust fine-tuning by optimizing hyperparameters on OOD data; state-of-the-art on WILDS.},
   abstract = {
-    Foundation models encode rich representations that can be adapted to a desired task by fine-tuning on task-specific data. However, fine-tuning a model on one particular data distribution often compromises the model's original performance on other distributions. Current methods for robust fine-tuning utilize hand-crafted regularization techniques to constrain the fine-tuning process towards the base foundation model. Yet, it is hard to precisely specify what characteristics of the foundation model to retain during fine-tuning, as this depends on how the pre-training, fine-tuning, and evaluation data distributions relate to each other. We propose AutoFT, a data-driven approach for guiding foundation model fine-tuning. AutoFT optimizes fine-tuning hyperparameters to maximize performance on a small out-of-distribution (OOD) validation set. To guide fine-tuning in a granular way, AutoFT searches a highly expressive hyperparameter space that includes weight coefficients for many different losses, in addition to learning rate and weight decay values. We evaluate AutoFT on nine natural distribution shifts which include domain shifts and subpopulation shifts. Our experiments show that AutoFT significantly improves generalization to new OOD data, outperforming existing robust fine-tuning methods. Notably, AutoFT achieves new state-of-the-art performance on the WILDS-iWildCam and WILDS-FMoW benchmarks, outperforming the previous best methods by 6.0% and 1.5%, respectively.
+    Large pretrained models encode rich representations that should, in principle, facilitate adaptation to downstream tasks by fine-tuning. However, fine-tuning a model on one data distribution often degrades performance on related distributions. Recent works propose hand-crafted fine-tuning algorithms to mitigate this issue, but these may not fully capture the relevant information for the task at hand. Since the optimal fine-tuning procedure depends on the relationship between the pretrained model and the downstream task, a data-driven approach which automatically searches the space of fine-tuning procedures is desirable. We propose LOFT, which optimizes the fine-tuning procedure such that resulting models are more robust to distribution shifts. Concretely, LOFT leverages a small validation set from a distribution that is different from both the training set and the test set. LOFT performs bi-level optimization to search for a loss function for which fine-tuning results in high performance on the validation set. Our experiments on nine naturally occurring distribution shifts show that LOFT outperforms existing robust fine-tuning methods in generalization to unseen distributions. Notably, LOFT achieves a new state-of-the-art on the WILDS iWildCam and FMoW benchmarks, outperforming the previous best methods by 6.0% and 1.5%, respectively.
+    }
+}
+
+@article{xie2024temperature,
+  abbr     = {ICLR-W},
+  title    = {Calibrating Language Models With Adaptive Temperature Scaling},
+  author   = {Johnathan Xie* and Annie S. Chen* and Yoonho Lee and Eric Mitchell and Chelsea Finn},
+  year     = {2024},
+  month    = {1},
+  paper    = {https://openreview.net/forum?id=BgfGqNpoMi},
+  journal  = {ICLR 2024 Workshop on Secure and Trustworthy LLMs},
+  code     = {},
+  tldr     = {Calibrating post-trained models via tokenwise temperature scaling.},
+  abstract = {
+    The effectiveness of large language models (LLMs) is not only measured by their ability to generate accurate outputs but also by their calibration—how well their confidence scores reflect the probability of their outputs being correct. While unsupervised pre-training has been shown to yield LLMs with well-calibrated conditional probabilities, recent studies have shown that after fine-tuning with reinforcement learning from human feedback (RLHF), the calibration of these models degrades significantly. In this work, we introduce Adaptive Temperature Scaling (ATS), a post-hoc calibration method that predicts a temperature scaling parameter for each token prediction. The predicted temperature values adapt based on token-level features and are fit over a standard supervised fine-tuning (SFT) dataset. The adaptive nature of ATS addresses the varying degrees of calibration shift that can occur after RLHF fine-tuning. ATS improves calibration by over 10-50% across three downstream natural language evaluation benchmarks compared to prior calibration methods and does not impede performance improvements from RLHF.
     }
 }
 
@@ -406,6 +420,8 @@
   tldr     = {An efficient relaxation of the Kolmogorov Structure Function that can leverage neural networks.},
   abstract = {The degree to which a task is learnable given different computational constraints shows the amount of usable information at different scales. An instantiation of this idea is the Kolmogorov Structure Function (KSF), which shows how the fit of an optimal $k$-bit description of a given string improves for increasing values of $k$. While conceptually appealing, computing the KSF is infeasible in practice due to the exponentially large search space of all descriptions of a given length, in addition to the unbounded time complexity. This paper proposes the Constrained Structure Function (CSF), a generalization of the KSF that can be computed efficiently by taking into account realistic computational constraints. In addition to being feasible to compute, the CSF of a dataset can be expressed as the sum of datapoint-wise functions which reflect the degree to which each datapoint is typical in the context of the dataset. Empirically, we demonstrate that the CSF can be used for detecting individual datapoints with characteristics such as being easy, mislabeled, or belonging to a hidden subgroup.}
 }
+
+
 
 
 @Comment{jabref-meta: databaseType:bibtex;}

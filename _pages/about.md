@@ -13,22 +13,20 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true
 ---
 
-I'm a third-year CS Ph.D. student at Stanford, advised by [Chelsea Finn](https://ai.stanford.edu/~cbfinn/) and part of the [IRIS lab](https://irislab.stanford.edu/).
-I am affiliated with [SAIL](https://ai.stanford.edu/), [CRFM](https://crfm.stanford.edu/), and the [ML Group](http://ml.stanford.edu/).
-My research is partly supported by [KFAS](https://eng.kfas.or.kr/theme/kfaschanel/intl_scholarship_5.php).
+I'm a Ph.D. candidate at Stanford CS, advised by [Chelsea Finn](https://ai.stanford.edu/~cbfinn/) and part of the [IRIS lab](https://irislab.stanford.edu/).
+I am affiliated with [SAIL](https://ai.stanford.edu/), [CRFM](https://crfm.stanford.edu/), and the [ML Group](http://ml.stanford.edu/) at Stanford.
+My research is supported by [OpenAI](https://openai.com/index/superalignment-fast-grants/) and [KFAS](https://eng.kfas.or.kr/theme/kfaschanel/intl_scholarship_5.php).
 
-Previously, as alternative military service for the South Korean army, I worked as a research scientist at [Kakao](https://www.kakaocorp.com/) and [AITRICS](https://www.aitrics.com/), working with [Juho Lee](https://juho-lee.github.io/).
+Previously, as mandatory military service for the South Korean army, I was a research scientist at [Kakao](https://www.kakaocorp.com/) and [AITRICS](https://www.aitrics.com/), working with [Juho Lee](https://juho-lee.github.io/).
 Before that, I completed my master's (CS, advised by [Seungjin Choi](http://mlg.postech.ac.kr/~seungjin)) and undergraduate (math) degrees at [POSTECH](https://www.postech.ac.kr/eng/).
 
-Real-world conditions are **nonstationary** rather than static.
-My research interest is in building **reliable machine learning systems** that can navigate and make sound decisions in such perpetually changing environments.
 Here are some key questions that guide my research:
 
-- **Better teaching**: Is there a more efficient and robust way to teach machines, beyond passive observation or imitation, so that they more easily "understand" the underlying concepts? What should we do when we want a machine to perform a task that humans cannot do well?
-- **Underspecification**: No dataset fully specifies its intended task. How can we make models recognize and represent the multitude of possible realities consistent with given data?
-- **Understanding fine-tuning**: How can we better conceptualize fine-tuning as applied in practice? What knowledge is present in foundation models, and what factors influence how much knowledge is preserved during fine-tuning?
-- **De-risking errors**: What strategies can we employ to handle the reality of machine learning systems generating potentially erroneous outputs?
-<!-- - **Usable information**: How can we formalize and quantify the amount of information in a dataset that is (1) learnable by a neural network and/or is (2) pertinent to a given task? -->
+- **Teaching strong models**: The strongest pre-trained models seem to already know much of what we want to teach them. Post-training seems to be more about eliciting the appropriate pre-existing capabilities than instilling entirely new information. Can we develop a more effective paradigm for "teaching" models that already know much of what we want to teach them?
+- **Underspecification**: No dataset can fully specify its intended task. How can we make models recognize and represent the multitude of possible realities consistent with given data? What is the best way to leverage such diverse hypotheses?
+- **Understanding information**: Within any dataset, there is an underlying essence ("information") that is independent of the specific representation. How can we better conceptualize this notion of information, and understand the mechanisms by which large neural networks extract, store, and communicate it?
+- **Mitigating risks**: What strategies can we employ to handle the reality of machine learning systems generating potentially erroneous or harmful outputs?
+
 
 <div class="selected-papers">
 <h3>Selected Papers</h3>
