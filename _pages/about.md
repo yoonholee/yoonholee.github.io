@@ -15,16 +15,16 @@ social: true
 
 I'm a Ph.D. candidate at Stanford CS, advised by [Chelsea Finn](https://ai.stanford.edu/~cbfinn/) and part of the [IRIS lab](https://irislab.stanford.edu/).
 I am affiliated with [SAIL](https://ai.stanford.edu/), [CRFM](https://crfm.stanford.edu/), and the [ML Group](http://ml.stanford.edu/) at Stanford.
-My research is supported by [OpenAI](https://openai.com/index/superalignment-fast-grants/) and [KFAS](https://eng.kfas.or.kr/theme/kfaschanel/intl_scholarship_5.php).
+My research is supported by an [OpenAI Superalignment Fellowship](https://openai.com/index/superalignment-fast-grants/) and a [KFAS PhD Scholarship](https://eng.kfas.or.kr/theme/kfaschanel/intl_scholarship_5.php).
 
 Previously, as mandatory military service for the South Korean army, I was a research scientist at [Kakao](https://www.kakaocorp.com/) and [AITRICS](https://www.aitrics.com/), working with [Juho Lee](https://juho-lee.github.io/).
 Before that, I completed my master's (CS, advised by [Seungjin Choi](http://mlg.postech.ac.kr/~seungjin)) and undergraduate (math) degrees at [POSTECH](https://www.postech.ac.kr/eng/).
 
 Here are some key questions that guide my research:
 
-- **Teaching strong models**: The strongest pre-trained models seem to already know much of what we want to teach them. Post-training seems to be more about eliciting the appropriate pre-existing capabilities than instilling entirely new information. Can we develop a more effective paradigm for "teaching" models that already know much of what we want to teach them?
-- **Underspecification**: No dataset can fully specify its intended task. How can we make models recognize and represent the multitude of possible realities consistent with given data? What is the best way to leverage such diverse hypotheses?
-- **Understanding information**: Within any dataset, there is an underlying essence ("information") that is independent of the specific representation. How can we better conceptualize this notion of information, and understand the mechanisms by which large neural networks extract, store, and communicate it?
+- **Teaching strong models**: Strong pre-trained models already know much of what we want to teach them. Post-training seems to be more about eliciting the appropriate pre-existing capabilities than instilling entirely new information. Can we develop a more effective paradigm for "teaching" models that leverage the pre-existing capabilities inside pre-trained models?
+- **Underspecification**: No dataset fully specifies its intended task. How can we make models recognize and represent the multitude of possible realities consistent with given data? What is the best way to leverage such diverse hypotheses?
+- **Understanding information**: Within any data, there is an underlying essence ("information") that exists independently of the specific representation. How can we better conceptualize this notion of information, and understand the mechanisms by which machine learning models extract, store, and communicate it?
 - **Mitigating risks**: What strategies can we employ to handle the reality of machine learning systems generating potentially erroneous or harmful outputs?
 
 

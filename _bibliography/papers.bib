@@ -126,6 +126,8 @@
 @article{pakman2020ACP,
   title    = {Amortized Probabilistic Detection of Communities in Graphs},
   author   = {Yueqi Wang* and Yoonho Lee* and Pallab Basu and Juho Lee and Yee Whye Teh and Liam Paninski, and Ari Pakman},
+  journal  = {ICML 2024 SPIGM workshop},
+  abbr     = {ICML-W},
   year     = {2021},
   month    = {3},
   paper    = {https://arxiv.org/abs/2010.15727},
@@ -368,10 +370,11 @@
   title    = {Clarify: Improving Model Robustness With Natural Language Corrections},
   author   = {Yoonho Lee and Michelle Lam and Helena Vasconcelos and Michael S. Bernstein and Chelsea Finn},
   year     = {2024},
-  month    = {3},
+  month    = {7},
   journal  = {NeurIPS 2023 Workshops: XAIA, ICBINB},
   tldr     = {A natural language interface for high-level feedback on model misconceptions; works at ImageNet scale.},
   paper    = {https://arxiv.org/abs/2402.03715},
+  code     = {https://github.com/yoonholee/Clarify},
   abstract = {
     The standard way to teach models is by feeding them lots of data. However, this approach often teaches models incorrect ideas because they pick up on misleading signals in the data. To prevent such misconceptions, we must necessarily provide additional information beyond the training data. Prior methods incorporate forms of additional instance-level supervision, such as labels for misleading features or additional labels for debiased data. However, such strategies require a large amount of labeler effort. We hypothesize that people are good at providing textual feedback at the level of concepts, a capability which existing frameworks for teaching do not leverage. We propose Clarify, a novel interface and method for interactively correcting model misconceptions. Through Clarify, users need only provide a short text description to describe a model's consistent failure patterns. Then, in an entirely automated way, we use such descriptions to improve the training process. Our user studies show that non-expert users can successfully describe model misconceptions via Clarify, leading to increased worst-case performance in two datasets. We additionally conduct a case study on a large-scale image dataset, ImageNet, where we use Clarify to find and rectify 31 novel hard subpopulations.
     }
@@ -400,7 +403,6 @@
   month    = {1},
   paper    = {https://openreview.net/forum?id=BgfGqNpoMi},
   journal  = {ICLR 2024 Workshop on Secure and Trustworthy LLMs},
-  code     = {},
   tldr     = {Calibrating post-trained models via tokenwise temperature scaling.},
   abstract = {
     The effectiveness of large language models (LLMs) is not only measured by their ability to generate accurate outputs but also by their calibration—how well their confidence scores reflect the probability of their outputs being correct. While unsupervised pre-training has been shown to yield LLMs with well-calibrated conditional probabilities, recent studies have shown that after fine-tuning with reinforcement learning from human feedback (RLHF), the calibration of these models degrades significantly. In this work, we introduce Adaptive Temperature Scaling (ATS), a post-hoc calibration method that predicts a temperature scaling parameter for each token prediction. The predicted temperature values adapt based on token-level features and are fit over a standard supervised fine-tuning (SFT) dataset. The adaptive nature of ATS addresses the varying degrees of calibration shift that can occur after RLHF fine-tuning. ATS improves calibration by over 10-50% across three downstream natural language evaluation benchmarks compared to prior calibration methods and does not impede performance improvements from RLHF.
