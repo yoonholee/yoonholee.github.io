@@ -39,7 +39,7 @@ Clarify: Improving Model Robustness with Natural Language Corrections
 Yoonho Lee, Michelle Lam, Helena Vasconcelos, Michael S. Bernstein, Chelsea Finn
 </p>
 <p class="venue"> 
-NeurIPS 2023 workshops XAIA, ICBINB
+UIST 2024, NeurIPS 2023 workshops XAIA and ICBINB
 </p>
 </div>
 
