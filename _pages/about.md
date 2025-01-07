@@ -15,21 +15,33 @@ social: true
 
 I'm a Ph.D. candidate at Stanford CS, advised by [Chelsea Finn](https://ai.stanford.edu/~cbfinn/) and part of the [IRIS lab](https://irislab.stanford.edu/).
 I am affiliated with [SAIL](https://ai.stanford.edu/), [CRFM](https://crfm.stanford.edu/), and the [ML Group](http://ml.stanford.edu/) at Stanford.
-My research is supported by an [OpenAI Superalignment Fellowship](https://openai.com/index/superalignment-fast-grants/) and a [KFAS PhD Scholarship](https://eng.kfas.or.kr/theme/kfaschanel/intl_scholarship_5.php).
+My research is generously supported through grants and fellowships from [OpenAI](https://openai.com/index/superalignment-fast-grants/) and [KFAS](https://eng.kfas.or.kr/theme/kfaschanel/intl_scholarship_5.php).
 
-Previously, as mandatory military service for the South Korean army, I was a research scientist at [Kakao](https://www.kakaocorp.com/) and [AITRICS](https://www.aitrics.com/), working with [Juho Lee](https://juho-lee.github.io/).
-Before that, I completed my master's (CS, advised by [Seungjin Choi](http://mlg.postech.ac.kr/~seungjin)) and undergraduate (math) degrees at [POSTECH](https://www.postech.ac.kr/eng/).
+During my mandatory military service in South Korea, I served as a research scientist at [Kakao](https://www.kakaocorp.com/) and [AITRICS](https://www.aitrics.com/), collaborating with [Juho Lee](https://juho-lee.github.io/).
+I hold a master's degree in Computer Science (advised by [Seungjin Choi](http://mlg.postech.ac.kr/~seungjin)) from [POSTECH](https://www.postech.ac.kr/eng/).
 
 Here are some key questions that guide my research:
 
-- **Teaching strong models**: Strong pre-trained models already know much of what we want to teach them. Post-training seems to be more about eliciting the appropriate pre-existing capabilities than instilling entirely new information. Can we develop a more effective paradigm for "teaching" models that leverage the pre-existing capabilities inside pre-trained models?
-- **Underspecification**: No dataset fully specifies its intended task. How can we make models recognize and represent the multitude of possible realities consistent with given data? What is the best way to leverage such diverse hypotheses?
-- **Understanding information**: Within any data, there is an underlying essence ("information") that exists independently of the specific representation. How can we better conceptualize this notion of information, and understand the mechanisms by which machine learning models extract, store, and communicate it?
-- **Mitigating risks**: What strategies can we employ to handle the reality of machine learning systems generating potentially erroneous or harmful outputs?
+- **Teaching strong models**: Pre-trained models already possess much of what we aim to teach them. Post-training is more about eliciting existing capabilities than instilling new information. How can we develop more effective paradigms for "teaching" that leverage these pre-existing capabilities?
+- **Underspecification**: No dataset fully specifies its intended task. How can we help models recognize and represent the multiple valid interpretations consistent with given data? How do we best leverage this diversity of hypotheses?
+- **Understanding information**: Within data lies an underlying essence ("information") that exists independently of its specific representation. How can we better conceptualize this notion of information and understand how machine learning models extract, process, and communicate it?
 
 
 <div class="selected-papers">
 <h3>Selected Papers</h3>
+
+<div class="paper">
+<a main-paper-link href="https://arxiv.org/abs/2412.08812">
+Test-Time Alignment via Hypothesis Reweighting
+</a>
+<p class="authors"> 
+Yoonho Lee, Jonathan Williams, Henrik Marklund, Archit Sharma, Eric Mitchell, Anikait Singh, Chelsea Finn
+</p>
+<p class="venue"> 
+arXiv preprint
+</p>
+</div>
+
 
 <div class="paper">
 <a main-paper-link href="https://arxiv.org/abs/2402.03715">

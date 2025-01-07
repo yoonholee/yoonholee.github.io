@@ -396,13 +396,13 @@
 }
 
 @article{xie2024temperature,
-  abbr     = {ICLR-W},
+  abbr     = {EMNLP},
   title    = {Calibrating Language Models With Adaptive Temperature Scaling},
   author   = {Johnathan Wenjia Xie* and Annie S. Chen* and Yoonho Lee and Eric Mitchell and Chelsea Finn},
   year     = {2024},
   month    = {1},
   paper    = {https://openreview.net/forum?id=BgfGqNpoMi},
-  journal  = {ICLR 2024 Workshop on Secure and Trustworthy LLMs},
+  journal  = {EMNLP 2024},
   tldr     = {Calibrating post-trained models via tokenwise temperature scaling.},
   abstract = {
     The effectiveness of large language models (LLMs) is not only measured by their ability to generate accurate outputs but also by their calibration—how well their confidence scores reflect the probability of their outputs being correct. While unsupervised pre-training has been shown to yield LLMs with well-calibrated conditional probabilities, recent studies have shown that after fine-tuning with reinforcement learning from human feedback (RLHF), the calibration of these models degrades significantly. In this work, we introduce Adaptive Temperature Scaling (ATS), a post-hoc calibration method that predicts a temperature scaling parameter for each token prediction. The predicted temperature values adapt based on token-level features and are fit over a standard supervised fine-tuning (SFT) dataset. The adaptive nature of ATS addresses the varying degrees of calibration shift that can occur after RLHF fine-tuning. ATS improves calibration by over 10-50% across three downstream natural language evaluation benchmarks compared to prior calibration methods and does not impede performance improvements from RLHF.
@@ -424,6 +424,27 @@
 }
 
 
+@article{lee2024hyre,
+  title    = {Test-Time Alignment via Hypothesis Reweighting},
+  author   = {Lee, Yoonho and Williams, Jonathan and Marklund, Henrik and Sharma, Archit and Mitchell, Eric and Singh, Anikait and Finn, Chelsea},
+  year     = {2024},
+  month    = {12},
+  paper    = {https://arxiv.org/abs/2412.08812},
+  journal  = {arXiv preprint arXiv:2412.08812},
+  tldr     = {Adapting models to test-time preferences by reweighting ensemble members.},
+  abstract = {Large pretrained models often struggle with underspecified tasks -- situations where the training data does not fully define the desired behavior. For example, chatbots must handle diverse and often conflicting user preferences, requiring adaptability to various user needs. We propose a novel framework to address the general challenge of aligning models to test-time user intent, which is rarely fully specified during training. Our approach involves training an efficient ensemble, i.e., a single neural network with multiple prediction heads, each representing a different function consistent with the training data. Our main contribution is HyRe, a simple adaptation technique that dynamically reweights ensemble members at test time using a small set of labeled examples from the target distribution, which can be labeled in advance or actively queried from a larger unlabeled pool. By leveraging recent advances in scalable ensemble training, our method scales to large pretrained models, with computational costs comparable to fine-tuning a single model. We empirically validate HyRe in several underspecified scenarios, including personalization tasks and settings with distribution shifts. Additionally, with just five preference pairs from each target distribution, the same ensemble adapted via HyRe outperforms the prior state-of-the-art 2B-parameter reward model accuracy across 18 evaluation distributions.}
+}
+
+@article{liu2024bid,
+  title    = {Bidirectional Decoding: Improving Action Chunking via Closed-Loop Resampling},
+  author   = {Liu*, Yuejiang and Hamid*, Jubayer Ibn and Xie, Annie and Lee, Yoonho and Du, Maximilian and Finn, Chelsea},
+  year     = {2024},
+  month    = {8},
+  paper    = {https://arxiv.org/abs/2408.17355},
+  journal  = {arXiv preprint arXiv:2408.17355},
+  tldr     = {Improving robot action chunking by combining temporal consistency with reactivity.},
+  abstract = {Predicting and executing a sequence of actions without intermediate replanning, known as action chunking, is increasingly used in robot learning from human demonstrations. Yet, its reported effects on the learned policy are inconsistent: some studies find it crucial for achieving strong results, while others observe decreased performance. In this paper, we first dissect how action chunking impacts the divergence between a learner and a demonstrator. We find that action chunking allows the learner to better capture the temporal dependencies in demonstrations but at the cost of reduced reactivity in stochastic environments. To address this tradeoff, we propose Bidirectional Decoding (BID), a test-time inference algorithm that bridges action chunking with closed-loop operations. BID samples multiple predictions at each time step and searches for the optimal one based on two criteria: (i) backward coherence, which favors samples that align with previous decisions; (ii) forward contrast, which seeks samples of high likelihood for future plans. By coupling decisions within and across action chunks, BID promotes consistency over time while maintaining reactivity to unexpected changes. Experimental results show that BID boosts the performance of two state-of-the-art generative policies across seven simulation benchmarks and two real-world tasks.}
+}
 
 
 @Comment{jabref-meta: databaseType:bibtex;}
