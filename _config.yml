@@ -7,10 +7,9 @@ first_name: Yoonho
 middle_name: 
 last_name: Lee
 email: yoonho@stanford.edu
-description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Personal website
+description: Personal website of Yoonho Lee, Ph.D. candidate at Stanford CS advised by Chelsea Finn, researching machine learning with a focus on teaching strong models, underspecification, and understanding information. Affiliated with Stanford's SAIL, CRFM, and ML Group.
+keywords: Yoonho Lee, Stanford, CS, PhD, Machine Learning, DetectGPT, DivDis, Set Transformer, Robustness, Underspecification, South Korea, Chelsea Finn
 footer_text: >
-keywords: # add your own keywords or leave empty
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 💻️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
@@ -19,6 +18,25 @@ url: https://www.yoonholee.com # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path:  # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
+
+# Performance Settings
+enable_image_optimization: true
+enable_lazy_loading: true
+enable_critical_css: true
+enable_defer_js: true
+enable_compression: true
+
+# Image optimization settings
+image_formats:
+  - webp
+  - original
+image_quality: 85
+image_sizes:
+  - 320
+  - 640
+  - 1024
+  - 1920
+
 
 # -----------------------------------------------------------------------------
 # Theme

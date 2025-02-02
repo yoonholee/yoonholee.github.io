@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang }}">
 
-  <!-- Head -->
-  <head>
+<!-- Head -->
+
+<head>
   {%- if page.redirect -%}
-    <meta http-equiv="refresh" content="3; url={{ site.baseurl }}/" />
+  <meta http-equiv="refresh" content="3; url={{ site.baseurl }}/" />
   {%- endif -%}
   {% include head.html %}
-  </head>
+</head>
 
-  <!-- Body -->
-  <body class="fixed-top-nav sticky-bottom-footer">
+<!-- Body -->
 
-    <!-- Header -->
-    {%- include header.html %}
+<body class="fixed-top-nav sticky-bottom-footer">
 
-    <!-- Content -->
-    <div class="container mt-5">
-      {{ content }}
-    </div>
+  <!-- Header -->
+  {%- include header.html %}
 
-    <!-- Footer -->
-    {%- include footer.html %}
+  <!-- Content -->
+  <div class="container mt-5">
+    {{ content }}
+  </div>
 
-    <!-- JavaScripts -->
-    {% include scripts/jquery.html %}
-    {% include scripts/bootstrap.html %}
-    {% include scripts/masonry.html %}
-    {% include scripts/misc.html %}
-    {% include scripts/mathjax.html %}
-    {% include scripts/analytics.html %}
-    {% include scripts/progressBar.html %}
-  </body>
+  <!-- Footer -->
+  {%- include footer.html %}
+
+  <!-- JavaScripts -->
+  {% include scripts/jquery.html %}
+  {% include scripts/bootstrap.html %}
+  {% include scripts/masonry.html %}
+  {% include scripts/misc.html %}
+  {% include scripts/mathjax.html %}
+  {% include scripts/analytics.html %}
+  {% include scripts/progressBar.html %}
+  <script src="{{ '/assets/js/performance.js' | relative_url }}" defer></script>
+
+</body>
+
 </html>
