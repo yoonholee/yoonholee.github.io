@@ -23,7 +23,9 @@ jobs:
         bundler-cache: true
     - name: Install deps
       run: |
-        npm install -g mermaid.cli
+        sudo apt-get update
+        sudo apt-get install -y imagemagick
+        npm install -g @mermaid-js/mermaid-cli@latest
     - name: Setup deploy options
       id: setup
       run: |
