@@ -21,7 +21,7 @@ I'm developing a new machine learning paradigm where **text serves as a primary 
 Instead of encoding knowledge solely in neural network weights, I build systems that store and update knowledge directly in text form, modified through text mutations based on rich experiential feedback.
 
 The core vision: enable models to extract *[massive amounts of information](https://youtu.be/Ount2Y4qxQo?si=LFsjABD1OT6QLZgU&t=1205)* from *[direct experience](https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf)* (e.g. raw observations, expert feedback, experiment results).
-As we deploy models on increasingly complex, long-horizon tasks, RL's scalar reward bottleneck will become severly limiting.
+As we deploy models on complex, long-horizon tasks, RL's scalar reward bottleneck will become increasingly limiting.
 I believe that learning through text can address this by allowing models to learn from a richer set of signals that scale naturally with task complexity.
 
 To this end, I have developed methods for encoding and selecting among a small set of hypotheses about the world [1,2,3] and efficiently fine-tuning model weights [4,5].
