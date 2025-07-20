@@ -428,7 +428,8 @@
   year     = {2025},
   month    = {2},
   paper    = {https://arxiv.org/abs/2412.08812},
-  journal  = {arXiv preprint arXiv:2412.08812},
+  journal  = {ICML 2025 Workshop PUT},
+  abbr     = {ICML-W},
   tldr     = {Adapting models to test-time preferences by reweighting ensemble members.},
   abstract = {Large pretrained models often struggle with underspecified tasks -- situations where the training data does not fully define the desired behavior. For example, chatbots must handle diverse and often conflicting user preferences, requiring adaptability to various user needs. We propose a novel framework to address the general challenge of aligning models to test-time user intent, which is rarely fully specified during training. Our approach involves training an efficient ensemble, i.e., a single neural network with multiple prediction heads, each representing a different function consistent with the training data. Our main contribution is HyRe, a simple adaptation technique that dynamically reweights ensemble members at test time using a small set of labeled examples from the target distribution, which can be labeled in advance or actively queried from a larger unlabeled pool. By leveraging recent advances in scalable ensemble training, our method scales to large pretrained models, with computational costs comparable to fine-tuning a single model. We empirically validate HyRe in several underspecified scenarios, including personalization tasks and settings with distribution shifts. Additionally, with just five preference pairs from each target distribution, the same ensemble adapted via HyRe outperforms the prior state-of-the-art 2B-parameter reward model accuracy across 18 evaluation distributions.}
 }
@@ -449,5 +450,16 @@
 }
 }
 
+@article{lee2025learning,
+  title    = {Learning to Discover Abstractions for LLM Reasoning},
+  author   = {Yoonho Lee* and Anikait Singh* and Yuxiao Qu* and Amrith Setlur and Ruslan Salakhutdinov and Chelsea Finn and Aviral Kumar},
+  year     = {2025},
+  month    = {6},
+  paper    = {https://drive.google.com/file/d/1SfafrkhAuAtITnVPIWLPGRp07VyAaosw/view},
+  journal  = {ICML 2025 workshops: AI for Math, PRAL, ES-FoMo},
+  abbr     = {ICML-W},
+  tldr     = {LLMs discover and leverage textual "abstractions" to solve complex reasoning tasks.},
+  abstract = {Effective reasoning often requires going beyond pattern matching or memorization of solutions to identify and implement “algorithmic procedures” that can be used to deduce answers to hard problems. These algorithmic procedures consist of reusable primitives, intermediate results, or procedures that themselves can be applied across many problems. While current methods of RL post-training on long chains of thought ultimately desire to uncover this kind of algorithmic behavior, their sensitivity to benchmarks and the brittle and locally optimal nature of strategies learned by these systems suggest that this is far from a fulfilled promise. To instantiate this, we introduce reasoning abstractions: concise natural language descriptions of procedural and factual knowledge that guide the model toward successful reasoning strategies. We train models to be capable of proposing several useful abstractions given a problem, followed by RL training that incentivizes building a solution while using the information provided by these abstractions. This results in a two-agent cooperative RL training paradigm, RL through Abstraction Discovery (RLAD), that jointly trains an abstraction generator and an abstraction-conditioned solution generator. This bi-level setup effectively enables structured exploration, decouples learning signals pertaining to abstraction proposal and solution generation, and improves generalization to harder problems, analogous to what we would expect from hierarchical RL. Empirically, RLAD improves performance on challenging math benchmarks.}
+}
 
 @Comment{jabref-meta: databaseType:bibtex;}
