@@ -42,7 +42,7 @@
             {%- endif -%}
           {%- endfor -%}
         {%- endif -%}
-        
+
         {%- if forloop.length > 1 -%}
           {%- if forloop.first == false -%},&nbsp;{%- endif -%}
           {%- if forloop.last and author_array_limit == author_array_size -%}{%- endif -%}
@@ -58,7 +58,7 @@
         {%- endif -%}
       {%- endfor -%}
       {%- assign more_authors = author_array_size | minus: author_array_limit -%}
-      
+
       {%- assign more_authors_hide = more_authors | append: " more author" -%}
       {%- if more_authors > 0 -%}
         {%- if more_authors > 1 -%}
@@ -102,9 +102,9 @@
     {% endif %}
 
     <span class="links">
-      {% if entry.abstract %} 
-      [<a class="abstract publink">abstract</a>] 
-      {% endif %} 
+      {% if entry.abstract %}
+      [<a class="abstract publink" href="#">abstract</a>]
+      {% endif %}
       {% if entry.arxiv %} [<a
         class="publink"
         href="http://arxiv.org/abs/{{ entry.arxiv }}"
@@ -164,6 +164,6 @@
       <p> <strong>TLDR: {{ entry.tldr }}</strong> </p>
       <p>{{entry.abstract }}</p>
     </span>
-    {% endif %} 
+    {% endif %}
   </div>
 </div>

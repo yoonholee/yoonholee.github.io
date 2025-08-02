@@ -7,22 +7,22 @@
 }
 
 .post-main {
-  max-width: 800px; // Preserve original text width
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .post-sidebar {
   position: fixed;
-  left: calc(50% - 670px); // Position to the left of centered content (400px from center + 270px spacing)
-  top: 6rem; // Moved down to avoid header overlap
+  left: calc(50% - 670px);
+  top: 6rem;
   width: 250px;
   max-height: calc(100vh - 8rem);
   overflow-y: auto;
-  overflow-x: hidden; // Prevent horizontal scroll bar
+  overflow-x: hidden;
   z-index: 10;
 
   @media (max-width: 1200px) {
-    display: none; // Hide ToC when there's not enough space
+    display: none;
   }
 }
 
@@ -30,7 +30,6 @@
   padding: 0;
   position: relative;
 
-  // Reading progress indicator
   &::before {
     content: '';
     position: absolute;
@@ -47,13 +46,12 @@
   h4 {
     margin: 0 0 0.5rem 0;
     font-size: 0.9rem;
-    color: var(--global-text-color);
     font-weight: 600;
   }
 
   ul {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
     margin: 0;
   }
 
@@ -61,7 +59,7 @@
     margin: 0;
   }
 
-    a {
+  a {
     text-decoration: none;
     color: var(--global-text-color-light);
     display: block;
@@ -71,48 +69,42 @@
     transition: all 0.3s ease;
     border-left: 2px solid transparent;
     transform: translateX(0);
-    position: relative;
 
     &:hover {
       color: var(--global-theme-color);
       transform: translateX(4px);
     }
-  }
 
-  // Active section highlighting with smooth transitions
-  a.active {
-    color: var(--global-theme-color);
-    font-weight: 500;
-    border-left: 2px solid var(--global-theme-color);
-    padding-left: 0.5rem;
-    background: rgba(var(--global-theme-color-rgb), 0.05);
-    transform: translateX(6px);
-    border-radius: 0 4px 4px 0;
+    &.active {
+      color: var(--global-theme-color);
+      font-weight: 500;
+      border-left: 2px solid var(--global-theme-color);
+      padding-left: 0.5rem;
+      background: rgba(var(--global-theme-color-rgb), 0.05);
+      transform: translateX(6px);
+      border-radius: 0 4px 4px 0;
+    }
   }
-
-  // Only h1 headings, no nested indentation needed
 }
 
-// Ensure smooth scrolling when clicking ToC links
 html {
   scroll-behavior: smooth;
 }
 
-// Responsive layout - ToC is hidden on smaller screens via display: none above
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
 
-// Highlight effect for headings when clicked from ToC
-.post-content {
-  h1, h2, h3, h4, h5, h6 {
-    transition: all 0.3s ease;
-    border-radius: 4px;
-    padding: 0.2rem 0.5rem;
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
-
-    &.toc-highlight {
-      animation: toc-flash 1s ease-out;
-      animation-fill-mode: forwards;
-    }
+  &.toc-highlight {
+    animation: toc-flash 1s ease-out forwards;
   }
 }
 

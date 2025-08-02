@@ -10,42 +10,22 @@ body {
   h1, h2, h3, h4, h5, h6 {
     scroll-margin-top: 66px;
   }
-}
 
-body.fixed-top-nav {
-  // Add some padding for the nav-bar.
-  padding-top: 56px;
-}
+  &.fixed-top-nav {
+    padding-top: 56px;
+  }
 
-body.sticky-bottom-footer {
-  padding-bottom: 0; // Remove padding below footer.
+  &.sticky-bottom-footer {
+    padding-bottom: 0;
+  }
 }
 
 .container {
   max-width: 800px;
   position: relative;
-  min-height: calc(100% - 15rem); // Footer=10rem, margin=5rem
+  min-height: calc(100% - 15rem);
 }
 
-// Profile
-.profile {
-  img {
-    width: 100%;
-  }
+.profile img {
+  width: 100%;
 }
-
-// TODO: redefine content layout.
-
-
-/******************************************************************************
- * Publications
- ******************************************************************************/
-
-// TODO: redefine publications layout.
-
-
-/*****************************************************************************
-* Projects
-*****************************************************************************/
-
-// TODO: redefine projects layout.

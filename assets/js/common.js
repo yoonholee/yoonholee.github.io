@@ -12,9 +12,10 @@
 
 $(document).ready(function () {
     // Use abstract button to open and close
-    $("a.abstract.publink").click(function () {
-      $(this).parent().parent().find(".abstract.hidden").toggleClass("open");
-      $(this).parent().parent().find(".bib.hidden").toggleClass("open", false);
+    $(document).on("click", "a.abstract.publink", function (e) {
+      e.preventDefault();
+      $(this).closest(".publication-row").find(".abstract.hidden").toggleClass("open");
+      $(this).closest(".publication-row").find(".bib.hidden").toggleClass("open", false);
     });
     $("a.bib.publink").click(function () {
       $(this).parent().parent().find(".abstract.hidden").toggleClass("open", false);
