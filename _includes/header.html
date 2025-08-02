@@ -46,16 +46,7 @@
             </a>
           </li>
 
-          <!-- Blog -->
-          {% if site.blog_nav_title and site.blog_nav_title != "" %}
-          <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/blog/' | relative_url }}">{{ site.blog_nav_title }}
-              {%- if page.url contains 'blog' -%}
-              <span class="sr-only">(current)</span>
-              {%- endif -%}
-            </a>
-          </li>
-          {%- endif %}
+          <!-- Blog navigation removed - blog accessible via permalink only -->
 
           <!-- Other pages -->
           {%- assign sorted_pages = site.pages | sort: "nav_order" -%}

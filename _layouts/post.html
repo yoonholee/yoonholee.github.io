@@ -20,7 +20,14 @@ layout: default
       if page.meta -%} • {{ page.meta }}{%- endif -%}</p>
   </header>
 
-  <div class="post-content">
-    {{ content }}
+  <div class="post-layout">
+    <div class="post-main">
+      <div class="post-content">
+        {{ content }}
+      </div>
+    </div>
+    <aside class="post-sidebar">
+      <nav id="toc"></nav>
+    </aside>
   </div>
 </div>

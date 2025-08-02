@@ -12,3 +12,8 @@
 
   <!-- Load Common JS -->
   <script defer src="{{ '/assets/js/common.js' | relative_url }}"></script>
+
+  <!-- Load ToC JS for blog posts -->
+  {% if page.layout == 'post' %}
+  <script defer src="{{ '/assets/js/toc.js' | relative_url }}"></script>
+  {% endif %}

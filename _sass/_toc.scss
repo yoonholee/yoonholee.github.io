@@ -1,0 +1,138 @@
+/******************************************************************************
+ * Table of Contents (ToC)
+ ******************************************************************************/
+
+.post-layout {
+  position: relative;
+}
+
+.post-main {
+  max-width: 800px; // Preserve original text width
+  margin: 0 auto;
+}
+
+.post-sidebar {
+  position: fixed;
+  left: calc(50% - 670px); // Position to the left of centered content (400px from center + 270px spacing)
+  top: 6rem; // Moved down to avoid header overlap
+  width: 250px;
+  max-height: calc(100vh - 8rem);
+  overflow-y: auto;
+  overflow-x: hidden; // Prevent horizontal scroll bar
+  z-index: 10;
+
+  @media (max-width: 1200px) {
+    display: none; // Hide ToC when there's not enough space
+  }
+}
+
+#toc {
+  padding: 0;
+  position: relative;
+
+  // Reading progress indicator
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -8px;
+    width: 3px;
+    height: var(--progress-height, 0px);
+    background: linear-gradient(to bottom, var(--global-theme-color), rgba(var(--global-theme-color-rgb), 0.4));
+    border-radius: 2px;
+    transition: height 0.3s ease;
+    z-index: 1;
+  }
+
+  h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--global-text-color);
+    font-weight: 600;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  li {
+    margin: 0;
+  }
+
+    a {
+    text-decoration: none;
+    color: var(--global-text-color-light);
+    display: block;
+    padding: 0.25rem 0;
+    font-size: 0.85rem;
+    line-height: 1.3;
+    transition: all 0.3s ease;
+    border-left: 2px solid transparent;
+    transform: translateX(0);
+    position: relative;
+
+    &:hover {
+      color: var(--global-theme-color);
+      transform: translateX(4px);
+    }
+  }
+
+  // Active section highlighting with smooth transitions
+  a.active {
+    color: var(--global-theme-color);
+    font-weight: 500;
+    border-left: 2px solid var(--global-theme-color);
+    padding-left: 0.5rem;
+    background: rgba(var(--global-theme-color-rgb), 0.05);
+    transform: translateX(6px);
+    border-radius: 0 4px 4px 0;
+  }
+
+  // Only h1 headings, no nested indentation needed
+}
+
+// Ensure smooth scrolling when clicking ToC links
+html {
+  scroll-behavior: smooth;
+}
+
+// Responsive layout - ToC is hidden on smaller screens via display: none above
+
+// Highlight effect for headings when clicked from ToC
+.post-content {
+  h1, h2, h3, h4, h5, h6 {
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+
+    &.toc-highlight {
+      animation: toc-flash 1s ease-out;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+@keyframes toc-flash {
+  0% {
+    background-color: lighten(#8C1515, 35%);
+    box-shadow: 0 0 10px rgba(140, 21, 21, 0.3);
+    transform: translateX(8px);
+  }
+  25% {
+    background-color: lighten(#8C1515, 40%);
+    box-shadow: 0 0 8px rgba(140, 21, 21, 0.2);
+  }
+  50% {
+    background-color: lighten(#8C1515, 45%);
+    box-shadow: 0 0 5px rgba(140, 21, 21, 0.1);
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: none;
+    transform: translateX(0);
+  }
+}

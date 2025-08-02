@@ -4,15 +4,15 @@
 
 title: Yoonho Lee # the website title (if blank, full name will be used instead)
 first_name: Yoonho
-middle_name: 
+middle_name:
 last_name: Lee
 email: yoonho@stanford.edu
 description: Personal website of Yoonho Lee, Ph.D. candidate at Stanford CS advised by Chelsea Finn, researching machine learning with a focus on teaching strong models, underspecification, and understanding information. Affiliated with Stanford's SAIL, CRFM, and ML Group.
 keywords: Yoonho Lee, Stanford, CS, PhD, Machine Learning, DetectGPT, DivDis, Set Transformer, Robustness, Underspecification, South Korea, Chelsea Finn
 footer_text: >
 
-lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: 💻️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+lang: en
+icon: 💻️
 
 url: https://www.yoonholee.com # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/
@@ -127,9 +127,8 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: "" 
-blog_nav_title: ""
-# blog_nav_title: "Blog"  # uncomment to enable blog
+blog_name: ""
+blog_nav_title: Blog
 blog_description: ""
 permalink: /blog/:year/:title/
 
@@ -286,7 +285,7 @@ more_authors_animation_delay: # more authors are revealed on click using animati
 
 
 # -----------------------------------------------------------------------------
-# Jekyll Link Attributes 
+# Jekyll Link Attributes
 # -----------------------------------------------------------------------------
 
 # These are the defaults
@@ -317,14 +316,6 @@ external_links:
 #   output_formats:
 #     webp: "-resize 800x"
 
-# -----------------------------------------------------------------------------
-# Jekyll Diagrams
-# -----------------------------------------------------------------------------
-
-jekyll-diagrams:
-    # configuration, see https://github.com/zhustec/jekyll-diagrams.
-    # feel free to comment out this section if not using jekyll diagrams.
-
 
 # -----------------------------------------------------------------------------
 # Optional Features
@@ -351,7 +342,7 @@ enable_progressbar:         true   # enables a horizontal progress bar linked to
 # -----------------------------------------------------------------------------
 
 academicons:
-  version: "1.9.1"
+  version: "1.9.2"
   integrity: "sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg="
 bootstrap:
   version: "4.6.1"
@@ -362,10 +353,10 @@ fontawesome:
   version: "5.15.4"
   integrity: "sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4="
 jquery:
-  version: "3.6.0"
+  version: "3.7.1"
   integrity: "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 mathjax:
-  version: "3.2.0"
+  version: "3.2.2"
 masonry:
   version: "4.2.2"
   integrity: "sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI="
