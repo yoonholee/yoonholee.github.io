@@ -5,7 +5,7 @@
 :root {
   --global-bg-color: #{$white-color};
   --global-code-bg-color: #{$code-bg-color-light};
-  --global-text-color-dark: #000000;
+  --global-text-color-dark: #{$black-color};
   --global-text-color: #0a0a0a;
   --global-text-color-light: #2a2a2a;
   --global-text-color-lighter: #464646;
@@ -20,21 +20,14 @@
   --global-divider-color: rgba(0,0,0,.1);
   --global-card-bg-color: #{$white-color};
 
-  .fa-sun {
-    display : none;
-  }
+  .fa-sun { display: none; }
   .fa-moon {
-    padding-left: 10px;
-    padding-top: 12px;
-    display : block;
-  }
-
-  .repo-img-light {
+    padding: 12px 0 0 10px;
     display: block;
   }
-  .repo-img-dark {
-    display: none;
-  }
+
+  .repo-img-light { display: block; }
+  .repo-img-dark { display: none; }
 }
 
 html[data-theme='dark'] {
@@ -52,18 +45,11 @@ html[data-theme='dark'] {
   --global-card-bg-color: #{$grey-900};
 
   .fa-sun {
-    padding-left: 10px;
-    padding-top: 12px;
-    display : block;
-  }
-  .fa-moon {
-    display : none;
-  }
-
-  .repo-img-light {
-    display: none;
-  }
-  .repo-img-dark {
+    padding: 12px 0 0 10px;
     display: block;
   }
+  .fa-moon { display: none; }
+
+  .repo-img-light { display: none; }
+  .repo-img-dark { display: block; }
 }

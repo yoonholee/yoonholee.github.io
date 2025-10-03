@@ -30,11 +30,11 @@
   code     = {https://github.com/yoonholee/MT-net},
   tldr     = {Improving MAML by fixing some weights during task adaptation.},
   abstract = {
-    Gradient-based meta-learning methods leverage gradient descent to learn the commonalities among various tasks. 
-    While previous such methods have been successful in meta-learning tasks, they resort to simple gradient descent during meta-testing. 
-    Our primary contribution is the MT-net, which enables the meta-learner to learn on each layer's activation space a subspace that the task-specific learner performs gradient descent on. 
-    Additionally, a task-specific learner of an MT-net performs gradient descent with respect to a meta-learned distance metric, which warps the activation space to be more sensitive to task identity. 
-    We demonstrate that the dimension of this learned subspace reflects the complexity of the task-specific learner's adaptation task, and also that our model is less sensitive to the choice of initial learning rates than previous gradient-based meta-learning methods. 
+    Gradient-based meta-learning methods leverage gradient descent to learn the commonalities among various tasks.
+    While previous such methods have been successful in meta-learning tasks, they resort to simple gradient descent during meta-testing.
+    Our primary contribution is the MT-net, which enables the meta-learner to learn on each layer's activation space a subspace that the task-specific learner performs gradient descent on.
+    Additionally, a task-specific learner of an MT-net performs gradient descent with respect to a meta-learned distance metric, which warps the activation space to be more sensitive to task identity.
+    We demonstrate that the dimension of this learned subspace reflects the complexity of the task-specific learner's adaptation task, and also that our model is less sensitive to the choice of initial learning rates than previous gradient-based meta-learning methods.
     Our method achieves state-of-the-art or comparable performance on few-shot classification and regression tasks.},
   video    = {https://youtu.be/skcErc5DBYM?t=2904},
   bib      = {@inproceedings\{lee2018mtnet,
@@ -267,7 +267,7 @@
   abbr     = {ICLR},
   title    = {Diversify and Disambiguate: Out-of-Distribution Robustness via Disagreement},
   author   = {Yoonho Lee and Huaxiu Yao and Chelsea Finn},
-  journal  = {ICLR 2023 <br> 
+  journal  = {ICLR 2023 <br>
   ICML workshops: PODS, SCIS
   },
   year     = {2023},
@@ -450,16 +450,15 @@
 }
 }
 
-@article{lee2025learning,
-  title    = {Learning to Discover Abstractions for LLM Reasoning},
-  author   = {Yoonho Lee* and Anikait Singh* and Yuxiao Qu* and Amrith Setlur and Ruslan Salakhutdinov and Chelsea Finn and Aviral Kumar},
+@article{qu2024rlad,
+  title    = {RLAD: Training LLMs to Discover Abstractions for Solving Reasoning Problems},
+  author   = {Qu*, Yuxiao and Singh*, Anikait and Lee*, Yoonho and Setlur, Amrith and Salakhutdinov, Ruslan and Finn, Chelsea and Kumar, Aviral},
   year     = {2025},
-  month    = {6},
-  paper    = {https://drive.google.com/file/d/1SfafrkhAuAtITnVPIWLPGRp07VyAaosw/view},
+  month    = {10},
+  paper    = {https://arxiv.org/abs/2510.02263},
   journal  = {ICML 2025 workshops: AI for Math, PRAL, ES-FoMo},
   abbr     = {ICML-W},
-  tldr     = {LLMs discover and leverage textual "abstractions" to solve complex reasoning tasks.},
-  abstract = {Effective reasoning often requires going beyond pattern matching or memorization of solutions to identify and implement “algorithmic procedures” that can be used to deduce answers to hard problems. These algorithmic procedures consist of reusable primitives, intermediate results, or procedures that themselves can be applied across many problems. While current methods of RL post-training on long chains of thought ultimately desire to uncover this kind of algorithmic behavior, their sensitivity to benchmarks and the brittle and locally optimal nature of strategies learned by these systems suggest that this is far from a fulfilled promise. To instantiate this, we introduce reasoning abstractions: concise natural language descriptions of procedural and factual knowledge that guide the model toward successful reasoning strategies. We train models to be capable of proposing several useful abstractions given a problem, followed by RL training that incentivizes building a solution while using the information provided by these abstractions. This results in a two-agent cooperative RL training paradigm, RL through Abstraction Discovery (RLAD), that jointly trains an abstraction generator and an abstraction-conditioned solution generator. This bi-level setup effectively enables structured exploration, decouples learning signals pertaining to abstraction proposal and solution generation, and improves generalization to harder problems, analogous to what we would expect from hierarchical RL. Empirically, RLAD improves performance on challenging math benchmarks.}
+  abstract = {Reasoning requires going beyond pattern matching or memorization of solutions to identify and implement "algorithmic procedures" that can be used to deduce answers to hard problems. Doing so requires realizing the most relevant primitives, intermediate results, or shared procedures, and building upon them. While RL post-training on long chains of thought ultimately aims to uncover this kind of algorithmic behavior, most reasoning traces learned by large models fail to consistently capture or reuse procedures, instead drifting into verbose and degenerate exploration. To address more effective reasoning, we introduce reasoning abstractions: concise natural language descriptions of procedural and factual knowledge that guide the model toward learning successful reasoning. We train models to be capable of proposing multiple abstractions given a problem, followed by RL that incentivizes building a solution while using the information provided by these abstractions. This results in a two-player RL training paradigm, abbreviated as RLAD, that jointly trains an abstraction generator and a solution generator. This setup effectively enables structured exploration, decouples learning signals of abstraction proposal and solution generation, and improves generalization to harder problems. We also show that allocating more test-time compute to generating abstractions is more beneficial for performance than generating more solutions at large test budgets, illustrating the role of abstractions in guiding meaningful exploration.}
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

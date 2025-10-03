@@ -17,8 +17,7 @@
   top: 6rem;
   width: 250px;
   max-height: calc(100vh - 8rem);
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden auto;
   z-index: 10;
 
   @media (max-width: 1200px) {
@@ -44,7 +43,7 @@
   }
 
   h4 {
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.5rem;
     font-size: 0.9rem;
     font-weight: 600;
   }
@@ -91,17 +90,12 @@ html {
   scroll-behavior: smooth;
 }
 
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.post-content h4,
-.post-content h5,
-.post-content h6 {
+.post-content h1, .post-content h2, .post-content h3,
+.post-content h4, .post-content h5, .post-content h6 {
   transition: all 0.3s ease;
   border-radius: 4px;
   padding: 0.2rem 0.5rem;
-  margin-left: -0.5rem;
-  margin-right: -0.5rem;
+  margin: 0 -0.5rem;
 
   &.toc-highlight {
     animation: toc-flash 1s ease-out forwards;

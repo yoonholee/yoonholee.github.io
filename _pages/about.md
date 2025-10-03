@@ -17,25 +17,37 @@ I'm a Ph.D. candidate at Stanford CS, advised by [Chelsea Finn](https://ai.stanf
 I am affiliated with [SAIL](https://ai.stanford.edu/), [CRFM](https://crfm.stanford.edu/), and the [ML Group](http://ml.stanford.edu/) at Stanford.
 My research is generously supported through grants and fellowships from [OpenAI](https://openai.com/index/superalignment-fast-grants/) and [KFAS](https://eng.kfas.or.kr/theme/kfaschanel/intl_scholarship_5.php).
 
-I'm developing a new machine learning paradigm where **text serves as a primary substrate for storing and updating knowledge**.
-Instead of encoding knowledge solely in neural network weights, I build systems that store and update knowledge directly in text form, modified through text mutations based on rich experiential feedback.
-
-The core vision: enable models to extract *[massive amounts of information](https://youtu.be/Ount2Y4qxQo?si=LFsjABD1OT6QLZgU&t=1205)* from *[direct experience](https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf)* (e.g. raw observations, expert feedback, experiment results).
-As we deploy models on complex, long-horizon tasks, RL's scalar reward bottleneck will become increasingly limiting.
-I believe that learning through text can address this by allowing models to learn from a richer set of signals that scale naturally with task complexity.
-
-To this end, I have developed methods for encoding and selecting among a small set of hypotheses about the world [1,2,3] and efficiently fine-tuning model weights [4,5].
-I created an interface that enables non-experts to teach vision models via natural language feedback [6].
-Most recently, I developed a hierarchical RL framework LLMs discover and leverage textual "abstractions" to solve complex reasoning tasks [7].
-
 My name (윤호) is pronounced like ‘you-know’ said quickly (stress on 'you').
 [This](https://ipa-reader.com/?text=%2Fju%3Ano%CA%8A%2F) is a good approximation.
+
+My research focuses on establishing text as an explicit and editable substrate for knowledge, complementing the implicit information stored in neural network weights. Instead of relying solely on weights, we can store and update knowledge directly in discrete text form, modified through mutations guided by rich experiential feedback.
+
+The core vision is towards enabling models to extract _[massive amounts of information](https://youtu.be/Ount2Y4qxQo?si=LFsjABD1OT6QLZgU&t=1205)_ from _[direct experience](https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf)_ (e.g. raw observations, expert feedback, experiment results).
+As we deploy models on increasingly complex, long-horizon tasks, the scalar reward bottleneck of reinforcement learning will prove increasingly limiting. Learning through text offers a way forward by allowing models to learn from richer signals that scale naturally with task complexity.
+
+<!--
+To this end, I have developed methods for encoding and selecting among a small set of hypotheses about the world [1,2,3] and efficiently fine-tuning model weights [4,5].
+I created an interface that enables non-experts to teach vision models via natural language feedback [6].
+Most recently, I developed a hierarchical RL framework LLMs discover and leverage textual "abstractions" to solve complex reasoning tasks [7]. -->
 
 <div class="selected-papers">
 <h3>Selected Papers</h3>
 
 <div class="paper">
 [1]
+<a main-paper-link href="https://arxiv.org/abs/2510.02263">
+RLAD: Training LLMs to Discover Abstractions for Solving Reasoning Problems
+</a>
+<p class="authors">
+Yuxiao Qu*, Anikait Singh*, Yoonho Lee*, Amrith Setlur, Ruslan Salakhutdinov, Chelsea Finn, Aviral Kumar
+</p>
+<p class="venue">
+ICML 2025 workshops: AI for Math, PRAL, ES-FoMo
+</p>
+</div>
+
+<div class="paper">
+[2]
 <a main-paper-link href="https://arxiv.org/abs/2412.08812">
 Test-Time Alignment via Hypothesis Reweighting
 </a>
@@ -48,7 +60,20 @@ ICML 2025 Workshop PUT
 </div>
 
 <div class="paper">
-[2]
+[3]
+<a main-paper-link href="https://arxiv.org/abs/2402.03715">
+Clarify: Improving Model Robustness with Natural Language Corrections
+</a>
+<p class="authors">
+Yoonho Lee, Michelle Lam, Helena Vasconcelos, Michael S. Bernstein, Chelsea Finn
+</p>
+<p class="venue">
+UIST 2024, NeurIPS 2023 workshops XAIA and ICBINB
+</p>
+</div>
+
+<div class="paper">
+[4]
 <a main-paper-link href="https://arxiv.org/abs/2302.05441">
 Project and Probe: Sample-Efficient Domain Adaptation by Interpolating Orthogonal Features
 </a>
@@ -57,32 +82,6 @@ Annie S. Chen*, Yoonho Lee*, Amrith Setlur, Sergey Levine, Chelsea Finn
 </p>
 <p class="venue">
 ICLR 2024 (spotlight)
-</p>
-</div>
-
-<div class="paper">
-[3]
-<a main-paper-link href="https://arxiv.org/abs/2202.03418">
-Diversify and Disambiguate: Out-of-Distribution Robustness via Disagreement
-</a>
-<p class="authors">
-Yoonho Lee, Huaxiu Yao, Chelsea Finn
-</p>
-<p class="venue">
-ICLR 2023
-</p>
-</div>
-
-<div class="paper">
-[4]
-<a main-paper-link href="https://arxiv.org/abs/2401.10220">
-AutoFT: Learning an Objective for Robust Fine-Tuning
-</a>
-<p class="authors">
-Caroline Choi*, Yoonho Lee*, Annie S. Chen, Allan Zhou, Aditi Raghunathan, Chelsea Finn
-</p>
-<p class="venue">
-NeurIPS 2023 workshop DistShift
 </p>
 </div>
 
@@ -101,27 +100,14 @@ ICLR 2023
 
 <div class="paper">
 [6]
-<a main-paper-link href="https://arxiv.org/abs/2402.03715">
-Clarify: Improving Model Robustness with Natural Language Corrections
+<a main-paper-link href="https://arxiv.org/abs/2202.03418">
+Diversify and Disambiguate: Out-of-Distribution Robustness via Disagreement
 </a>
 <p class="authors">
-Yoonho Lee, Michelle Lam, Helena Vasconcelos, Michael S. Bernstein, Chelsea Finn
+Yoonho Lee, Huaxiu Yao, Chelsea Finn
 </p>
 <p class="venue">
-UIST 2024, NeurIPS 2023 workshops XAIA and ICBINB
-</p>
-</div>
-
-<div class="paper">
-[7]
-<a main-paper-link href="https://drive.google.com/file/d/1SfafrkhAuAtITnVPIWLPGRp07VyAaosw/view">
-Learning to Discover Abstractions for LLM Reasoning
-</a>
-<p class="authors">
-Yuxiao Qu*, Anikait Singh*, Yoonho Lee*, Amrith Setlur, Ruslan Salakhutdinov, Chelsea Finn, Aviral Kumar
-</p>
-<p class="venue">
-ICML 2025 workshops AI for Math, PRAL, ES-FoMo
+ICLR 2023
 </p>
 </div>
 

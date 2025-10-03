@@ -12,6 +12,7 @@ d-byline h3 {
 
 d-byline a, d-article d-byline a {
   color: var(--global-text-color) !important;
+
   &:hover {
     color: var(--global-hover-color) !important;
   }
@@ -19,15 +20,19 @@ d-byline a, d-article d-byline a {
 
 d-article {
   border-top-color: var(--global-divider-color) !important;
+
   a, p, h1, h2, h3, h4, h5, h6, li, table {
     color: var(--global-text-color) !important;
   }
+
   a, h1, h2, hr, table, table th, table td {
     border-bottom-color: var(--global-divider-color) !important;
   }
+
   a:hover {
     border-bottom-color: var(--global-hover-color) !important;
   }
+
   b i {
     display: inline;
   }
@@ -96,11 +101,14 @@ d-article {
 d-appendix {
   border-top-color: var(--global-divider-color) !important;
   color: var(--global-distill-app-color) !important;
+
   h3, li, span {
     color: var(--global-distill-app-color) !important;
   }
+
   a, a.footnote-backlink {
     color: var(--global-distill-app-color) !important;
+
     &:hover {
       color: var(--global-hover-color) !important;
     }
