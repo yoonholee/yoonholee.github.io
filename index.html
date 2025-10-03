@@ -5,7 +5,6 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="refresh" content="3; url=/">
 <!-- Metadata, OpenGraph and Schema.org -->
 
 
@@ -14,17 +13,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="canonical" href="https://www.yoonholee.com/404.html">
+<link rel="canonical" href="https://www.yoonholee.com/">
 <meta name="robots" content="index, follow">
 
 
 
 
-<title>Page not found | Yoonho Lee</title>
+<title>Yoonho Lee</title>
 
 
 <meta name="author" content="Yoonho  Lee">
-<meta name="description" content="Looks like there has been a mistake. Nothing exists here.">
+<meta name="description" content="Personal website of Yoonho Lee, Ph.D. candidate at Stanford CS advised by Chelsea Finn, researching machine learning with a focus on teaching strong models, underspecification, and understanding information. Affiliated with Stanford's SAIL, CRFM, and ML Group.">
 <meta name="keywords" content="Yoonho Lee, Stanford, CS, PhD, Machine Learning, DetectGPT, DivDis, Set Transformer, Robustness, Underspecification, South Korea, Chelsea Finn">
 
 
@@ -62,7 +61,7 @@
  <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%92%BB%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://www.yoonholee.com/404.html">
+    <link rel="canonical" href="https://www.yoonholee.com/">
 
     <!-- Dark Mode -->
     
@@ -90,8 +89,8 @@
         <ul class="navbar-nav ml-auto flex-nowrap">
 
           <!-- About -->
-          <li class="nav-item ">
-            <a class="nav-link" href="/">About</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="/">About<span class="sr-only">(current)</span></a>
           </li>
 
           <!-- Blog navigation removed - blog accessible via permalink only -->
@@ -119,13 +118,133 @@
 
   <!-- Content -->
   <div class="container mt-5">
-    <!-- page.html -->
-<div class="post">
+    <!-- about.html -->
+  <div class="post">
   <article>
-    <p>You will be redirected to the main page within 3 seconds. If not redirected, please click <a href="/">here</a>.</p>
+    <div class="profile float-right">
 
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/prof_pic.jpg" class="img-fluid z-depth-1 rounded" width="auto" height="auto" alt="prof_pic.jpg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+
+    <div class="clearfix">
+      <p>I’m a Ph.D. candidate at Stanford CS, advised by <a href="https://ai.stanford.edu/~cbfinn/" rel="external nofollow noopener" target="_blank">Chelsea Finn</a> and part of the <a href="https://irislab.stanford.edu/" rel="external nofollow noopener" target="_blank">IRIS lab</a>.
+I am affiliated with <a href="https://ai.stanford.edu/" rel="external nofollow noopener" target="_blank">SAIL</a>, <a href="https://crfm.stanford.edu/" rel="external nofollow noopener" target="_blank">CRFM</a>, and the <a href="http://ml.stanford.edu/" rel="external nofollow noopener" target="_blank">ML Group</a> at Stanford.
+My research is generously supported through grants and fellowships from <a href="https://openai.com/index/superalignment-fast-grants/" rel="external nofollow noopener" target="_blank">OpenAI</a> and <a href="https://eng.kfas.or.kr/theme/kfaschanel/intl_scholarship_5.php" rel="external nofollow noopener" target="_blank">KFAS</a>.</p>
+
+<p>My name (윤호) is pronounced like ‘you-know’ said quickly (stress on ‘you’).
+<a href="https://ipa-reader.com/?text=%2Fju%3Ano%CA%8A%2F" rel="external nofollow noopener" target="_blank">This</a> is a good approximation.</p>
+
+<p>My research focuses on establishing text as an explicit and editable substrate for knowledge, complementing the implicit information stored in neural network weights. Instead of relying solely on weights, we can store and update knowledge directly in discrete text form, modified through mutations guided by rich experiential feedback.</p>
+
+<p>The core vision is towards enabling models to extract <em><a href="https://youtu.be/Ount2Y4qxQo?si=LFsjABD1OT6QLZgU&amp;t=1205" rel="external nofollow noopener" target="_blank">massive amounts of information</a></em> from <em><a href="https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf" rel="external nofollow noopener" target="_blank">direct experience</a></em> (e.g. raw observations, expert feedback, experiment results).
+As we deploy models on increasingly complex, long-horizon tasks, the scalar reward bottleneck of reinforcement learning will prove increasingly limiting. Learning through text offers a way forward by allowing models to learn from richer signals that scale naturally with task complexity.</p>
+
+<!--
+To this end, I have developed methods for encoding and selecting among a small set of hypotheses about the world [1,2,3] and efficiently fine-tuning model weights [4,5].
+I created an interface that enables non-experts to teach vision models via natural language feedback [6].
+Most recently, I developed a hierarchical RL framework LLMs discover and leverage textual "abstractions" to solve complex reasoning tasks [7]. -->
+
+<div class="selected-papers">
+<h3>Selected Papers</h3>
+
+<div class="paper">
+[1]
+<a main-paper-link="" href="https://arxiv.org/abs/2510.02263" rel="external nofollow noopener" target="_blank">
+RLAD: Training LLMs to Discover Abstractions for Solving Reasoning Problems
+</a>
+<p class="authors">
+Yuxiao Qu*, Anikait Singh*, Yoonho Lee*, Amrith Setlur, Ruslan Salakhutdinov, Chelsea Finn, Aviral Kumar
+</p>
+<p class="venue">
+ICML 2025 workshops: AI for Math, PRAL, ES-FoMo
+</p>
+</div>
+
+<div class="paper">
+[2]
+<a main-paper-link="" href="https://arxiv.org/abs/2412.08812" rel="external nofollow noopener" target="_blank">
+Test-Time Alignment via Hypothesis Reweighting
+</a>
+<p class="authors">
+Yoonho Lee, Jonathan Williams, Henrik Marklund, Archit Sharma, Eric Mitchell, Anikait Singh, Chelsea Finn
+</p>
+<p class="venue">
+ICML 2025 Workshop PUT
+</p>
+</div>
+
+<div class="paper">
+[3]
+<a main-paper-link="" href="https://arxiv.org/abs/2402.03715" rel="external nofollow noopener" target="_blank">
+Clarify: Improving Model Robustness with Natural Language Corrections
+</a>
+<p class="authors">
+Yoonho Lee, Michelle Lam, Helena Vasconcelos, Michael S. Bernstein, Chelsea Finn
+</p>
+<p class="venue">
+UIST 2024, NeurIPS 2023 workshops XAIA and ICBINB
+</p>
+</div>
+
+<div class="paper">
+[4]
+<a main-paper-link="" href="https://arxiv.org/abs/2302.05441" rel="external nofollow noopener" target="_blank">
+Project and Probe: Sample-Efficient Domain Adaptation by Interpolating Orthogonal Features
+</a>
+<p class="authors">
+Annie S. Chen*, Yoonho Lee*, Amrith Setlur, Sergey Levine, Chelsea Finn
+</p>
+<p class="venue">
+ICLR 2024 (spotlight)
+</p>
+</div>
+
+<div class="paper">
+[5]
+<a main-paper-link="" href="https://arxiv.org/abs/2210.11466" rel="external nofollow noopener" target="_blank">
+Surgical Fine-Tuning Improves Adaptation to Distribution Shifts
+</a>
+<p class="authors">
+Yoonho Lee*, Annie S. Chen*, Fahim Tajwar, Ananya Kumar, Huaxiu Yao, Percy Liang, Chelsea Finn
+</p>
+<p class="venue">
+ICLR 2023
+</p>
+</div>
+
+<div class="paper">
+[6]
+<a main-paper-link="" href="https://arxiv.org/abs/2202.03418" rel="external nofollow noopener" target="_blank">
+Diversify and Disambiguate: Out-of-Distribution Robustness via Disagreement
+</a>
+<p class="authors">
+Yoonho Lee, Huaxiu Yao, Chelsea Finn
+</p>
+<p class="venue">
+ICLR 2023
+</p>
+</div>
+
+</div>
+
+    </div>
+
+    
+    
   </article>
 </div>
+
   </div>
 
   <!-- Footer -->    <!-- <footer class="sticky-bottom mt-5">
