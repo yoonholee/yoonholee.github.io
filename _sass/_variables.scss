@@ -3,20 +3,22 @@
  * To adjust anything, simply edit the variables below and rebuild the theme.
  ******************************************************************************/
 
+@use "sass:color";
+
 // Core colors
 $cyan-color:          #2698BA !default;
 $purple-color:        #B509AC !default;
 $grey-color:          #828282 !default;
-$grey-color-light:    lighten($grey-color, 40%);
+$grey-color-light:    color.scale($grey-color, $lightness: 81.6%);
 $grey-color-dark:     #1C1C1D;
 $grey-900:            #212529;
 $white-color:         #fff !default;
 $black-color:         #000 !default;
 
 // Theme colors
-$theme-color:         lighten(#8C1515, 10%); // Cardinal Red
-$theme-color-light:   lighten($theme-color, 50%);
-$theme-color-dark:    darken($theme-color, 5%);
+$theme-color:         color.scale(#8C1515, $lightness: 14.6131805158%); // Cardinal Red
+$theme-color-light:   color.scale($theme-color, $lightness: 85.5704697987%);
+$theme-color-dark:    color.scale($theme-color, $lightness: -12.0283018868%);
 
 // Code background colors
 $code-bg-color-light: rgba($purple-color, 0.05);

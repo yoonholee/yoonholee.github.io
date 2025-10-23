@@ -2,6 +2,8 @@
  * Table of Contents (ToC)
  ******************************************************************************/
 
+@use "sass:color";
+
 .post-layout {
   position: relative;
 }
@@ -104,16 +106,16 @@ html {
 
 @keyframes toc-flash {
   0% {
-    background-color: lighten(#8C1515, 35%);
+    background-color: color.scale(#8C1515, $lightness: 51.1461318052%);
     box-shadow: 0 0 10px rgba(140, 21, 21, 0.3);
     transform: translateX(8px);
   }
   25% {
-    background-color: lighten(#8C1515, 40%);
+    background-color: color.scale(#8C1515, $lightness: 58.4416883117%);
     box-shadow: 0 0 8px rgba(140, 21, 21, 0.2);
   }
   50% {
-    background-color: lighten(#8C1515, 45%);
+    background-color: color.scale(#8C1515, $lightness: 65.7372448183%);
     box-shadow: 0 0 5px rgba(140, 21, 21, 0.1);
   }
   100% {

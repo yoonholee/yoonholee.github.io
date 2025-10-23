@@ -2,6 +2,8 @@
  * Styles for the base elements of the theme.
  ******************************************************************************/
 
+@use "variables" as *;
+
 // Typography
 html, body {
   font: 400 1.04rem/1.5 Avenir, Tahoma, "Open Sans", sans-serif;

@@ -5,11 +5,9 @@
 
 // Dimensions
 
-@import
-  "variables",
-  "themes",
-  "layout",
-  "base",
-  "distill",
-  "toc"
-;
+@use "variables" as *;
+@use "themes" as *;
+@use "layout" as *;
+@use "base" as *;
+@use "distill" as *;
+@use "toc" as *;

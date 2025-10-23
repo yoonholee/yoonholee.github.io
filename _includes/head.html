@@ -7,22 +7,38 @@
 <!-- Performance optimizations -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
-<!-- Bootstrap & MDB -->
+<!-- Bootstrap & MDB - Preload for faster loading -->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@{{ site.bootstrap.version }}/dist/css/bootstrap.min.css"
+    as="style" integrity="{{ site.bootstrap.integrity.css }}" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@{{ site.bootstrap.version }}/dist/css/bootstrap.min.css"
     rel="stylesheet" integrity="{{ site.bootstrap.integrity.css }}" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/mdbootstrap@{{ site.mdb.version }}/css/mdb.min.css"
+    as="style" integrity="{{ site.mdb.integrity.css }}" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@{{ site.mdb.version }}/css/mdb.min.css"
     integrity="{{ site.mdb.integrity.css }}" crossorigin="anonymous" />
 
-<!-- Fonts & Icons -->
+<!-- Fonts & Icons - Defer non-critical CSS -->
 <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@{{ site.fontawesome.version }}/css/all.min.css"
-    integrity="{{ site.fontawesome.integrity }}" crossorigin="anonymous">
+    integrity="{{ site.fontawesome.integrity }}" crossorigin="anonymous"
+    media="print" onload="this.media='all'; this.onload=null;">
+<noscript><link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@{{ site.fontawesome.version }}/css/all.min.css"
+    integrity="{{ site.fontawesome.integrity }}" crossorigin="anonymous"></noscript>
 <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/academicons@{{ site.academicons.version }}/css/academicons.min.css"
-    integrity="{{ site.academicons.integrity }}" crossorigin="anonymous">
+    integrity="{{ site.academicons.integrity }}" crossorigin="anonymous"
+    media="print" onload="this.media='all'; this.onload=null;">
+<noscript><link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/academicons@{{ site.academicons.version }}/css/academicons.min.css"
+    integrity="{{ site.academicons.integrity }}" crossorigin="anonymous"></noscript>
 <link rel="stylesheet" type="text/css"
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"
+    media="print" onload="this.media='all'; this.onload=null;">
+<noscript><link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"></noscript>
 
 <!-- Code Syntax Highlighting -->
 <link rel="stylesheet"

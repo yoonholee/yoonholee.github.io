@@ -7,8 +7,8 @@ first_name: Yoonho
 middle_name:
 last_name: Lee
 email: yoonho@stanford.edu
-description: Personal website of Yoonho Lee, Ph.D. candidate at Stanford CS advised by Chelsea Finn, researching machine learning with a focus on teaching strong models, underspecification, and understanding information. Affiliated with Stanford's SAIL, CRFM, and ML Group.
-keywords: Yoonho Lee, Stanford, CS, PhD, Machine Learning, DetectGPT, DivDis, Set Transformer, Robustness, Underspecification, South Korea, Chelsea Finn
+description: Personal website of Yoonho Lee, Ph.D. candidate at Stanford CS advised by Chelsea Finn. Research focuses on text-based knowledge representation, reward modeling, and learning from direct experience. Affiliated with IRIS Lab, SAIL, CRFM, and ML Group.
+keywords: Yoonho Lee, Stanford, Machine Learning, Text-based Knowledge, Reward Modeling, Reinforcement Learning, RLAD, Test-Time Alignment, Clarify, Chelsea Finn, IRIS Lab, Language Models, Direct Experience Learning, Abstractions, Hypothesis Reweighting
 footer_text: >
 
 lang: en
@@ -22,20 +22,21 @@ impressum_path:  # set to path to include impressum link in the footer, use the 
 # Performance Settings
 enable_image_optimization: false
 enable_lazy_loading: false
+lazy_loading_images: false
 enable_critical_css: false
 enable_defer_js: false
 enable_compression: false
 
-# Image optimization settings (disabled)
-# image_formats:
-#   - webp
-#   - original
-# image_quality: 85
-# image_sizes:
-#   - 320
-#   - 640
-#   - 1024
-#   - 1920
+# Image optimization settings
+image_formats:
+  - webp
+  - original
+image_quality: 85
+image_sizes:
+  - 320
+  - 640
+  - 1024
+  - 1920
 
 
 # -----------------------------------------------------------------------------
@@ -74,8 +75,8 @@ footer_fixed: false
 # Open Graph & Schema.org
 # -----------------------------------------------------------------------------
 # Display links to the page with a preview object on social media.
-serve_og_meta: false # Include Open Graph meta tags in the HTML head
-serve_schema_org: false # Include Schema.org in the HTML head
+serve_og_meta: true # Include Open Graph meta tags in the HTML head
+serve_schema_org: true # Include Schema.org in the HTML head
 og_image: # The site-wide (default for all links) Open Graph preview image
 
 # -----------------------------------------------------------------------------
@@ -117,7 +118,7 @@ contact_note: >
 # Analytics and search engine verification
 # -----------------------------------------------------------------------------
 
-google_analytics: UA-56028200-1 # your Goole Analytics measurement ID (format: G-XXXXXXXXXX)
+google_analytics: G-FS7MW2SLV7 # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
 panelbear_analytics:  # panelbear analytics site ID (format: XXXXXXXXX)
 
 google_site_verification:  # your google-site-verification ID (Google Search Console)
@@ -202,7 +203,7 @@ plugins:
   - jekyll-diagrams
   - jekyll-email-protect
   - jekyll-feed
-  # - jekyll-imagemagick  # Disabled - may cause segfault
+  - jekyll-imagemagick
   - jekyll-minifier
   - jekyll-paginate-v2
   - jekyll/scholar
@@ -300,21 +301,21 @@ external_links:
 # Responsive WebP Images
 # -----------------------------------------------------------------------------
 
-# imagemagick:
-#   enabled: true # enables responsive images for your site (recomended, see https://github.com/alshedivat/al-folio/issues/537)
-#   widths:
-#     - 480
-#     - 800
-#     - 1400
-#   input_directories:
-#     - assets/img/
-#   input_formats:
-#     - ".jpg"
-#     - ".jpeg"
-#     - ".png"
-#     - ".tiff"
-#   output_formats:
-#     webp: "-resize 800x"
+imagemagick:
+  enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
+  widths:
+    - 480
+    - 800
+    - 1400
+  input_directories:
+    - assets/img/
+  input_formats:
+    - ".jpg"
+    - ".jpeg"
+    - ".png"
+    - ".tiff"
+  output_formats:
+    webp: "-resize 800x"
 
 
 # -----------------------------------------------------------------------------
@@ -344,13 +345,13 @@ enable_progressbar:         true   # enables a horizontal progress bar linked to
 academicons:
   version: "1.9.2"
 bootstrap:
-  version: "4.6.1"
+  version: "4.6.2"
   integrity:
-    css: "sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY="
-    js: "sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8="
+    css: "sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+    js: "sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
 fontawesome:
-  version: "5.15.4"
-  integrity: "sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4="
+  version: "6.4.0"
+  integrity: "sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
 jquery:
   version: "3.6.0"
   integrity:
