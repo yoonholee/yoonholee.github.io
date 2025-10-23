@@ -6,13 +6,13 @@ title: Yoonho Lee # the website title (if blank, full name will be used instead)
 first_name: Yoonho
 middle_name:
 last_name: Lee
-email: yoonho@stanford.edu
-description: Personal website of Yoonho Lee, Ph.D. candidate at Stanford CS advised by Chelsea Finn. Research focuses on text-based knowledge representation, reward modeling, and learning from direct experience. Affiliated with IRIS Lab, SAIL, CRFM, and ML Group.
+email: yoonho@cs.stanford.edu
+description: Personal website of Yoonho Lee, Ph.D. candidate at Stanford CS.
 keywords: Yoonho Lee, Stanford, Machine Learning, Text-based Knowledge, Reward Modeling, Reinforcement Learning, RLAD, Test-Time Alignment, Clarify, Chelsea Finn, IRIS Lab, Language Models, Direct Experience Learning, Abstractions, Hypothesis Reweighting
 footer_text: >
 
 lang: en
-icon: 💻️
+icon: YL
 
 url: https://www.yoonholee.com # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/
@@ -20,11 +20,11 @@ last_updated: false # set to true if you want to display last updated in the foo
 impressum_path:  # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 
 # Performance Settings
-enable_image_optimization: false
-enable_lazy_loading: false
-lazy_loading_images: false
-enable_critical_css: false
-enable_defer_js: false
+enable_image_optimization: true
+enable_lazy_loading: true
+lazy_loading_images: true
+enable_critical_css: true
+enable_defer_js: true
 enable_compression: false
 
 # Image optimization settings
@@ -46,10 +46,6 @@ image_sizes:
 # code highlighter theme
 highlight_theme_light: github   # https://github.com/jwarby/jekyll-pygments-themes
 highlight_theme_dark: native    # https://github.com/jwarby/jekyll-pygments-themes
-
-# repo color theme
-repo_theme_light: default       # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
-repo_theme_dark: dark           # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 
 # -----------------------------------------------------------------------------
 # RSS Feed
@@ -84,33 +80,8 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # -----------------------------------------------------------------------------
 
 github_username: yoonholee # your GitHub user name
-gitlab_username: # your GitLab user name
 twitter_username: yoonholeee # your Twitter handle
-mastodon_username: # your mastodon instance+username in the format instance.tld/@username
-linkedin_username: # your LinkedIn user name
-telegram_username: # your Telegram user name
 scholar_userid: BAAZ_ysAAAAJ # your Google Scholar ID
-semanticscholar_id: # your Semantic Scholar ID
-whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
-orcid_id: # your ORCID ID
-medium_username: # your Medium username
-quora_username: # your Quora username
-publons_id: # your ID on Publons
-research_gate_profile: # your profile on ResearchGate
-blogger_url: # your blogger URL
-work_url: # work page URL
-keybase_username: # your keybase user name
-wikidata_id: # your wikidata id
-dblp_url: # your DBLP profile url
-stackoverflow_id: # your stackoverflow id
-kaggle_id: # your kaggle id
-lastfm_id: # your lastfm id
-spotify_id: # your spotify id
-pinterest_id: # your pinterest id
-unsplash_id: # your unsplash id
-instagram_id: # your instagram id
-facebook_id: # your facebook id
-discord_id: # your discord id (18-digit unique numerical identifier)
 
 contact_note: >
 
@@ -119,10 +90,6 @@ contact_note: >
 # -----------------------------------------------------------------------------
 
 google_analytics: G-FS7MW2SLV7 # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
-panelbear_analytics:  # panelbear analytics site ID (format: XXXXXXXXX)
-
-google_site_verification:  # your google-site-verification ID (Google Search Console)
-bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 
 # -----------------------------------------------------------------------------
 # Blog
@@ -323,18 +290,7 @@ imagemagick:
 # -----------------------------------------------------------------------------
 
 enable_google_analytics:    true  # enables google analytics
-enable_panelbear_analytics: false  # enables panelbear analytics
-enable_google_verification: false  # enables google site verification
-enable_bing_verification:   false  # enables bing site verification
-enable_masonry:             true   # enables automatic project cards arangement
 enable_math:                true   # enables math typesetting (uses MathJax)
-enable_tooltips:            false  # enables automatic tooltip links generated
-                                   # for each section titles on pages and posts
-enable_darkmode:            false   # enables switching between light/dark modes
-enable_navbar_social:       false  # enables displaying social links in the
-                                   # navbar on the about page
-enable_project_categories:  true   # enables categorization of projects into
-                                   # multiple categories
 enable_medium_zoom:         true   # enables image zoom feature (as on medium.com)
 enable_progressbar:         true   # enables a horizontal progress bar linked to the vertical scroll position
 
@@ -345,10 +301,10 @@ enable_progressbar:         true   # enables a horizontal progress bar linked to
 academicons:
   version: "1.9.2"
 bootstrap:
-  version: "4.6.2"
+  version: "5.3.3"
   integrity:
-    css: "sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
-    js: "sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    css: "sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    js: "sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 fontawesome:
   version: "6.4.0"
   integrity: "sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -364,12 +320,6 @@ mathjax:
     js: "sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="
   url:
     js: "https://cdn.jsdelivr.net/npm/mathjax@{{version}}/es5/tex-mml-chtml.js"
-masonry:
-  version: "4.2.2"
-  integrity:
-    js: "sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI="
-  url:
-    js: "https://cdn.jsdelivr.net/npm/masonry-layout@{{version}}/dist/masonry.pkgd.min.js"
 mdb:
   version: "4.20.0"
   integrity:
@@ -388,3 +338,14 @@ medium_zoom:
     js: "sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc="
   url:
     js: "https://cdn.jsdelivr.net/npm/medium-zoom@{{version}}/dist/medium-zoom.min.js"
+
+# -----------------------------------------------------------------------------
+# Development Server (WEBrick)
+# -----------------------------------------------------------------------------
+
+# Disable caching for local development
+webrick:
+  headers:
+    Cache-Control: "no-cache, no-store, must-revalidate"
+    Pragma: "no-cache"
+    Expires: "0"

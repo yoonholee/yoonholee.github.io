@@ -4,4 +4,24 @@ permalink: /robots.txt
 User-agent: *
 Allow: /
 
+# AI Crawlers - Explicitly allow access to research content
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot-Extended
+Allow: /
+
+# Sitemap
 Sitemap: {{ site.baseurl | prepend: site.url }}/sitemap.xml

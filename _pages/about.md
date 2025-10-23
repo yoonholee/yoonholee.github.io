@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-# description: <a href="#">Affiliations</a>. Address. Contacts. Moto. Etc.
+description: Yoonho Lee - Ph.D. candidate at Stanford CS researching text-based knowledge representation, reward modeling, and learning from direct experience. Advised by Chelsea Finn at IRIS Lab, SAIL, CRFM. Research supported by OpenAI and KFAS fellowships.
 
 profile:
   align: right
@@ -13,28 +13,42 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true
 ---
 
-I'm a Ph.D. candidate at Stanford CS, advised by [Chelsea Finn](https://ai.stanford.edu/~cbfinn/) and part of the [IRIS lab](https://irislab.stanford.edu/).
-I am affiliated with [SAIL](https://ai.stanford.edu/), [CRFM](https://crfm.stanford.edu/), and the [ML Group](http://ml.stanford.edu/) at Stanford.
-My research is generously supported through grants and fellowships from [OpenAI](https://openai.com/index/superalignment-fast-grants/) and [KFAS](https://eng.kfas.or.kr/theme/kfaschanel/intl_scholarship_5.php).
+I'm a Ph.D. candidate at Stanford CS, advised by [Chelsea Finn](https://ai.stanford.edu/~cbfinn/). My research is supported by [OpenAI](https://openai.com/index/superalignment-fast-grants/) and [KFAS](https://eng.kfas.or.kr/theme/kfaschanel/intl_scholarship_5.php).
 
-My research focuses on establishing text as an explicit and editable substrate for knowledge, complementing the implicit information stored in neural network weights. Instead of relying solely on weights, we can store and update knowledge directly in discrete text form, modified through mutations guided by rich experiential feedback.
+My research focuses on **operationalizing text as a substrate for learning**.
+As tasks grow more complex, low-bandwidth scalar signals can't keep up.
+These require learning from higher-bandwidth feedback that preserves the structure of what went wrong.
+I develop methods that enable models to extract _[massive amounts of information](https://youtu.be/Ount2Y4qxQo?si=LFsjABD1OT6QLZgU&t=1205)_ from _[direct experience](https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf)_ through structured textual feedback: natural language corrections, pairwise comparisons with "why better" explanations, and reasoning traces.
 
-The core vision is towards enabling models to extract _[massive amounts of information](https://youtu.be/Ount2Y4qxQo?si=LFsjABD1OT6QLZgU&t=1205)_ from _[direct experience](https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf)_ (e.g. raw observations, expert feedback, experiment results).
-As we deploy models on increasingly complex, long-horizon tasks, the scalar reward bottleneck of reinforcement learning will prove increasingly limiting. Learning through text offers a way forward by allowing models to learn from richer signals that scale naturally with task complexity.
+Rather than treating text as throwaway scaffolding, I view it as a persistent store to optimize, where models accumulate experience at increasing levels of abstraction, similar to how humans write papers and books.
+This combines parametric models (for inductive biases and in-context understanding) with nonparametric text storage (for persistence and interpretability).
+Looking forward, I'm focused on scaling these methods to scientific discovery and other open-ended domains that require continual learning across long horizons.
 
-My name (윤호) is pronounced like ‘you-know’ said quickly (stress on 'you').
-[This](https://ipa-reader.com/?text=%2Fju%3Ano%CA%8A%2F) is a good approximation.
-
-<!--
-To this end, I have developed methods for encoding and selecting among a small set of hypotheses about the world [1,2,3] and efficiently fine-tuning model weights [4,5].
-I created an interface that enables non-experts to teach vision models via natural language feedback [6].
-Most recently, I developed a hierarchical RL framework LLMs discover and leverage textual "abstractions" to solve complex reasoning tasks [7]. -->
+Recent papers along these lines:
 
 <div class="selected-papers">
-<h3>Selected Papers</h3>
+<div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2026">
+<span class="paper-year">2025</span>
+<div class="paper-content">
+<a main-paper-link href="https://openreview.net/forum?id=TIOFvhliLA" itemprop="url">
+<span itemprop="name">Feedback Descent: Open-Ended Text Optimization via Pairwise Comparison</span>
+</a>
+<p class="authors" itemprop="author">
+Yoonho Lee, Joseph Boen, Chelsea Finn
+</p>
+<p class="venue" itemprop="publisher">
+ICLR 2026 submission
+</p>
+<div class="paper-tooltip">
+Operationalizes the core text optimization loop, accumulating "why better" signals from pairwise comparisons across up to a thousand iterations.
+</div>
+</div>
+{% include paper_schema.html title="Feedback Descent: Open-Ended Text Optimization via Pairwise Comparison" authors="Yoonho Lee, Joseph Boen, Chelsea Finn" year="2026" url="https://openreview.net/forum?id=TIOFvhliLA" venue="ICLR 2026 submission" %}
+</div>
 
-<div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2025" data-venue="ICML 2025" data-topics="reinforcement-learning,abstractions,reasoning,llm">
-[1]
+<div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2025">
+<span class="paper-year">2025</span>
+<div class="paper-content">
 <a main-paper-link href="https://arxiv.org/abs/2510.02263" itemprop="url">
 <span itemprop="name">RLAD: Training LLMs to Discover Abstractions for Solving Reasoning Problems</span>
 </a>
@@ -44,10 +58,16 @@ Yuxiao Qu*, Anikait Singh*, Yoonho Lee*, Amrith Setlur, Ruslan Salakhutdinov, Ch
 <p class="venue" itemprop="publisher">
 ICML 2025 workshops: AI for Math, PRAL, ES-FoMo
 </p>
+<div class="paper-tooltip">
+A hierarchical RL framework for training LLMs to discover and use textual abstractions for solving complex reasoning problems. Demonstrates that useful information for solving reasoning problems can be represented in pure text form.
+</div>
+</div>
+{% include paper_schema.html title="RLAD: Training LLMs to Discover Abstractions for Solving Reasoning Problems" authors="Yuxiao Qu, Anikait Singh, Yoonho Lee, Amrith Setlur, Ruslan Salakhutdinov, Chelsea Finn, Aviral Kumar" year="2025" url="https://arxiv.org/abs/2510.02263" venue="ICML 2025 workshops" %}
 </div>
 
-<div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2025" data-venue="ICML 2025" data-topics="test-time-alignment,hypothesis-reweighting,llm">
-[2]
+<div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2025">
+<span class="paper-year">2025</span>
+<div class="paper-content">
 <a main-paper-link href="https://arxiv.org/abs/2412.08812" itemprop="url">
 <span itemprop="name">Test-Time Alignment via Hypothesis Reweighting</span>
 </a>
@@ -57,10 +77,16 @@ Yoonho Lee, Jonathan Williams, Henrik Marklund, Archit Sharma, Eric Mitchell, An
 <p class="venue" itemprop="publisher">
 ICML 2025 Workshop PUT
 </p>
+<div class="paper-tooltip">
+Test-time alignment by reweighting ensemble members using a small set of labeled examples from the target distribution. Adaptation without retraining weights.
+</div>
+</div>
+{% include paper_schema.html title="Test-Time Alignment via Hypothesis Reweighting" authors="Yoonho Lee, Jonathan Williams, Henrik Marklund, Archit Sharma, Eric Mitchell, Anikait Singh, Chelsea Finn" year="2025" url="https://arxiv.org/abs/2412.08812" venue="ICML 2025 Workshop PUT" %}
 </div>
 
-<div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2024" data-venue="UIST 2024" data-topics="robustness,natural-language-feedback,human-ai-interaction">
-[3]
+<div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2024">
+<span class="paper-year">2024</span>
+<div class="paper-content">
 <a main-paper-link href="https://arxiv.org/abs/2402.03715" itemprop="url">
 <span itemprop="name">Clarify: Improving Model Robustness with Natural Language Corrections</span>
 </a>
@@ -70,36 +96,16 @@ Yoonho Lee, Michelle Lam, Helena Vasconcelos, Michael S. Bernstein, Chelsea Finn
 <p class="venue" itemprop="publisher">
 UIST 2024, NeurIPS 2023 workshops XAIA and ICBINB
 </p>
+<div class="paper-tooltip">
+Built a natural language interface for humans to teach vision models using natural language corrections instead of manual labels. Demonstrates how natural language can provide higher-bandwidth feedback that communicates what went wrong.
+</div>
+</div>
+{% include paper_schema.html title="Clarify: Improving Model Robustness with Natural Language Corrections" authors="Yoonho Lee, Michelle Lam, Helena Vasconcelos, Michael S. Bernstein, Chelsea Finn" year="2024" url="https://arxiv.org/abs/2402.03715" venue="UIST 2024" %}
 </div>
 
-<div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2024" data-venue="ICLR 2024" data-topics="domain-adaptation,transfer-learning,sample-efficiency">
-[4]
-<a main-paper-link href="https://arxiv.org/abs/2302.05441" itemprop="url">
-<span itemprop="name">Project and Probe: Sample-Efficient Domain Adaptation by Interpolating Orthogonal Features</span>
-</a>
-<p class="authors" itemprop="author">
-Annie S. Chen*, Yoonho Lee*, Amrith Setlur, Sergey Levine, Chelsea Finn
-</p>
-<p class="venue" itemprop="publisher">
-ICLR 2024 (spotlight)
-</p>
-</div>
-
-<div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2023" data-venue="ICLR 2023" data-topics="fine-tuning,distribution-shift,robustness">
-[5]
-<a main-paper-link href="https://arxiv.org/abs/2210.11466" itemprop="url">
-<span itemprop="name">Surgical Fine-Tuning Improves Adaptation to Distribution Shifts</span>
-</a>
-<p class="authors" itemprop="author">
-Yoonho Lee*, Annie S. Chen*, Fahim Tajwar, Ananya Kumar, Huaxiu Yao, Percy Liang, Chelsea Finn
-</p>
-<p class="venue" itemprop="publisher">
-ICLR 2023
-</p>
-</div>
-
-<div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2023" data-venue="ICLR 2023" data-topics="out-of-distribution,robustness,disagreement,ensemble">
-[6]
+<div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2023">
+<span class="paper-year">2023</span>
+<div class="paper-content">
 <a main-paper-link href="https://arxiv.org/abs/2202.03418" itemprop="url">
 <span itemprop="name">Diversify and Disambiguate: Out-of-Distribution Robustness via Disagreement</span>
 </a>
@@ -109,6 +115,20 @@ Yoonho Lee, Huaxiu Yao, Chelsea Finn
 <p class="venue" itemprop="publisher">
 ICLR 2023
 </p>
+<div class="paper-tooltip">
+Learns from structured disagreement signals between diverse models; working at a higher level of abstraction than datapoints by "choosing the best model" among different functions that fit the training data.
+</div>
+</div>
+{% include paper_schema.html title="Diversify and Disambiguate: Out-of-Distribution Robustness via Disagreement" authors="Yoonho Lee, Huaxiu Yao, Chelsea Finn" year="2023" url="https://arxiv.org/abs/2202.03418" venue="ICLR 2023" %}
 </div>
 
+</div>
+
+<div class="contact-section" markdown="1">
+
+My name (윤호) is pronounced like 'you-know' said quickly (with stress on 'you').
+[This](https://ipa-reader.com/?text=%2Fju%3Ano%CA%8A%2F) is a good approximation.
+
+Feel free to reach out via [email](mailto:yoonho@cs.stanford.edu)—I'm always happy to connect!
+I'm planning to be on both the academic and industry job markets in the late 2026-early 2027 cycle, so please let me know if you think I'd be a good fit for your organization.
 </div>

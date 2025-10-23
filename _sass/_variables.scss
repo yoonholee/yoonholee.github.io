@@ -16,9 +16,9 @@ $white-color:         #fff !default;
 $black-color:         #000 !default;
 
 // Theme colors
-$theme-color:         color.scale(#8C1515, $lightness: 14.6131805158%); // Cardinal Red
-$theme-color-light:   color.scale($theme-color, $lightness: 85.5704697987%);
-$theme-color-dark:    color.scale($theme-color, $lightness: -12.0283018868%);
+$theme-color:         color.scale(#8C1515, $lightness: 14.6%); // Cardinal Red
+$theme-color-light:   color.scale($theme-color, $lightness: 85.6%);
+$theme-color-dark:    color.scale($theme-color, $lightness: -12%);
 
 // Code background colors
 $code-bg-color-light: rgba($purple-color, 0.05);

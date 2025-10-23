@@ -1,0 +1,252 @@
+// Print Stylesheet
+// Optimized for printing papers, CV, and blog posts
+
+@media print {
+  // Remove non-essential elements
+  nav,
+  .navbar,
+  .header,
+  footer,
+  .footer,
+  .social,
+  #toc,
+  .post-sidebar,
+  .sidenote-toggle-label,
+  .progress-container,
+  button,
+  .btn {
+    display: none !important;
+  }
+
+  // Expand main content to full width
+  .post-layout,
+  .post-main,
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .post-content {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  // Typography optimizations
+  body {
+    font-size: 12pt !important;
+    line-height: 1.5 !important;
+    color: #000 !important;
+    background: #fff !important;
+  }
+
+  h1 {
+    font-size: 24pt !important;
+    page-break-after: avoid !important;
+  }
+
+  h2 {
+    font-size: 18pt !important;
+    page-break-after: avoid !important;
+  }
+
+  h3 {
+    font-size: 14pt !important;
+    page-break-after: avoid !important;
+  }
+
+  h4, h5, h6 {
+    font-size: 12pt !important;
+    page-break-after: avoid !important;
+  }
+
+  // Avoid page breaks in inappropriate places
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid !important;
+  }
+
+  p, blockquote, ul, ol {
+    orphans: 3 !important;
+    widows: 3 !important;
+  }
+
+  pre, code, blockquote {
+    page-break-inside: avoid !important;
+  }
+
+  img, figure {
+    page-break-inside: avoid !important;
+    max-width: 100% !important;
+  }
+
+  // Show URLs for links
+  a[href]:after {
+    content: " (" attr(href) ")" !important;
+    font-size: 10pt !important;
+    color: #666 !important;
+  }
+
+  // Don't show URLs for internal links or anchors
+  a[href^="#"]:after,
+  a[href^="/"]:after,
+  a[main-paper-link]:after {
+    content: "" !important;
+  }
+
+  // Paper citations - keep compact
+  .paper {
+    page-break-inside: avoid !important;
+    margin-bottom: 1em !important;
+  }
+
+  .paper .authors {
+    font-size: 10pt !important;
+  }
+
+  .paper .venue {
+    font-size: 9pt !important;
+    color: #666 !important;
+  }
+
+  // Sidenotes - show inline in print
+  .sidenote {
+    display: inline !important;
+    position: relative !important;
+    font-size: 10pt !important;
+    color: #333 !important;
+  }
+
+  .sidenote:before {
+    content: " [" !important;
+  }
+
+  .sidenote:after {
+    content: "] " !important;
+  }
+
+  // Code blocks
+  pre, code {
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+    padding: 0.5em !important;
+    font-size: 9pt !important;
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+  }
+
+  // Profile image - smaller for print
+  .profile img {
+    max-width: 200px !important;
+    max-height: 200px !important;
+  }
+
+  // Remove shadows and colors that don't print well
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  // Convert colored backgrounds to white
+  * {
+    background: transparent !important;
+  }
+
+  // Ensure black text on white background
+  body, p, li, td, th {
+    color: #000 !important;
+    background: #fff !important;
+  }
+
+  // Table styling for print
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  th, td {
+    border: 1px solid #000 !important;
+    padding: 0.5em !important;
+  }
+
+  th {
+    background: #f0f0f0 !important;
+    font-weight: bold !important;
+  }
+
+  // QR code for homepage (optional)
+  // Uncomment if you want to add a QR code
+  /*
+  .about:after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: url('https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://www.yoonholee.com') no-repeat;
+    margin-top: 2em;
+  }
+  */
+
+  // Page margins
+  @page {
+    margin: 2cm 1.5cm;
+  }
+
+  @page :first {
+    margin-top: 1cm;
+  }
+
+  // Add page numbers
+  @page {
+    @bottom-right {
+      content: counter(page);
+      font-size: 10pt;
+    }
+  }
+
+  // Prevent page breaks in specific sections
+  .selected-papers {
+    page-break-before: auto !important;
+  }
+
+  .paper:first-child {
+    page-break-before: avoid !important;
+  }
+
+  // CV specific styling (if applicable)
+  .cv-entry {
+    page-break-inside: avoid !important;
+    margin-bottom: 1em !important;
+  }
+
+  // Blog post metadata
+  .post-meta {
+    font-size: 10pt !important;
+    color: #666 !important;
+    margin-bottom: 1em !important;
+  }
+
+  .post-meta time:after {
+    content: " • Print version" !important;
+    color: #999 !important;
+  }
+
+  // Ensure proper spacing
+  .post-title {
+    margin-bottom: 0.5em !important;
+  }
+
+  article, section {
+    page-break-inside: auto !important;
+  }
+}
+
+// High-resolution print (optional)
+@media print and (min-resolution: 300dpi) {
+  body {
+    font-size: 11pt !important;
+  }
+}

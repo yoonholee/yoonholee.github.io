@@ -1,0 +1,44 @@
+# Netlify/Cloudflare Pages Security Headers
+# This file configures HTTP security headers for enhanced security and privacy
+#
+# For GitHub Pages: These headers require Cloudflare or Netlify as CDN
+# GitHub Pages does not support custom headers natively
+
+/*
+  # Security Headers
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: interest-cohort=(), geolocation=(), microphone=(), camera=()
+
+  # Content Security Policy (CSP)
+  # Note: This is a relatively permissive CSP. Adjust based on your needs.
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: https: http:; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net; frame-src 'self'; base-uri 'self'; form-action 'self'
+
+  # Strict Transport Security (HSTS)
+  # Only enable after testing with HTTPS
+  # Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+# Cache headers for static assets
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache images for 1 year
+/assets/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache CSS/JS for 1 year (use versioning if changing frequently)
+/assets/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Don't cache HTML pages
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Don't cache the service worker
+/sw.js
+  Cache-Control: no-cache

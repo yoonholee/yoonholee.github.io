@@ -1,15 +1,17 @@
 name: Axe accessibility testing
 
 on:
-  # Uncomment to run automatically on push/PR
-  # push:
-  #   branches:
-  #     - master
-  #     - main
-  # pull_request:
-  #   branches:
-  #     - master
-  #     - main
+  # Run automatically on push to master/main
+  push:
+    branches:
+      - master
+      - main
+  # Run on pull requests
+  pull_request:
+    branches:
+      - master
+      - main
+  # Allow manual triggering
   workflow_dispatch:
     inputs:
       url:

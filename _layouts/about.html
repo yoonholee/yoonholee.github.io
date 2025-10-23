@@ -22,19 +22,24 @@ layout: default
         width="622"
         height="800"
         fetchpriority="high"
-        alt=page.profile.image -%}
+        alt="Photo of Yoonho Lee" -%}
       {% endif -%}
       {%- if page.profile.address %}
       <div class="address">
         {{ page.profile.address }}
       </div>
       {%- endif %}
+      {%- if page.social %}
+      <div class="social-icons">
+        {% include social.html %}
+      </div>
+      {%- endif %}
     </div>
     {%- endif %}
 
-    <div class="clearfix">
-      {{ content }}
-    </div>
+    {{ content }}
+
+    <div style="clear: both;"></div>
 
     {% if page.news -%}
     <!-- News -->

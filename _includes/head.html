@@ -1,23 +1,19 @@
 <!-- Metadata, OpenGraph and Schema.org -->
 {% include metadata.html %}
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <!-- Performance optimizations -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Bootstrap & MDB - Preload for faster loading -->
+<!-- Inter font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+<!-- Bootstrap - Preload for faster loading -->
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@{{ site.bootstrap.version }}/dist/css/bootstrap.min.css"
     as="style" integrity="{{ site.bootstrap.integrity.css }}" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@{{ site.bootstrap.version }}/dist/css/bootstrap.min.css"
     rel="stylesheet" integrity="{{ site.bootstrap.integrity.css }}" crossorigin="anonymous">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/mdbootstrap@{{ site.mdb.version }}/css/mdb.min.css"
-    as="style" integrity="{{ site.mdb.integrity.css }}" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@{{ site.mdb.version }}/css/mdb.min.css"
-    integrity="{{ site.mdb.integrity.css }}" crossorigin="anonymous" />
 
 <!-- Fonts & Icons - Defer non-critical CSS -->
 <link rel="stylesheet"
@@ -29,16 +25,11 @@
     integrity="{{ site.fontawesome.integrity }}" crossorigin="anonymous"></noscript>
 <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/academicons@{{ site.academicons.version }}/css/academicons.min.css"
-    integrity="{{ site.academicons.integrity }}" crossorigin="anonymous"
+    crossorigin="anonymous"
     media="print" onload="this.media='all'; this.onload=null;">
 <noscript><link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/academicons@{{ site.academicons.version }}/css/academicons.min.css"
-    integrity="{{ site.academicons.integrity }}" crossorigin="anonymous"></noscript>
-<link rel="stylesheet" type="text/css"
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"
-    media="print" onload="this.media='all'; this.onload=null;">
-<noscript><link rel="stylesheet" type="text/css"
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"></noscript>
+    crossorigin="anonymous"></noscript>
 
 <!-- Code Syntax Highlighting -->
 <link rel="stylesheet"

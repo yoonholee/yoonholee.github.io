@@ -59,7 +59,11 @@ Runs Jekyll in a Docker container accessible at `http://localhost:8080`.
 **Important config values:**
 - `scholar.bibliography: papers.bib` - main bibliography source
 - `collections.obsidian` - custom collection for obsidian notes
-- Performance optimizations are **disabled** (see lines 23-27)
+- Performance optimizations are **enabled** (see lines 23-28):
+  - Image optimization: true
+  - Lazy loading: true
+  - Critical CSS: true
+  - Defer JS: true
 
 ## Blog Features
 
@@ -110,7 +114,25 @@ The `about.md` page manually lists selected papers with:
 - `serve_schema_org: true` in `_config.yml` enables Schema.org metadata
 - `_includes/schema_org.html` provides structured data for research/person
 - Open Graph meta tags enabled via `serve_og_meta: true`
-- Google Analytics tracking via `google_analytics: UA-56028200-1`
+- Google Analytics tracking via `google_analytics: G-FS7MW2SLV7` (GA4 format)
+
+### Analytics: Tracking LLM Referrals
+
+To track traffic from AI chatbots (ChatGPT, Claude, Perplexity, etc.) in Google Analytics 4:
+
+1. **Go to GA4 Admin** → Data Streams → Web → Click your data stream
+2. **Navigate to Explore** → Create new exploration report
+3. **Add regex filter** to identify LLM traffic sources:
+   ```
+   ^.*\.openai.*|.*copilot.*|.*chatgpt.*|.*gemini.*|.*gpt.*|.*neeva.*|.*perplexity.*|.*claude.*
+   ```
+4. **Apply to dimensions**: Source, Medium, or Campaign
+5. **Create custom dimension** (optional):
+   - Dimension name: `LLM Referral`
+   - Scope: Event
+   - Filter: Apply the regex above
+
+This helps measure how AI chatbots drive traffic to your research publications.
 
 ## Deployment
 
@@ -162,10 +184,24 @@ Enabled features:
   - Preconnect hints for CDN origins (jsdelivr, Google Fonts, GTM)
   - Preload critical CSS (Bootstrap, MDB)
   - Deferred non-critical CSS (FontAwesome, Academicons, Fonts)
+  - Critical CSS extraction enabled
+- **JavaScript optimization**:
+  - Defer non-critical JS enabled
+  - Service worker for offline support (caches key resources)
 - **LCP optimization**: `fetchpriority="high"` on profile image
+- **Font optimization**: `font-display: swap` added to Google Fonts to prevent FOIT
 - **PurgeCSS**: Removes unused CSS during build
+- **Core Web Vitals 2025**: Targeting LCP <2.5s, INP <200ms, CLS <0.1
 
 Expected PageSpeed score: **80-85/100** (up from 56)
+
+**Optional: Self-host Google Fonts**
+To further optimize font loading and reduce DNS lookups:
+1. Use [google-webfonts-helper](https://gwfh.mranftl.com/fonts) to download Roboto and Roboto Slab
+2. Subset fonts to Latin charset only
+3. Place fonts in `/assets/fonts/`
+4. Update `_includes/head.html` to reference local fonts
+5. Add `@font-face` declarations to `_sass/_base.scss`
 
 See `PERFORMANCE_NOTES.md` for details on remaining optimizations and `CLOUDFLARE_SETUP.md` for optional CDN caching improvements.
 

@@ -1,0 +1,29 @@
+{% comment %}
+Schema.org JSON-LD for individual papers
+Usage: {% include paper_schema.html title="Paper Title" authors="Author1, Author2" year="2025" url="https://arxiv.org/..." venue="ICML 2025" %}
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "name": "{{ include.title }}",
+  "author": [
+    {% assign author_list = include.authors | split: ", " %}
+    {% for author in author_list %}
+    {
+      "@type": "Person",
+      "name": "{{ author | strip | replace: '*', '' }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "datePublished": "{{ include.year }}",
+  "url": "{{ include.url }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ include.venue }}"
+  },
+  "isAccessibleForFree": true,
+  "inLanguage": "en"
+}
+</script>
