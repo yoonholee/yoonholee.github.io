@@ -11,10 +11,9 @@
   left: 0;
   background: var(--global-theme-color);
   color: white;
-  padding: 8px 16px;
+  padding: var(--space-sigma) var(--space-tau);
   text-decoration: none;
   z-index: 100;
-  border-radius: 0 0 4px 0;
   font-weight: 600;
 
   &:focus {
@@ -36,7 +35,7 @@ select:focus-visible,
 // Typography
 html, body {
   font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 1rem;
+  font-size: 1.0625rem;
   line-height: 1.5;
   font-weight: 400;
   height: 100%;
@@ -78,8 +77,8 @@ b, strong {
 #footer {
   height: auto;
   width: 100%;
-  margin: 3rem 0 0;
-  padding: 2rem 0;
+  margin: var(--space-2tau) 0 0;
+  padding: var(--space-2tau) 0;
   clear: both;
   position: relative;
 }
@@ -119,20 +118,34 @@ span a, p a, li a {
   }
 
   .paper {
+    position: relative;
     display: grid;
     grid-template-columns: 60px 1fr;
     gap: var(--space-tau);
     margin-bottom: var(--space-sigma);
-    padding: var(--space-sigma) 0;
+    padding: var(--space-tau);
+    margin-left: calc(-1 * var(--space-tau));
+    margin-right: calc(-1 * var(--space-tau));
     align-items: start;
+    border: 1px solid transparent;
+    cursor: pointer;
 
     &:hover {
+      background-color: rgba(0, 0, 0, 0.02);
+      border-color: var(--global-divider-color);
+
       .paper-year {
         font-weight: 500;
       }
 
       .paper-content a {
         font-weight: 600;
+      }
+
+      .my-badge {
+        background-color: var(--global-theme-color);
+        color: white;
+        border-color: var(--global-theme-color);
       }
     }
 
@@ -144,11 +157,20 @@ span a, p a, li a {
     }
 
     .paper-content {
-      a {
+      a[main-paper-link] {
         color: var(--global-theme-color);
         font-size: 1.0625rem;
         font-weight: 500;
         text-decoration: none;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
 
         &:hover {
           color: var(--global-hover-color);
@@ -194,20 +216,20 @@ figure, img {
 blockquote {
   background: var(--global-bg-color);
   border-left: 2px solid var(--global-theme-color);
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
+  margin: 1.5em var(--space-sigma);
+  padding: 0.5em var(--space-sigma);
   font-size: 1.2rem;
 }
 
 // Math & Captions
 .equation {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-tau);
   text-align: center;
 }
 
 .caption {
   font-size: 0.875rem;
-  margin: 0.75rem 0 1.5rem;
+  margin: var(--space-tau) 0 var(--space-2tau);
   text-align: center;
 }
 
@@ -226,7 +248,7 @@ blockquote {
 
   .card-item {
     width: auto;
-    margin-bottom: 10px;
+    margin-bottom: var(--space-sigma);
 
     .row {
       display: flex;
@@ -249,13 +271,17 @@ blockquote {
   // Width is set by media query below
   max-width: 100%;
 
+  figure {
+    margin-bottom: 0.5rem;
+  }
+
   img[src*="prof_pic"] {
     filter: saturate(0.7);
   }
 
   .address {
-    margin-bottom: 5px;
-    margin-top: 5px;
+    margin-bottom: var(--space-mu);
+    margin-top: var(--space-mu);
     font-family: monospace;
 
     p {
@@ -265,7 +291,7 @@ blockquote {
   }
 
   .social-icons {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     text-align: center;
 
     .contact-icon {
@@ -291,9 +317,9 @@ blockquote {
 
 .profile.float-right {
   float: right;
-  margin-left: 1.5rem;
-  margin-bottom: 2rem;
-  margin-top: 0.5rem;
+  margin-left: 1.125rem;
+  margin-bottom: 0;
+  margin-top: 0;
   width: 24%;  // Set explicit width for floating to work
 }
 
@@ -434,7 +460,7 @@ blockquote {
 
 // Social (bottom)
 .social {
-  padding: 3rem 0;
+  padding: var(--space-2tau) 0;
   text-align: center;
   background-color: #222;
 
@@ -468,7 +494,7 @@ footer.fixed-bottom {
 
   .container {
     color: var(--global-footer-text-color);
-    padding: 9px 0 8px;
+    padding: var(--space-sigma) 0;
   }
 
   a {
@@ -518,7 +544,7 @@ footer.sticky-bottom {
 .header-bar {
   border-bottom: 1px solid var(--global-divider-color);
   text-align: center;
-  padding: 1rem;
+  padding: var(--space-tau);
 
   h1 {
     color: var(--global-theme-color);
@@ -529,7 +555,7 @@ footer.sticky-bottom {
 .tag-list {
   border-bottom: 1px solid var(--global-divider-color);
   text-align: center;
-  padding-top: 1rem;
+  padding-top: var(--space-tau);
 
   ul {
     justify-content: center;
@@ -538,7 +564,7 @@ footer.sticky-bottom {
     p, li {
       list-style: none;
       display: inline-block;
-      padding: 1rem 0.5rem;
+      padding: var(--space-tau) var(--space-sigma);
       color: var(--global-text-color-light);
     }
   }
@@ -623,12 +649,13 @@ footer.sticky-bottom {
 
 // Publications
 .publications {
-  margin-top: 1rem;
+  margin-top: var(--space-tau);
 
   .year {
+    font-family: "Source Serif 4", Charter, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
     font-size: 2rem;
-    color: $grey-color;
-    margin-top: 1rem;  // Reduce from default spacing
+    color: var(--global-text-color-lighter);
+    margin-top: var(--space-tau);
     margin-bottom: 0;
     text-align: center;
   }
@@ -638,32 +665,61 @@ footer.sticky-bottom {
     padding: 0;
     margin-top: 0;
 
-    .row {
-      margin-bottom: 1rem; // distance between publications
-      margin-top: 1rem; // distance between publications
+    .publication-row {
+      margin-bottom: var(--space-mu);
+      padding: var(--space-sigma);
+      margin-left: calc(-1 * var(--space-sigma));
+      margin-right: calc(-1 * var(--space-sigma));
+      border: 1px solid transparent;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.02);
+        border-color: var(--global-divider-color);
+
+        .my-badge {
+          background-color: var(--global-theme-color);
+          color: white;
+          border-color: var(--global-theme-color);
+        }
+
+        .title {
+          font-weight: 600;
+        }
+      }
     }
 
     li {
-      margin-bottom: 1rem;
       font-size: 0.95rem;
 
       .abbr {
-        // space around publication badges.
         min-height: 1.5rem;
-        margin-bottom: 0.1rem;
+        margin-bottom: var(--space-mu);
+        flex: 0 0 15%;
+        max-width: 15%;
       }
 
       span {
         display: block;
       }
 
+      .title {
+        font-size: 1.0625rem;
+        font-weight: 500;
+        color: var(--global-text-color);
+      }
+
       .author {
+        font-size: 0.95rem;
+        color: var(--global-text-color-light);
+        margin: var(--space-mu) 0;
+
         a {
-          border-bottom: 1px dashed var(--global-theme-color);
+          color: inherit;
+          text-decoration: none;
 
           &:hover {
-            border-bottom-style: solid;
-            text-decoration: none;
+            color: var(--global-theme-color);
           }
         }
 
@@ -673,10 +729,21 @@ footer.sticky-bottom {
         }
       }
 
+      .periodical {
+        font-size: 0.875rem;
+        color: var(--global-text-color-lighter);
+        font-style: italic;
+      }
+
       em.star {
         border-bottom: none;
         color: var(--global-theme-color);
         font-style: normal;
+      }
+
+      .links {
+        margin-top: var(--space-sigma);
+        font-size: 0.875rem;
       }
 
       a.abstract.publink,
@@ -685,8 +752,7 @@ footer.sticky-bottom {
         cursor: pointer;
 
         &:hover {
-          color: var(--global-text-color);
-          background-color: white;
+          color: var(--global-hover-color);
           text-decoration: underline;
         }
       }
@@ -732,13 +798,15 @@ footer.sticky-bottom {
 // Badge
 .publications ol.bibliography li .abbr .my-badge,
 .my-badge {
-  font-weight: 600;
-  color: $white-color;
-  background-color: $theme-color-dark;
-  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--global-text-color-light);
+  background-color: transparent;
+  border: 1px solid var(--global-divider-color);
+  font-size: 0.75rem;
   display: inline-block;
-  padding: 0.1rem 0.8rem;
+  padding: var(--space-mu) var(--space-sigma);
   white-space: nowrap;
+  letter-spacing: 0.02em;
 }
 
 // Rouge Color Customization
@@ -749,7 +817,7 @@ figure.highlight {
 pre {
   color: var(--global-theme-color);
   background-color: var(--global-code-bg-color);
-  padding: 6px 12px;
+  padding: var(--space-sigma) var(--space-tau);
   font-variant-numeric: lining-nums tabular-nums;
 
   pre,
@@ -762,7 +830,7 @@ pre {
 code {
   color: var(--global-theme-color);
   background-color: var(--global-code-bg-color);
-  padding: 3px 3px;
+  padding: var(--space-mu);
   font-variant-numeric: lining-nums tabular-nums;
 }
 
@@ -1010,8 +1078,8 @@ progress::-moz-progress-bar {
 
 .skeleton-paper {
   height: 120px;
-  margin: 1.2rem 0;
-  padding: 1rem;
+  margin: var(--space-tau) 0;
+  padding: var(--space-tau);
 }
 
 .skeleton-post {
