@@ -3,11 +3,11 @@
 
 <!-- Performance optimizations -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Inter font -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<!-- Preload self-hosted fonts for instant rendering -->
+<link rel="preload" href="{{ '/assets/fonts/SourceSerif4-Semibold.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="{{ '/assets/fonts/SourceSans3-Variable.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="{{ '/assets/fonts/SourceSerif4-Regular.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
 
 <!-- Bootstrap - Preload for faster loading -->
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@{{ site.bootstrap.version }}/dist/css/bootstrap.min.css"

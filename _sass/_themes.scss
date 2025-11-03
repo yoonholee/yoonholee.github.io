@@ -5,22 +5,38 @@
 @use "variables" as *;
 
 :root {
+  // Spatial units (8pt grid)
+  --space-mu: 0.25rem;      // 4px
+  --space-sigma: 0.5rem;    // 8px
+  --space-tau: 1rem;        // 16px
+  --space-2tau: 2rem;       // 32px
+
+  // Background colors
   --global-bg-color: #{$white-color};
   --global-code-bg-color: #{$code-bg-color-light};
+  --global-card-bg-color: #{$white-color};
+
+  // Text colors (systematic blacks: 85%, 60%, 40%)
+  --global-text-color: #262626;        // 85% black (~15:1 contrast)
+  --global-text-color-light: #666666;  // 60% gray for metadata
+  --global-text-color-lighter: #999999; // 40% gray for deemphasized
   --global-text-color-dark: #{$black-color};
-  --global-text-color: #0a0a0a;
-  --global-text-color-light: #2a2a2a;
-  --global-text-color-lighter: #464646;
+
+  // Theme color (Stanford red)
   --global-theme-color: #{$theme-color};
   --global-theme-color-dark: #{$theme-color-dark};
-  --global-hover-color: #8C1515;
-  --global-hover-bg-color: #ffcbcb;
+  --global-hover-color: #8C1515; // Cardinal red
+
+  // Structural colors
+  --global-divider-color: rgba(38, 38, 38, 0.12); // hairline from text color
+
+  // Footer
   --global-footer-bg-color: #{$grey-color-dark};
   --global-footer-text-color: #{$grey-color-light};
   --global-footer-link-color: #{$white-color};
+
+  // Legacy (to be phased out)
   --global-distill-app-color: #{$grey-color};
-  --global-divider-color: rgba(0,0,0,.1);
-  --global-card-bg-color: #{$white-color};
 
 }
 

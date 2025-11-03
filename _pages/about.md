@@ -18,7 +18,7 @@ I'm a Ph.D. candidate at Stanford CS, advised by [Chelsea Finn](https://ai.stanf
 My research focuses on **operationalizing text as a substrate for learning**.
 As tasks grow more complex, low-bandwidth scalar signals can't keep up.
 These require learning from higher-bandwidth feedback that preserves the structure of what went wrong.
-I develop methods that enable models to extract _[massive amounts of information](https://youtu.be/Ount2Y4qxQo?si=LFsjABD1OT6QLZgU&t=1205)_ from _[direct experience](https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf)_ through structured textual feedback: natural language corrections, pairwise comparisons with "why better" explanations, and reasoning traces.
+I develop methods that enable models to extract _[massive amounts of information](https://youtu.be/Ount2Y4qxQo?si=LFsjABD1OT6QLZgU&t=1205)_ from _[direct experience](https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf)_ through structured textual feedback such as natural-language corrections, pairwise comparisons with "why better" explanations, and reasoning traces.
 
 Rather than treating text as throwaway scaffolding, I view it as a persistent store to optimize, where models accumulate experience at increasing levels of abstraction, similar to how humans write papers and books.
 This combines parametric models (for inductive biases and in-context understanding) with nonparametric text storage (for persistence and interpretability).
@@ -130,5 +130,5 @@ My name (윤호) is pronounced like 'you-know' said quickly (with stress on 'you
 [This](https://ipa-reader.com/?text=%2Fju%3Ano%CA%8A%2F) is a good approximation.
 
 Feel free to reach out via [email](mailto:yoonho@cs.stanford.edu)—I'm always happy to connect!
-I'm planning to be on both the academic and industry job markets in the late 2026-early 2027 cycle, so please let me know if you think I'd be a good fit for your organization.
+I plan to be on the academic and industry job markets in the late 2026-early 2027 cycle, so please let me know if you think I'd be a good fit for your organization.
 </div>

@@ -1,0 +1,32 @@
+/*******************************************************************************
+ * Self-hosted fonts
+ ******************************************************************************/
+
+// Source Serif 4 - Regular (400)
+@font-face {
+  font-family: 'Source Serif 4';
+  src: url('/assets/fonts/SourceSerif4-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Source Serif 4 - Semibold (600)
+@font-face {
+  font-family: 'Source Serif 4';
+  src: url('/assets/fonts/SourceSerif4-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Source Sans 3 - Variable font (weight 200-900)
+// Smaller than individual static fonts, so keeping variable
+@font-face {
+  font-family: 'Source Sans 3';
+  src: url('/assets/fonts/SourceSans3-Variable.ttf') format('truetype');
+  font-weight: 200 900;
+  font-stretch: normal;
+  font-style: normal;
+  font-display: swap;
+}
