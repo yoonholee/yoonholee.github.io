@@ -17,6 +17,7 @@ CV/tmp/*.fls
 CV/tmp/*.log
 CV/tmp/*.out
 CV/tmp/*.pdf
+!CV/tmp/main.pdf
 CV/tmp/*.synctex.gz
 CV/tmp/*.xdv
 CV/tmp/*.toc

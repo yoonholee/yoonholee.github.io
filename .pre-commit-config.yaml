@@ -4,7 +4,7 @@ repos:
     rev: v4.6.0
     hooks:
       - id: trailing-whitespace
-        exclude: '_bibliography/.*\.bib$'
+        exclude: '_bibliography/.*\.bib$|CV/tmp/.*\.(aux|log)$'
       - id: end-of-file-fixer
       - id: check-yaml
         exclude: '_config\.yml' # Jekyll uses non-standard YAML
@@ -56,4 +56,12 @@ repos:
         entry: bash -c 'bibtex -terse _bibliography/papers.bib || true'
         language: system
         files: '\.bib$'
+        pass_filenames: false
+
+      # Build CV when LaTeX files change
+      - id: build-cv
+        name: Build CV PDF
+        entry: bash -c 'cd CV && xelatex -interaction=nonstopmode -output-directory=tmp main.tex > /dev/null 2>&1 && git add tmp/main.pdf'
+        language: system
+        files: '^CV/.*\.tex$'
         pass_filenames: false
