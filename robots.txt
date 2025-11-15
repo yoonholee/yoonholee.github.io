@@ -1,6 +1,3 @@
----
-permalink: /robots.txt
----
 User-agent: *
 Allow: /
 
@@ -24,4 +21,4 @@ User-agent: Googlebot-Extended
 Allow: /
 
 # Sitemap
-Sitemap: {{ site.baseurl | prepend: site.url }}/sitemap.xml
+Sitemap: https://www.yoonholee.com/sitemap.xml
