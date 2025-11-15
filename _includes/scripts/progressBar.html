@@ -1,60 +1,44 @@
 {% if site.enable_progressbar %}
 
-<!-- Progress bar that shows reading position while scrolling -->
-<script type="text/javascript">
-  const progressBar = $("#progress");
+<!-- Progress bar that shows reading position while scrolling (vanilla JS - jQuery removed) -->
+<script>
+  (function () {
+    "use strict";
 
-  // Initialize after DOM loads to handle image resizing
-  document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(progressBarSetup, 100);
-  });
+    const progressBar = document.getElementById("progress");
+    if (!progressBar) return;
 
-  function progressBarSetup() {
-    if ("max" in document.createElement("progress")) {
-      initializeProgressElement();
-      $(document).on("scroll", onScroll);
-      $(window).on("resize", initializeProgressElement);
-    } else {
-      resizeProgressBar();
-      $(document).on("scroll", onScroll);
-      $(window).on("resize", resizeProgressBar);
-    }
-  }
+    let ticking = false;
 
-  function getCurrentScrollPosition() {
-    return $(window).scrollTop();
-  }
+    function updateProgress() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
 
-  function initializeProgressElement() {
-    let navbarHeight = $("#navbar").outerHeight(true);
-    progressBar.css({ top: navbarHeight });
-    progressBar.attr({
-      max: getDistanceToScroll(),
-      value: getCurrentScrollPosition(),
-    });
-  }
-
-  function getDistanceToScroll() {
-    return $(document).height() - $(window).height();
-  }
-
-  function resizeProgressBar() {
-    progressBar.css({ width: getWidthPercentage() + "%" });
-  }
-
-  function getWidthPercentage() {
-    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
-  }
-
-  function onScroll() {
-    window.requestAnimationFrame(() => {
-      if ("max" in document.createElement("progress")) {
-        progressBar.attr({ value: getCurrentScrollPosition() });
-      } else {
-        resizeProgressBar();
+      if (docHeight > 0) {
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        progressBar.value = scrollPercent;
       }
-    });
-  }
+
+      ticking = false;
+    }
+
+    function requestTick() {
+      if (!ticking) {
+        window.requestAnimationFrame(updateProgress);
+        ticking = true;
+      }
+    }
+
+    // Update on scroll (throttled with RAF)
+    window.addEventListener("scroll", requestTick, { passive: true });
+
+    // Update on load and resize
+    window.addEventListener("load", updateProgress);
+    window.addEventListener("resize", updateProgress);
+
+    // Initial update
+    updateProgress();
+  })();
 </script>
 
 {%- endif %}

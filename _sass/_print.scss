@@ -81,16 +81,16 @@
   }
 
   // Show URLs for links
-  a[href]:after {
+  a[href]::after {
     content: " (" attr(href) ")" !important;
     font-size: 10pt !important;
     color: #666 !important;
   }
 
   // Don't show URLs for internal links or anchors
-  a[href^="#"]:after,
-  a[href^="/"]:after,
-  a[main-paper-link]:after {
+  a[href^="#"]::after,
+  a[href^="/"]::after,
+  a[main-paper-link]::after {
     content: "" !important;
   }
 
@@ -117,11 +117,11 @@
     color: #333 !important;
   }
 
-  .sidenote:before {
+  .sidenote::before {
     content: " [" !important;
   }
 
-  .sidenote:after {
+  .sidenote::after {
     content: "] " !important;
   }
 
@@ -179,6 +179,7 @@
 
   // QR code for homepage (optional)
   // Uncomment if you want to add a QR code
+
   /*
   .about:after {
     content: "";
@@ -229,7 +230,7 @@
     margin-bottom: 1em !important;
   }
 
-  .post-meta time:after {
+  .post-meta time::after {
     content: " • Print version" !important;
     color: #999 !important;
   }
@@ -245,7 +246,7 @@
 }
 
 // High-resolution print (optional)
-@media print and (min-resolution: 300dpi) {
+@media print and (resolution >= 300dpi) {
   body {
     font-size: 11pt !important;
   }

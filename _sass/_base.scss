@@ -42,7 +42,7 @@ html, body {
   color: var(--global-text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
   word-break: break-word;
   text-justify: inter-word;
   hyphens: auto;
@@ -110,6 +110,27 @@ span a, p a, li a {
   }
 }
 
+// Make more-authors button look like styled text
+button.more-authors {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    color: var(--global-hover-color);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
 .selected-papers {
   margin-top: 0;
 
@@ -131,7 +152,7 @@ span a, p a, li a {
     cursor: pointer;
 
     &:hover {
-      background-color: rgba(0, 0, 0, 0.02);
+      background-color: rgb(0 0 0 / 2%);
       border-color: var(--global-divider-color);
 
       .paper-year {
@@ -166,10 +187,7 @@ span a, p a, li a {
         &::after {
           content: '';
           position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
+          inset: 0;
         }
 
         &:hover {
@@ -330,7 +348,7 @@ blockquote {
   width: 24%;  // Set explicit width for floating to work
 }
 
-@media (min-width: 576px) {
+@media (width >= 576px) {
   .profile.float-right,
   .profile.float-left {
     width: 20%;  // Slightly narrower on larger screens
@@ -468,7 +486,7 @@ blockquote {
     font-size: 1rem;
 
     .contact-separator, h4 {
-      color: #b3b3b3;
+      color: #c7c7c7; // WCAG AAA compliant (7.1:1 contrast on #222 background)
     }
 
     a {
@@ -534,7 +552,7 @@ footer.sticky-bottom {
 
 // Repositories
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .repo {
     max-width: 50%;
   }
@@ -674,7 +692,7 @@ footer.sticky-bottom {
       cursor: pointer;
 
       &:hover {
-        background-color: rgba(0, 0, 0, 0.02);
+        background-color: rgb(0 0 0 / 2%);
         border-color: var(--global-divider-color);
 
         .my-badge {
@@ -837,8 +855,8 @@ code {
 // Transitioning Themes
 html.transition,
 html.transition *,
-html.transition *:before,
-html.transition *:after {
+html.transition *::before,
+html.transition *::after {
   transition: all 750ms !important;
   transition-delay: 0 !important;
 }
@@ -856,8 +874,6 @@ progress {
   height: 1.5px;
 
   /* Reset the appearance */
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
 
   /* Get rid of the default border in Firefox/Opera. */
@@ -982,6 +998,7 @@ progress::-moz-progress-bar {
 
   em, i { font-style: italic; }
   strong, b { font-weight: 600; }
+
   del {
     text-decoration: line-through;
     color: var(--global-text-color-light);
@@ -1062,7 +1079,7 @@ progress::-moz-progress-bar {
   animation: skeleton-loading 1s linear infinite alternate;
   background: linear-gradient(90deg,
     var(--global-bg-color) 0%,
-    rgba(128, 128, 128, 0.08) 50%,
+    rgb(128 128 128 / 8%) 50%,
     var(--global-bg-color) 100%);
   background-size: 200% 100%;
 }
@@ -1071,6 +1088,7 @@ progress::-moz-progress-bar {
   0% {
     background-position: 200% 0;
   }
+
   100% {
     background-position: -200% 0;
   }

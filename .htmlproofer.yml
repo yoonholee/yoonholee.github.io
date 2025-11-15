@@ -1,0 +1,47 @@
+# HTMLProofer configuration for yoonholee.github.io
+
+# Assume extension for extensionless URLs (Jekyll default)
+assume_extension: ".html"
+
+# Allow href="#" links (common for JavaScript toggles)
+allow_hash_href: true
+
+# Validate favicon exists
+check_favicon: true
+
+# Validate Open Graph meta tags
+check_opengraph: true
+
+# Enforce HTTPS for all URLs
+enforce_https: true
+
+# Ignore specific URLs (rate-limited or problematic sites)
+ignore_urls:
+  - /localhost/
+  - /127.0.0.1/
+  - /linkedin\.com\// # Rate limited
+  - /twitter\.com\// # Rate limited
+  - /x\.com\// # Rate limited
+
+# Disable external link checking by default (faster local runs)
+# Override with --external flag for full checks
+disable_external: false
+
+# Check HTML validity
+check_html: true
+
+# Validate images use HTTPS
+check_img_http: true
+
+# Check for valid internal hash references
+check_internal_hash: true
+
+# Allow missing alt tags (will fix separately in accessibility task)
+validation:
+  report_missing_names: false
+
+# Typhoeus options for external requests
+typhoeus:
+  timeout: 30
+  connecttimeout: 10
+  followlocation: true

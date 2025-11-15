@@ -9,6 +9,7 @@ nav: true
 <div class="publications">
 
 {% for y in page.years %}
+
   <div class="year">{{y}}</div>
   {% bibliography -f papers -q @*[year={{y}}]* %}
 {% endfor %}

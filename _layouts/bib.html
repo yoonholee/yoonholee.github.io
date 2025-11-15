@@ -72,22 +72,14 @@
           {%- endunless -%}
         {%- endfor -%}
         , and
-        <span
-            class="more-authors"
-            title="click to view {{more_authors_hide}}"
-            onclick="
-              var element = $(this);
-              element.attr('title', '');
-              var more_authors_text = element.text() == '{{more_authors_hide}}' ? '{{more_authors_show}}' : '{{more_authors_hide}}';
-              var cursorPosition = 0;
-              var textAdder = setInterval(function(){
-                element.text(more_authors_text.substring(0, cursorPosition + 1));
-                if (++cursorPosition == more_authors_text.length){
-                  clearInterval(textAdder);
-                }
-            }, '{{site.more_authors_animation_delay}}');
-            "
-        >{{more_authors_hide}}</span>
+        <button
+          type="button"
+          class="more-authors"
+          aria-label="Show {{ more_authors }} additional author{% if more_authors > 1 %}s{% endif %}"
+          aria-expanded="false"
+          data-toggle-text-show="{{more_authors_show}}"
+          data-toggle-text-hide="{{more_authors_hide}}"
+        >{{more_authors_hide}}</button>
       {%- endif -%}
 
       </div>

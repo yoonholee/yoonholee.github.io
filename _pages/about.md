@@ -131,4 +131,5 @@ My name (윤호) is pronounced like 'you-know' said quickly (with stress on 'you
 
 Feel free to reach out via [email](mailto:yoonho@cs.stanford.edu)—I'm always happy to connect!
 I plan to be on the academic and industry job markets in the late 2026-early 2027 cycle, so please let me know if you think I'd be a good fit for your organization.
+
 </div>

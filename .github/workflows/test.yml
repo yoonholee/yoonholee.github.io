@@ -1,0 +1,64 @@
+name: Test
+
+on:
+  pull_request:
+    branches: [master, main]
+  push:
+    branches: [master, main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2.2"
+          bundler-cache: true
+
+      - name: Cache Jekyll artifacts
+        uses: actions/cache@v4
+        with:
+          path: |
+            .jekyll-cache
+            .jekyll-metadata
+          key: jekyll-test-${{ runner.os }}-${{ hashFiles('**/*.md', '**/*.html', '_config.yml') }}
+          restore-keys: |
+            jekyll-test-${{ runner.os }}-
+
+      - name: Install ImageMagick
+        uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: imagemagick
+          version: 1.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Lint CSS/SCSS
+        run: npm run lint:css
+
+      - name: Lint JavaScript
+        run: npm run lint:js
+
+      - name: Build site
+        run: bundle exec jekyll build
+
+      - name: Test internal links
+        run: bundle exec rake test
+
+      # Only check external links on main branch (slow)
+      - name: Test external links
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
+        run: bundle exec rake test_external
+        continue-on-error: true # Don't fail build on external link issues

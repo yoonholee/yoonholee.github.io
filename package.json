@@ -1,0 +1,37 @@
+{
+  "name": "yoonholee-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Academic personal website for Yoonho Lee",
+  "main": "purgecss.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npm run lint:css && npm run lint:js",
+    "lint:css": "stylelint '_sass/**/*.scss'",
+    "lint:css:fix": "stylelint '_sass/**/*.scss' --fix",
+    "lint:js": "eslint 'assets/js/**/*.js'",
+    "lint:js:fix": "eslint 'assets/js/**/*.js' --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoonholee/yoonholee.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/yoonholee/yoonholee.github.io/issues"
+  },
+  "homepage": "https://github.com/yoonholee/yoonholee.github.io#readme",
+  "devDependencies": {
+    "@shopify/prettier-plugin-liquid": "^1.10.0",
+    "prettier": "^3.6.2",
+    "stylelint": "^16.10.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "postcss": "^8.4.47",
+    "eslint": "^9.14.0",
+    "@eslint/js": "^9.14.0",
+    "globals": "^15.12.0"
+  }
+}

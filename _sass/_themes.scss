@@ -18,8 +18,8 @@
 
   // Text colors (systematic blacks: 85%, 60%, 40%)
   --global-text-color: #262626;        // 85% black (~15:1 contrast)
-  --global-text-color-light: #666666;  // 60% gray for metadata
-  --global-text-color-lighter: #999999; // 40% gray for deemphasized
+  --global-text-color-light: #666;  // 60% gray for metadata
+  --global-text-color-lighter: #999; // 40% gray for deemphasized
   --global-text-color-dark: #{$black-color};
 
   // Theme color (Stanford red)
@@ -28,7 +28,7 @@
   --global-hover-color: #8C1515; // Cardinal red
 
   // Structural colors
-  --global-divider-color: rgba(38, 38, 38, 0.12); // hairline from text color
+  --global-divider-color: rgb(38 38 38 / 12%); // hairline from text color
 
   // Footer
   --global-footer-bg-color: #{$grey-color-dark};

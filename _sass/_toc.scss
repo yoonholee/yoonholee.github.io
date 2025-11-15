@@ -22,7 +22,7 @@
   overflow: hidden auto;
   z-index: 10;
 
-  @media (max-width: 1200px) {
+  @media (width <= 1200px) {
     display: none;
   }
 }
@@ -37,7 +37,7 @@
     top: 0;
     left: -8px;
     width: 3px;
-    height: var(--progress-height, 0px);
+    height: var(--progress-height, 0);
     background: linear-gradient(to bottom, var(--global-theme-color), rgba(var(--global-theme-color-rgb), 0.4));
     border-radius: 2px;
     transition: height 0.3s ease;
@@ -107,17 +107,20 @@ html {
 @keyframes toc-flash {
   0% {
     background-color: color.scale(#8C1515, $lightness: 51.1461318052%);
-    box-shadow: 0 0 10px rgba(140, 21, 21, 0.3);
+    box-shadow: 0 0 10px rgb(140 21 21 / 30%);
     transform: translateX(8px);
   }
+
   25% {
     background-color: color.scale(#8C1515, $lightness: 58.4416883117%);
-    box-shadow: 0 0 8px rgba(140, 21, 21, 0.2);
+    box-shadow: 0 0 8px rgb(140 21 21 / 20%);
   }
+
   50% {
     background-color: color.scale(#8C1515, $lightness: 65.7372448183%);
-    box-shadow: 0 0 5px rgba(140, 21, 21, 0.1);
+    box-shadow: 0 0 5px rgb(140 21 21 / 10%);
   }
+
   100% {
     background-color: transparent;
     box-shadow: none;

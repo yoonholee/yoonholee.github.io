@@ -21,15 +21,15 @@
   {%- include header.html %}
 
   <!-- Content -->
-  <div class="container mt-5" id="main-content">
+  <main class="container mt-5" id="main-content">
     {{ content }}
-  </div>
+  </main>
 
   <!-- Footer -->
   {%- include footer.html %}
 
   <!-- JavaScripts -->
-  {% include scripts/jquery.html %}
+  {% comment %}jQuery removed - site now uses vanilla JavaScript{% endcomment %}
   {% include scripts/bootstrap.html %}
   {% include scripts/misc.html %}
   {% include scripts/mathjax.html %}

@@ -38,17 +38,15 @@ d-article {
   }
 
   d-contents {
-    align-self: start;
+    place-self: start end;
     grid-column: 1 / 4;
     grid-row: auto / span 4;
-    justify-self: end;
-    margin-top: 0em;
     padding-left: 2em;
     padding-right: 3em;
     border-right: 1px solid var(--global-divider-color);
     width: calc(max(70%, 300px));
-    margin-right: 0px;
-    margin-top:  0em;
+    margin-right: 0;
+    margin-top:  0;
     display: grid;
     grid-template-columns:
       minmax(8px, 1fr) [toc] auto
@@ -57,36 +55,44 @@ d-article {
 
     nav {
       grid-column: toc;
+
       a {
         border-bottom: none !important;
+
         &:hover {
           border-bottom: 1px solid var(--global-text-color) !important;
         }
       }
+
       h3 {
         margin-top: 0;
         margin-bottom: 1em;
       }
+
       div {
         display: block;
         outline: none;
         margin-bottom: 0.8em;
-        color: rgba(0, 0, 0, 0.8);
+        color: rgb(0 0 0 / 80%);
         font-weight: bold;
       }
+
       ul {
         padding-left: 1em;
         margin-top: 0;
         margin-bottom: 6px;
         list-style-type: none;
+
         li {
           margin-bottom: 0.25em;
         }
       }
     }
+
     .figcaption {
       line-height: 1.4em;
     }
+
     toc-line {
       border-right: 1px solid var(--global-divider-color);
       grid-column: toc-line;
@@ -115,17 +121,17 @@ d-appendix {
   }
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   d-article {
     d-contents {
       display: block;
-      grid-column-start: 2;
-      grid-column-end: -2;
+      grid-column: 2 / -2;
       padding-bottom: 0.5em;
       margin-bottom: 1em;
       padding-top: 0.5em;
       width: 100%;
       border: 1px solid var(--global-divider-color);
+
       nav {
         grid-column: none;
       }

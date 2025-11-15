@@ -50,6 +50,7 @@ Runs Jekyll in a Docker container accessible at `http://localhost:8080`.
 ### Configuration
 
 **`_config.yml`** contains all site settings:
+
 - Personal info (name, email, social links)
 - Jekyll Scholar settings (bibliography formatting)
 - Plugin configuration (jekyll-archives, jekyll-scholar, etc.)
@@ -57,6 +58,7 @@ Runs Jekyll in a Docker container accessible at `http://localhost:8080`.
 - SEO settings (Google Analytics, Open Graph, Schema.org)
 
 **Important config values:**
+
 - `scholar.bibliography: papers.bib` - main bibliography source
 - `collections.obsidian` - custom collection for obsidian notes
 - Performance optimizations are **enabled** (see lines 23-28):
@@ -70,6 +72,7 @@ Runs Jekyll in a Docker container accessible at `http://localhost:8080`.
 ### Automatic Table of Contents
 
 Blog posts automatically generate a table of contents from H1 headings:
+
 - Sticky sidebar navigation on desktop
 - Active section highlighting via scrollspy (IntersectionObserver)
 - Smooth scrolling with highlight animation on click
@@ -98,6 +101,7 @@ Blog posts support margin notes that appear alongside text on desktop:
 ### Jekyll Scholar
 
 Publications are managed via Jekyll Scholar (`jekyll-scholar` gem):
+
 - BibTeX files in `_bibliography/` directory
 - Custom fields supported: `abbr`, `tldr`, `code`, `paper`, `video`, `selected`
 - Filter out internal keywords via `filtered_bibtex_keywords` in `_config.yml`
@@ -105,6 +109,7 @@ Publications are managed via Jekyll Scholar (`jekyll-scholar` gem):
 ### About Page Papers
 
 The `about.md` page manually lists selected papers with:
+
 - Schema.org structured data (`itemscope`, `itemtype="ScholarlyArticle"`)
 - Custom data attributes for filtering (`data-year`, `data-venue`, `data-topics`)
 - Main paper links marked with `main-paper-link` attribute
@@ -139,6 +144,7 @@ This helps measure how AI chatbots drive traffic to your research publications.
 ### GitHub Actions
 
 The site auto-deploys via `.github/workflows/deploy.yml`:
+
 - Triggers on push to `master` or `main` branches
 - Builds Jekyll site and deploys to `gh-pages` branch
 - Uses `bin/deploy` script for deployment
@@ -161,21 +167,14 @@ bash bin/deploy --verbose --src master --deploy gh-pages
 
 ## Code Quality & CI/CD
 
-### Automated Checks (GitHub Actions)
-
-The repository includes automated quality checks:
-
-- **Prettier** (`.github/workflows/prettier.yml`): Code formatting validation for HTML/Liquid/SCSS/JS
-- **Lychee** (`.github/workflows/broken-links.yml`): Broken link checker that runs after deployment
-- **Axe** (`.github/workflows/axe.yml`): Accessibility testing (manual trigger via workflow_dispatch)
-
 Configuration files:
-- `.prettierrc`: Prettier settings (Liquid plugin, 150 char line width, ES5 trailing commas)
+
 - `purgecss.config.js`: Removes unused CSS from built site
 
 ### Performance Optimizations
 
 Enabled features:
+
 - **Image optimization**: ImageMagick processes images into multiple sizes and WebP format
 - **Lazy loading**: Images load on-demand as user scrolls
 - **Responsive images**: Multiple sizes generated (480px, 800px, 1400px) for different viewports
@@ -197,6 +196,7 @@ Expected PageSpeed score: **80-85/100** (up from 56)
 
 **Optional: Self-host Google Fonts**
 To further optimize font loading and reduce DNS lookups:
+
 1. Use [google-webfonts-helper](https://gwfh.mranftl.com/fonts) to download Roboto and Roboto Slab
 2. Subset fonts to Latin charset only
 3. Place fonts in `/assets/fonts/`
@@ -208,6 +208,7 @@ See `PERFORMANCE_NOTES.md` for details on remaining optimizations and `CLOUDFLAR
 ## Customization Notes
 
 This site has been customized beyond the base al-folio template:
+
 1. Custom ToC implementation with scrollspy for blog posts
 2. Tufte-style sidenotes for academic writing
 3. Manual paper listing in `about.md` with Schema.org markup (instead of using Jekyll Scholar's auto-generation)
@@ -217,6 +218,7 @@ This site has been customized beyond the base al-folio template:
 ## File Modification Patterns
 
 When editing content:
+
 - **Publications**: Edit `_bibliography/papers.bib` and/or manually update `_pages/about.md`
 - **Blog posts**: Create new markdown files in `_posts/` with YAML frontmatter
 - **About page**: Edit `_pages/about.md` (includes manual HTML for structured papers)

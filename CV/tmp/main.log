@@ -134,7 +134,7 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2023-02-22 L3 programming layer (loader) 
+Package: expl3 2023-02-22 L3 programming layer (loader)
  (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2023-01-16 L3 backend support: XeTeX
 \g__graphics_track_int=\count198
@@ -638,7 +638,7 @@ LaTeX Font Info:    ... okay on input line 62.
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
+* modes:
 * h-part:(L,W,R)=(51.21504pt, 495.07779pt, 51.21504pt)
 * v-part:(T,H,B)=(42.67912pt, 768.2245pt, 34.14322pt)
 * \paperwidth=597.50787pt
@@ -720,7 +720,7 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 5.47441pt on input line 67.
 
 Overfull \hbox (1.46pt too wide) in paragraph at lines 67--67
-[]$[]$ $[]$$[]$ 
+[]$[]$ $[]$$[]$
  []
 
 (./cv/education.tex
@@ -772,7 +772,7 @@ LaTeX Font Info:    Font shape `TU/SourceSansPro(1)/m/sc' will be
 ]) (./cv/honors.tex) (./cv/service.tex) (./cv/talks.tex) (./cv/teaching.tex) [2] (tmp/main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
- ) 
+ )
 Here is how much of TeX's memory you used:
  32709 strings out of 476683
  667749 string characters out of 5804046
