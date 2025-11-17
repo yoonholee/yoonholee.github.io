@@ -49,9 +49,7 @@
 
 <!-- Code Syntax Highlighting -->
 <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/{{ site.highlight_theme_light | append: '.css' }}"
-    integrity="sha384-/tujfASjttzsRPkdiVuub0ckTchk70kHbdT1/G7C/9xA2mBu/45Kxae2kSeXMPqZ"
-    crossorigin="anonymous"
+    href="{{ '/assets/css/syntax/light.css' | relative_url }}"
     media="" id="highlight_theme_light" />
 
 <!-- Styles -->
@@ -66,9 +64,7 @@
     <!-- Dark Mode -->
     {% if site.enable_darkmode %}
     <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/{{ site.highlight_theme_dark | append: '.css' }}"
-        integrity="sha384-zkiblDYWgSXfpl/lQE2riHkUA0VbZnY3GGeRWgCiZi2rS5n23fq9MD6vS9ewzl7N"
-        crossorigin="anonymous"
+        href="{{ '/assets/css/syntax/dark.css' | relative_url }}"
         media="none" id="highlight_theme_dark" />
 
     <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>

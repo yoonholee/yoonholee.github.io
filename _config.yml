@@ -43,8 +43,8 @@ image_sizes:
 # -----------------------------------------------------------------------------
 
 # code highlighter theme
-highlight_theme_light: github # https://github.com/jwarby/jekyll-pygments-themes
-highlight_theme_dark: native # https://github.com/jwarby/jekyll-pygments-themes
+highlight_theme_light: colorful # https://github.com/jwarby/jekyll-pygments-themes
+highlight_theme_dark: monokai.sublime # https://github.com/jwarby/jekyll-pygments-themes
 
 # -----------------------------------------------------------------------------
 # RSS Feed
@@ -119,6 +119,9 @@ pagination:
 # -----------------------------------------------------------------------------
 
 collections:
+  unlisted:
+    output: true
+    permalink: /unlisted/:path/
   obsidian:
     output: true
     permalink: /obsidian/:path/
@@ -180,6 +183,11 @@ plugins:
 
 # Sitemap settings
 defaults:
+  - scope:
+      path: ""
+      type: "unlisted"
+    values:
+      layout: unlisted
   - scope:
       path: "assets/**/*.*"
     values:

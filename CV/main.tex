@@ -1,23 +1,9 @@
-% !TEX program = xelatex
 % !TEX encoding = UTF-8 Unicode
-
-%-------------------------------------------------------------------------------
-% CONFIGURATIONS
-%-------------------------------------------------------------------------------
-% A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, a4paper]{awesome-cv}
+\documentclass[11pt, letterpaper]{awesome-cv}
 
 % Configure page margins with geometry
-\geometry{left=1.8cm, top=1.5cm, right=1.8cm, bottom=1.2cm, footskip=.5cm}
+\geometry{left=1.8cm, top=1.5cm, right=1.8cm, bottom=2.0cm, footskip=0.8cm}
 
-% Specify the location of the included fonts
-\fontdir[fonts/]
-
-% Color for highlights
-% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
-%                 awesome-nephritis, awesome-concrete, awesome-darknight
-% \colorlet{awesome}{awesome-concrete}
-% Uncomment if you would like to specify your own color
 \definecolor{awesome}{HTML}{0066CC}
 
 % Colors for text
@@ -33,55 +19,300 @@
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
+% Centralized spacing control
+\newcommand{\sectionspacing}{\vspace{1mm}}
 
-%-------------------------------------------------------------------------------
-%	PERSONAL INFORMATION
-%	Comment any of the lines below if they are not required
-%-------------------------------------------------------------------------------
-% Available options: circle|rectangle,edge/noedge,left/right
-% \photo{./examples/profile.png}
-% \name{Yoonho}{Lee\normalsize{, Computer Science Department}}
 \name{Yoonho}{Lee}
 \email{yoonholee95@gmail.com}
 \homepage{yoonholee.com}
 \googlescholar{BAAZ_ysAAAAJ}{google scholar}
-% \github{yoonholee}
-% \gitlab{gitlab-id}
-% \stackoverflow{SO-id}{SO-name}
-% \twitter{@twit}
-% \skype{skype-id}
-% \reddit{reddit-id}
-% \medium{madium-id}
-% \googlescholar{googlescholar-id}{name-to-display}
-%% \firstname and \lastname will be used
-% \googlescholar{googlescholar-id}{}
 \extrainfo{Stanford, CA}
 
 
 %-------------------------------------------------------------------------------
 \begin{document}
 
-% Print the header with above personal informations
-% Give optional argument to change alignment(C: center, L: left, R: right)
 \makecvheader
 
-% Print the footer with 3 arguments(<left>, <center>, <right>)
-% Leave any of these blank if they are not needed
 \makecvfooter
-  {\small\textcolor{lighttext}{Updated \today}}
-  {Yoonho Lee~~~·~~~Curriculum Vitae}
-  {\thepage}
+  {}
+  {\footnotesize\mdseries\textcolor{lighttext}{Compiled on \today}}
+  {}
 
 
-\input{cv/education.tex}
-\input{cv/publications.tex}
-% \clearpage
-\input{cv/honors.tex}
-% \input{cv/experience.tex}
-\input{cv/service.tex}
-\input{cv/talks.tex}
-\input{cv/teaching.tex}
-% \input{cv/coursework.tex}
-% \input{cv/skills.tex}
+\sectionspacing
+\cvsection{Education}
+\vspace{1mm}
+
+\begin{cventries}
+  \cventry
+    {Department of Computer Science, Advisor: Chelsea Finn}% Degree
+    {Stanford University, Ph.D.} % Institution
+    {United States} % Location
+    {2021 - present} % Date(s)
+    {}
+  \cventry
+    {Department of Computer Science and Engineering, Advisor: Seungjin Choi}% Degree
+    {POSTECH, M.S.} % Institution
+    {South Korea} % Location
+    {2018} % Date(s)
+    {}
+  \cventry
+    {Department of Mathematics}% Degree
+    {POSTECH, B.S.} % Institution
+    {South Korea} % Location
+    {2016} % Date(s)
+    {}
+  % \cventry
+  %   {Exchange Student, Mathematics Department}% Degree
+  %   {University of California, Berkeley} % Institution
+  %   {CA, United States} % Location
+  %   {2014 - 2015} % Date(s)
+  %   {} \vspace{-10pt}
+
+%---------------------------------------------------------
+\end{cventries}
+
+\vspace{-2mm}
+\cvsection{Publications}
+
+\newcommand{\me}{{\textcolor{darktext}{\fontseries{sb}\selectfont\underline{Yoonho Lee}}}}
+\newcommand{\meeq}{{\textcolor{darktext}{\fontseries{sb}\selectfont\underline{Yoonho Lee*}}}}
+
+\autopubcount % Automatically count publications from previous compilation
+
+\cvpub
+{\me, Joseph Boen, Chelsea Finn}
+{\href{https://arxiv.org/abs/2511.07919}{Feedback Descent: Open-Ended Text Optimization via Pairwise Comparison}}
+{\textbf{arXiv:2511.07919} \textcolor{gray}{\textit{(preprint)}}}
+
+\cvpub
+{Yuxiao Qu*, Anikait Singh*, \meeq, Amrith Setlur, Ruslan Salakhutdinov, Chelsea Finn, Aviral Kumar}
+{\href{https://arxiv.org/abs/2510.02263}{RLAD: Training LLMs to Discover Abstractions for Solving Reasoning Problems}}
+{\textbf{ICML 2025} (42\textsuperscript{nd} International Conference on Machine Learning) Workshops: AI for Math, PRAL, ES-FoMo}
+
+\cvpub
+{\me, Jonathan Williams, Henrik Marklund, Archit Sharma, Eric Mitchell, Anikait Singh, Chelsea Finn}
+{\href{https://arxiv.org/abs/2412.08812}{Test-Time Alignment via Hypothesis Reweighting}}
+{\textbf{ICML 2025} (42\textsuperscript{nd} International Conference on Machine Learning) Workshop PUT}
+
+\cvpub
+{Yuejiang Liu, Jubayer Ibn Hamid, Annie Xie, \me, Maximilian Du, Chelsea Finn}
+{\href{https://arxiv.org/abs/2408.17355}{Bidirectional Decoding: Improving Action Chunking via Closed-Loop Resampling}}
+{\textbf{ICLR 2025} (13\textsuperscript{th} International Conference on Learning Representations)}
+
+\cvpub
+{\me, Michelle Lam, Helena Vasconcelos, Michael S. Bernstein, Chelsea Finn}
+{\href{https://arxiv.org/abs/2402.03715}{Clarify: Improving Model Robustness With Natural Language Corrections}}
+{\textbf{UIST 2024} (ACM Symposium on User Interface Software and Technology), \textbf{NeurIPS 2023} (37\textsuperscript{th} Conference on Neural Information Processing Systems) Workshops: XAIA, ICBINB}
+
+\cvpub
+{Caroline Choi*, \meeq, Annie S. Chen, Allan Zhou, Aditi Raghunathan, Chelsea Finn}
+{\href{https://arxiv.org/abs/2401.10220}{AutoFT: Learning an Objective for Robust Fine-Tuning}}
+{Workshop on Distribution Shifts, \textbf{NeurIPS 2023} (37\textsuperscript{th} Conference on Neural Information Processing Systems)}
+
+\cvpub
+{Annie S. Chen, \me, Amrith Setlur, Sergey Levine, Chelsea Finn}
+{\href{https://arxiv.org/abs/2306.11120}{Confidence-Based Model Selection: When to Take Shortcuts for Subpopulation Shifts}}
+{Workshop on Distribution Shifts, \textbf{NeurIPS 2023} (37\textsuperscript{th} Conference on Neural Information Processing Systems)}
+
+\cvpub
+{Caroline Choi*, Fahim Tajwar*, \meeq, Huaxiu Yao, Ananya Kumar, Chelsea Finn}
+{\href{https://arxiv.org/abs/2306.04974}{Conservative Prediction via Data-Driven Confidence Minimization}}
+{Transactions on Machine Learning Research (\textbf{TMLR 2024}), \textbf{ICLR 2023} (11\textsuperscript{th} International Conference on Learning Representations) Workshops: TrustML, ME-FoMo}
+
+\cvpub
+{Annie S. Chen*, \meeq, Amrith Setlur, Sergey Levine, Chelsea Finn}
+{\href{https://arxiv.org/abs/2302.05441}{Project and Probe: Sample-Efficient Domain Adaptation by Interpolating Orthogonal Features}}
+{\textbf{ICLR 2024, Spotlight} (12\textsuperscript{th} International Conference on Learning Representations, top 5\% of submissions), \textbf{ICLR 2023} (11\textsuperscript{th} International Conference on Learning Representations) Workshops: TrustML \textbf{(Oral)}, ME-FoMo}
+
+\cvpub
+{Johnathan Wenjia Xie, \me, Annie S. Chen, Chelsea Finn}
+{\href{https://openreview.net/forum?id=HiYMiZYwkw}{Self-Guided Masked Autoencoders for Domain-Agnostic Self-Supervised Learning}}
+{\textbf{ICLR 2024} (12\textsuperscript{th} International Conference on Learning Representations)}
+
+\cvpub
+{Eric Mitchell, \me, Alexander Khazatsky, Christopher D Manning, Chelsea Finn}
+{\href{https://arxiv.org/abs/2301.11305}{DetectGPT: Zero-Shot Machine-Generated Text Detection using Probability Curvature}}
+{\textbf{ICML 2023, Oral} (40\textsuperscript{th} International Conference on Machine Learning, top 2\% of submissions)}
+
+\cvpub
+{\meeq, Annie S. Chen*, Fahim Tajwar, Ananya Kumar, Huaxiu Yao, Percy Liang, Chelsea Finn}
+{\href{https://arxiv.org/abs/2210.11466}{Surgical Fine-Tuning Improves Adaptation to Distribution Shifts}}
+{\textbf{ICLR 2023} (11\textsuperscript{th} International Conference on Learning Representations)}
+
+\cvpub
+{\me, Huaxiu Yao, Chelsea Finn}
+{\href{https://arxiv.org/abs/2202.03418}{Diversify and Disambiguate: Out-of-Distribution Robustness via Disagreement}}
+{\textbf{ICLR 2023} (11\textsuperscript{th} International Conference on Learning Representations)}
+
+\cvpub
+{\me, Chelsea Finn, Stefano Ermon}
+{\href{https://openreview.net/forum?id=I1bW14EvUF7}{Relaxing the Kolmogorov Structure Function for Realistic Computational Constraints}}
+{Workshop on Information-Theoretic Principles in Cognitive Systems, \textbf{NeurIPS 2022} (36\textsuperscript{th} Conference on Neural Information Processing Systems)}
+
+\cvpub
+{Balhae Kim, Jungwon Choi, Seanie Lee, \me, Jung-Woo Ha, Juho Lee}
+{\href{https://arxiv.org/abs/2210.06205}{On Divergence Measures for Bayesian Pseudocoresets}}
+{\textbf{NeurIPS 2022} (36\textsuperscript{th} Conference on Neural Information Processing Systems)}
+
+\cvpub
+{Huaxiu Yao*, Caroline Choi*, Bochuan Cao, \me, Pang Wei Koh, Chelsea Finn}
+{\href{https://arxiv.org/abs/2211.14238}{Wild-Time: A Benchmark of in-the-Wild Distribution Shift over Time}}
+{\textbf{NeurIPS 2022} (36\textsuperscript{th} Conference on Neural Information Processing Systems), Datasets \& Benchmarks track}
+
+\cvpub
+{\me, Wonjae Kim, Wonpyo Park, Seungjin Choi}
+{ \href{https://arxiv.org/abs/1905.11656}
+  {Discrete Infomax Codes for Supervised Representation Learning}}
+{Special issue "Theory and Applications of Information Processing Algorithms", \textbf{Entropy 2022}}
+
+\cvpub
+{Giung Nam*, Jongmin Yoon*, \me, Juho Lee}
+{\href{https://arxiv.org/abs/2110.14149}{Diversity Matters When Learning From Ensembles}}
+{\textbf{NeurIPS 2021} (35\textsuperscript{th} Conference on Neural Information Processing Systems)}
+
+\cvpub
+{Minkyo Seo*, \meeq, Suha Kwak}
+{\href{https://arxiv.org/abs/2107.01900}{On the Distribution of Penultimate Activations of Classification Networks}}
+{\textbf{UAI 2021} (37\textsuperscript{th} Conference on Uncertainty in Artificial Intelligence)}
+
+\cvpub
+{\me, Juho Lee, Sung Ju Hwang, Eunho Yang, Seungjin Choi}
+{\href{https://arxiv.org/abs/2008.02953}
+  {Neural Complexity Measures}}
+{\textbf{NeurIPS 2020} (34\textsuperscript{th} Conference on Neural Information Processing Systems)}
+
+\cvpub
+{Juho Lee*, \meeq, Jungtaek Kim, Eunho Yang, Sung Ju Hwang, Yee Whye Teh}
+{\href{https://arxiv.org/abs/2008.02956}
+  {Bootstrapping Neural Processes}}
+{\textbf{NeurIPS 2020} (34\textsuperscript{th} Conference on Neural Information Processing Systems)}
+
+\cvpub
+{Wonjae Kim, \me}
+{\href{https://papers.nips.cc/paper/8835-learning-dynamics-of-attention-human-prior-for-interpretable-machine-reasoning.pdf}
+  {Learning Dynamics of Attention: Human Prior for Interpretable Machine Reasoning}}
+{\textbf{NeurIPS 2019} (33\textsuperscript{rd} Conference on Neural Information Processing Systems)}
+
+\cvpub
+{Juho Lee, \me, Yee Whye Teh}
+{\href{https://arxiv.org/abs/1909.13433}
+  {Deep Amortized Clustering} }
+{Sets and Partitions Workshop at \textbf{NeurIPS 2019} (33\textsuperscript{rd} Conference on Neural Information Processing Systems, \textbf{oral presentation})}
+
+\cvpub
+{Juho Lee, \me, Jungtaek Kim, Adam Kosiorek, Seungjin Choi, Yee Whye Teh}
+{\href{http://proceedings.mlr.press/v97/lee19d/lee19d.pdf}
+  {Set Transformer: A Framework for Attention-based Permutation-Invariant Neural Networks}}
+{\textbf{ICML 2019} (36\textsuperscript{th} International Conference on Machine Learning)}
+
+\cvpub
+{\me \hspace{1pt}, Seungjin Choi}
+{\href{http://proceedings.mlr.press/v80/lee18a/lee18a.pdf}
+  {Gradient-based meta-learning with learned layerwise metric and subspace}}
+{\textbf{ICML 2018} (35\textsuperscript{th} International Conference on Machine Learning)}
+
+%-------------------------------------------------------------------------------
+%	FELLOWSHIPS AND GRANTS
+%-------------------------------------------------------------------------------
+\sectionspacing
+\sectionspacing
+\sectionspacing
+\cvsection{Fellowships and Grants}
+
+\begin{cvhonors}
+  \cvhonor{\href{https://hai.stanford.edu/research/grant-programs/google-cloud-credit-grants}{HAI Google Cloud Credits Award}}{Stanford HAI, \$15,000}{2025--2026}
+  \cvhonor{\href{https://openai.com/index/superalignment-fast-grants/}{OpenAI Superalignment Fellowship}}{OpenAI, \$150,000}{2024}
+  \cvhonor{\href{https://www.microsoft.com/en-us/research/collaboration/accelerating-foundation-models-research/}{Microsoft Accelerate Foundation Models Research Grant}}{Microsoft Research, \$20,000}{2023--2024}
+  \cvhonor{\href{https://hai.stanford.edu/research/grant-programs/google-cloud-credit-grants}{HAI Google Cloud Credits Award}}{Stanford HAI, \$15,000}{2022--2023}
+  \cvhonor{\href{https://eng.kfas.or.kr/theme/kfaschanel/intl_scholarship_5.php}{KFAS Doctoral Fellowship}}{Korea Foundation for Advanced Studies}{2021--present}
+  \cvhonor{\href{https://www.kosaf.go.kr/ko/scholar.do?pg=scholarship05_05_01&ttab1=0}{Presidential Science Scholarship}}{Korea Student Aid Foundation}{2012--2016}
+\end{cvhonors}
+
+%-------------------------------------------------------------------------------
+%	MENTORING
+%-------------------------------------------------------------------------------
+\cvsection{Mentoring}
+
+\begin{cvhonors}
+\mentoritem{\href{https://zhengxuyan.github.io/}{Zhengxu (Jason) Yan}}{2025-current}
+\mentoritem{\href{https://www.linkedin.com/in/teresa-s-zhang/}{Teresa Zhang}}{2025-current}
+\mentoritem{\href{https://www.linkedin.com/in/roshen-nair/}{Roshen Nair}}{2025-current}
+\mentoritem{\href{https://victorkolev.github.io/}{Victor Kolev}}{2025}
+\mentoritem{\href{https://www.linkedin.com/in/rpark-stanford/}{Ryan Park}}{2025}
+\mentoritem{\href{https://jonwill8.github.io/}{Jonathan Williams} \textmd{(Next: PhD at Princeton)}}{2023-2024}
+\mentoritem{\href{https://jubayer-ibn-hamid.github.io/}{Jubayer Ibn Hamid} \textmd{(Next: PhD at Stanford)}}{2024-2025}
+\mentoritem{\href{https://www.linkedin.com/in/johnathan-xie/}{Johnathan Wenjia Xie} \textmd{(Next: Tesla)}}{2024}
+\mentoritem{\href{https://tajwarfahim.github.io/}{Fahim Tajwar} \textmd{(Next: PhD at CMU)}}{2023}
+\mentoritem{\href{https://cchoi1.github.io/}{Caroline Choi} \textmd{(Next: PhD at Stanford)}}{2022}
+\end{cvhonors}
+
+%-------------------------------------------------------------------------------
+%	PROFESSIONAL SERVICE
+%-------------------------------------------------------------------------------
+\vspace{-2mm}
+\cvsection{Professional Service}
+
+\begin{cvhonors}
+\cvitem {\textbf{Workshop organizer},
+NeurIPS Workshop on Distribution Shifts (%
+    \href{https://sites.google.com/view/distshift2022}{2022},
+    \href{https://sites.google.com/view/distshift2023}{2023})
+}{}
+\cvitem {\textbf{Reviewer}:
+  NeurIPS (2018-2025),
+  ICML (2019-2025),
+  ICLR (2021-2026),
+  NeurIPS workshop proposals (2024-2025),
+  ICML workshop proposals (2024),
+  AAAI (2024-2025),
+  AISTATS (2019-2022),
+  IJCAI (2019-2021),
+  ACML (2019-2020),
+  ME-FoMo@ICLR (2023),
+  TrustML@ICLR (2023).
+}{}
+\end{cvhonors}
+
+%-------------------------------------------------------------------------------
+%	TALKS AND PRESENTATIONS
+%-------------------------------------------------------------------------------
+\vspace{-2mm}
+\cvsection{Talks and Presentations}
+
+\begin{cvhonors}
+  \cvitem {Moveworks, Mountain View, CA, USA}{Dec. 2024}
+  \cvitem {UIST 2024, Pittsburgh, PA, USA}{Oct. 2024}
+  \cvitem {Centre for Frontier AI Research, Online}{Aug. 2023}
+  \cvitem {MosaicML, Online}{Aug. 2023}
+  \cvitem {ICLR 2023, Kigali, Rwanda}{Apr. 2023}
+  \cvitem {Deep Learning: Classics and Trends, Online}{Mar. 2023}
+  \cvitem {NeurIPS 2022, New Orleans, USA}{Dec. 2022}
+  \cvitem {ICML 2022, Baltimore, USA}{Jul. 2022}
+  \cvitem {NeurIPS 2021, Online}{Dec. 2021}
+  \cvitem {Post-NeurIPS Workshop @ KSC2020, Online}{Dec. 2020}
+  \cvitem {NeurIPS 2020, Online}{Dec. 2020}
+  \cvitem {NeurIPS 2019, Vancouver, Canada}{Dec. 2019}
+  % \cvitem {Kakao Brain, South Korea}{May. 2019, Oct. 2019} % Date(s)
+  \cvitem {Second Korea-Japan Machine Learning Workshop, South Korea}{Feb. 2019}
+  \cvitem {ICML 2018, Stockholm, Sweden}{Jul. 2018}
+  % \cvitem {Naver, South Korea}{Apr. 2018}
+\end{cvhonors}
+
+%-------------------------------------------------------------------------------
+%	TEACHING EXPERIENCE
+%-------------------------------------------------------------------------------
+\vspace{-2mm}
+\cvsection{Teaching Experience}
+
+\begin{cvhonors}
+  \cvitem{Teaching Assistant, \href{https://cs330.stanford.edu/}{CS330 Deep Multi-Task and Meta Learning}, Stanford University}{Sep. 2023 - Dec. 2023}
+  \cvitem{Teaching Assistant, \href{https://cs330.stanford.edu/}{CS330 Deep Multi-Task and Meta Learning}, Stanford University}{Sep. 2022 - Dec. 2022}
+  \cvitem{Teaching Assistant, Deep Learning, POSCO Group}{Mar. 2017 - Jun. 2018}
+  \cvitem{Teaching Assistant, Machine Learning for Business, Samsung Electronics}{Sep. 2017 - Dec. 2017}
+  \cvitem{Teaching Assistant, AI Job Training, POSTECH Institute of AI}{Mar. 2017 - Jun. 2017}
+  \cvitem{Teaching Assistant, CSED101 Programming and Problem Solving, POSTECH}{Mar. 2017 - Jun. 2017}
+\end{cvhonors}
 
 \end{document}

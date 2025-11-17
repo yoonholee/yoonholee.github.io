@@ -27,7 +27,7 @@ Looking forward, I'm focused on scaling these methods to scientific discovery an
 Recent papers along these lines:
 
 <div class="selected-papers">
-<div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2026">
+<div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2025">
 <span class="paper-year">2025</span>
 <div class="paper-content">
 <a main-paper-link href="https://arxiv.org/abs/2511.07919" itemprop="url">
@@ -43,7 +43,7 @@ preprint
 Operationalizes the core text optimization loop, accumulating "why better" signals from pairwise comparisons across up to a thousand iterations.
 </div>
 </div>
-{% include paper_schema.html title="Feedback Descent: Open-Ended Text Optimization via Pairwise Comparison" authors="Yoonho Lee, Joseph Boen, Chelsea Finn" year="2026" url="https://arxiv.org/abs/2511.07919" venue="ICLR 2026 submission" %}
+{% include paper_schema.html title="Feedback Descent: Open-Ended Text Optimization via Pairwise Comparison" authors="Yoonho Lee, Joseph Boen, Chelsea Finn" year="2025" url="https://arxiv.org/abs/2511.07919" venue="preprint" %}
 </div>
 
 <div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2025">

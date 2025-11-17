@@ -71,3 +71,9 @@ build/
 # macOS specific
 .AppleDouble
 .LSOverride
+
+*.bbl
+*.blg
+*.out
+*.aux
+*.log
