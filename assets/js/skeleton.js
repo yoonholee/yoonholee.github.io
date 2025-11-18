@@ -42,13 +42,6 @@
     });
   }
 
-  // Add skeleton screens for dynamically loaded content
-  function addSkeletonForDynamicContent() {
-    // This can be extended for AJAX-loaded content
-    // For now, we'll just mark as loaded on DOMContentLoaded
-    return;
-  }
-
   // Initialize on DOM ready
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {

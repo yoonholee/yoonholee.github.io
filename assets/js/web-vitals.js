@@ -46,7 +46,7 @@
       });
 
       observer.observe({ type: "largest-contentful-paint", buffered: true });
-    } catch (e) {
+    } catch {
       // Silently fail if LCP is not supported
     }
   }
@@ -83,7 +83,7 @@
           });
         }
       });
-    } catch (e) {
+    } catch {
       // Silently fail if CLS is not supported
     }
   }
@@ -120,7 +120,7 @@
           });
         }
       });
-    } catch (e) {
+    } catch {
       // Silently fail if INP is not supported
     }
   }
@@ -143,7 +143,7 @@
       });
 
       observer.observe({ type: "paint", buffered: true });
-    } catch (e) {
+    } catch {
       // Silently fail if FCP is not supported
     }
   }
@@ -159,7 +159,7 @@
           id: "v3-" + Date.now() + "-" + Math.random().toString(36).substr(2, 9),
         });
       }
-    } catch (e) {
+    } catch {
       // Silently fail if TTFB is not supported
     }
   }
