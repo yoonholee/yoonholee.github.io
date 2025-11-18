@@ -30,11 +30,10 @@ jobs:
           key: jekyll-${{ runner.os }}-${{ hashFiles('**/*.md', '**/*.html', '_config.yml', '_sass/**', '_layouts/**', '_includes/**') }}
           restore-keys: |
             jekyll-${{ runner.os }}-
-      - name: Cache and install ImageMagick
-        uses: awalsh128/cache-apt-pkgs-action@v1
-        with:
-          packages: imagemagick
-          version: 1.0
+      - name: Install ImageMagick
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
       - name: Setup deploy options
         id: setup
         run: |
