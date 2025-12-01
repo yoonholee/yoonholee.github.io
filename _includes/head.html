@@ -10,8 +10,7 @@
   style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;
   font-src 'self' https://cdn.jsdelivr.net;
   img-src 'self' data: https: http:;
-  connect-src 'self' https://www.google-analytics.com;
-  frame-ancestors 'none';
+  connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://cdn.jsdelivr.net;
   base-uri 'self';
   form-action 'self';
 "
@@ -51,6 +50,7 @@
 <link rel="stylesheet"
     href="{{ '/assets/css/syntax/light.css' | relative_url }}"
     media="" id="highlight_theme_light" />
+
 
 <!-- Styles -->
 {% if site.icon.size < 3 %} <link rel="shortcut icon"

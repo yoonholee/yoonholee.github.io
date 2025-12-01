@@ -46,7 +46,14 @@
             </a>
           </li>
 
-          <!-- Blog navigation removed - blog accessible via permalink only -->
+          <!-- Blog -->
+          <li class="nav-item {% if page.permalink == '/blog/' or page.layout == 'post' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/blog/' | relative_url }}">{{ site.blog_nav_title }}
+              {%- if page.permalink == '/blog/' or page.layout == 'post' -%}
+              <span class="visually-hidden">(current)</span>
+              {%- endif -%}
+            </a>
+          </li>
 
           <!-- Other pages -->
           {%- assign sorted_pages = site.pages | sort: "nav_order" -%}

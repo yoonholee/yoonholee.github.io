@@ -1,0 +1,123 @@
+{% if page.layout == 'post' %}
+<style>
+/* Right panel for margin notes */
+.margin-note-panel {
+  position: absolute;
+  left: calc(100% + 2rem);
+  width: 280px;
+  padding: 1rem;
+  background: var(--global-bg-color, #fff);
+  border: 1px solid var(--global-divider-color, #e0e0e0);
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.margin-note-panel.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Container needs relative positioning */
+.post-main {
+  position: relative;
+}
+
+.margin-note-panel p {
+  margin: 0;
+}
+
+.margin-note-panel p + p {
+  margin-top: 0.5rem;
+}
+
+.margin-note-panel a {
+  color: var(--global-theme-color);
+}
+
+/* Footnote reference styling */
+.footnote-ref {
+  vertical-align: baseline;
+  margin: 0 0.15em;
+}
+
+.footnote-ref a {
+  text-decoration: none;
+  background: transparent;
+  color: var(--global-theme-color, #8C1515);
+  border: 1px solid var(--global-theme-color, #8C1515);
+  padding: 0.05em 0.3em;
+  border-radius: 3px;
+  font-size: 0.75em;
+  vertical-align: 0.3em;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.footnote-ref a:hover,
+.footnote-ref.active a {
+  background: var(--global-theme-color, #8C1515);
+  color: #fff;
+}
+
+/* Hide panel on narrow screens */
+@media (max-width: 1400px) {
+  .margin-note-panel {
+    display: none;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const postMain = document.querySelector('.post-main');
+  if (!postMain) return;
+
+  // Create the margin note panel
+  const panel = document.createElement('div');
+  panel.className = 'margin-note-panel';
+  postMain.appendChild(panel);
+
+  let activeRef = null;
+
+  // Find all footnote references
+  const footnoteRefs = document.querySelectorAll('sup[id^="fnref"]');
+
+  footnoteRefs.forEach(ref => {
+    ref.classList.add('footnote-ref');
+    const link = ref.querySelector('a');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    const footnoteId = href.replace('#', '');
+    const footnote = document.getElementById(footnoteId);
+    if (!footnote) return;
+
+    // Get footnote content (excluding the backref link)
+    const content = footnote.cloneNode(true);
+    const backref = content.querySelector('.reversefootnote');
+    if (backref) backref.remove();
+
+    // Show panel on hover - stays until different footnote is hovered
+    ref.addEventListener('mouseenter', function() {
+      if (activeRef) activeRef.classList.remove('active');
+      activeRef = ref;
+      ref.classList.add('active');
+      panel.innerHTML = content.innerHTML;
+
+      // Position panel next to the footnote
+      const refRect = ref.getBoundingClientRect();
+      const mainRect = postMain.getBoundingClientRect();
+      const topOffset = refRect.top - mainRect.top + postMain.scrollTop;
+      panel.style.top = topOffset + 'px';
+
+      panel.classList.add('visible');
+    });
+  });
+});
+</script>
+{% endif %}

@@ -58,6 +58,10 @@
 
   li {
     margin: 0;
+
+    &.toc-h2 {
+      padding-left: 1em;
+    }
   }
 
   a {
@@ -97,7 +101,8 @@ html {
   transition: all 0.3s ease;
   border-radius: 4px;
   padding: 0.2rem 0.5rem;
-  margin: 0 -0.5rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
 
   &.toc-highlight {
     animation: toc-flash 1s ease-out forwards;

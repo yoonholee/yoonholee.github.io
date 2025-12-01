@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!toc || !mainContent) return;
 
-  const headings = mainContent.querySelectorAll("h1");
+  const headings = mainContent.querySelectorAll("h1, h2");
 
   if (headings.length === 0) {
     toc.style.display = "none";
@@ -46,7 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
     link.textContent = heading.textContent;
     link.setAttribute("data-heading-id", heading.id);
 
-    // All headings are h1, no indentation needed
+    // Indent h2 headings
+    if (heading.tagName === "H2") {
+      listItem.classList.add("toc-h2");
+    }
 
     listItem.appendChild(link);
     tocList.appendChild(listItem);

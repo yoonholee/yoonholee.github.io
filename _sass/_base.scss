@@ -67,11 +67,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { font-size: 2.4rem; }
-h2 { font-size: 1.8rem; }
+h2 { font-size: 1.8rem; margin-bottom: 1.25em; }
 h3 { font-size: 1.4rem; }
 
 b, strong {
   font-weight: 600;
+}
+
+em, i {
+  padding-right: 0.08em;
 }
 
 #footer {
@@ -84,16 +88,23 @@ b, strong {
 }
 
 hr {
-  border-top: 1px solid var(--global-divider-color);
+  border-top: 1px solid var(--global-text-color);
+}
+
+table {
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
 }
 
 table td, table th {
   font-size: 1rem;
   font-variant-numeric: lining-nums tabular-nums;
+  padding: 0.5rem 1rem;
 }
 
 table th {
   font-weight: 600;
+  border-bottom: 2px solid var(--global-divider-color);
 }
 
 // Common link styles
@@ -609,14 +620,9 @@ footer.sticky-bottom {
 }
 
 .post-title {
-  color: inherit;
+  color: var(--global-theme-color);
   text-decoration: none;
   font-weight: 500;
-
-  &:hover {
-    color: var(--global-theme-color);
-    text-decoration: underline;
-  }
 }
 
 .post-description-line {
@@ -630,9 +636,13 @@ footer.sticky-bottom {
 .post-meta {
   color: var(--global-text-color-light);
   font-size: 0.9em;
-  margin: 0;
+  margin: 0 0 1.5em;
   padding: 0;
   text-align: center;
+
+  .meta-separator {
+    margin: 0 0.5em;
+  }
 }
 
 .pagination {
@@ -837,6 +847,8 @@ pre {
   background-color: var(--global-code-bg-color);
   padding: var(--space-sigma) var(--space-tau);
   font-variant-numeric: lining-nums tabular-nums;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 
   pre,
   code {
@@ -916,7 +928,7 @@ progress::-moz-progress-bar {
 .post-header {
   margin-top: 5em;
   text-align: center;
-  margin-bottom: 2em;
+  margin-bottom: 5em;
 }
 
 .post-title {
@@ -936,9 +948,9 @@ progress::-moz-progress-bar {
 
 // Individual post page titles
 .post-header h1.post-title {
-  font-size: 2em; // Larger size for individual post pages
-  margin-bottom: 0.2em;
-  color: var(--global-text-color);
+  font-size: 2.5em;
+  margin-bottom: 0.3em;
+  color: var(--global-theme-color);
 }
 
 .post {
@@ -960,7 +972,13 @@ progress::-moz-progress-bar {
     margin-bottom: 1rem;
   }
 
-  h1 { font-size: 1.8em; margin-bottom: 0.8em; }
+  img {
+    width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+  }
+
+  h1 { font-size: 1.8em; margin-top: 1.5em; margin-bottom: 1em; }
   h2 { font-size: 1.5em; margin: 1.5em 0 0.6em; }
   h3 { font-size: 1.3em; margin-top: 1.2em; }
   h4, h5 { font-size: 1.1em; }

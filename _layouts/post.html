@@ -21,17 +21,17 @@ layout: default
     <p class="post-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>
       {%- if page.author -%}
-       • <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+       <span class="meta-separator">&bull;</span><span itemprop="author" itemscope itemtype="https://schema.org/Person">
           <span itemprop="name">{{ page.author }}</span>
         </span>
       {%- else -%}
-       • <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+       <span class="meta-separator">&bull;</span><span itemprop="author" itemscope itemtype="https://schema.org/Person">
           <a href="{{ site.url }}{{ site.baseurl }}/" rel="author" itemprop="url">
             <span itemprop="name">{{ site.first_name }} {{ site.last_name }}</span>
           </a>
         </span>
       {%- endif -%}
-      {%- if page.meta -%} • {{ page.meta }}{%- endif -%}
+      {%- if page.meta -%}<span class="meta-separator">&bull;</span>{{ page.meta }}{%- endif -%}
     </p>
   </header>
 
