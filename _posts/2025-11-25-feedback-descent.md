@@ -29,7 +29,7 @@ In recent work, two broad patterns have emerged around this principle:
 - **Critique-based or "text gradient" methods.** The model proposes an artifact and receives a natural-language critique of its errors or omissions. The critique explicitly suggests a direction of improvement: adjust the retrieval query, remove this redundancy, change the control flow, etc. A revised artifact is then produced by editing the original in line with the critique. This pattern appears in systems such as [Self-Refine](https://arxiv.org/abs/2303.17651), [APO](https://arxiv.org/abs/2305.03495), [Trace](https://arxiv.org/abs/2406.16218), and [TextGrad](https://arxiv.org/abs/2406.07496).
 - **Evolutionary methods.** Instead of iteratively editing a single artifact, these methods maintain a population of artifacts. Language models generate mutations and recombinations conditioned on the current population, and evaluators select the better ones. Iterating this variation-selection loop gradually shifts the population toward higher-performing algorithms or designs, as in [EvoPrompt](https://arxiv.org/abs/2309.08532), [GEPA](https://arxiv.org/abs/2507.19457), and [AlphaEvolve](https://arxiv.org/abs/2506.13131)/[OpenEvolve](https://github.com/algorithmicsuperintelligence/openevolve), and has driven novel [mathematical discoveries](https://www.nature.com/articles/s41586-023-06924-6).
 
-Both lines demonstrate the same underlying principle: textual feedback can serve as structured supervision, often far more informative than scalar rewards. In the remainder of this post, we build a single, domain-agnostic loop around the two primitives these approaches rely on: an evaluator that produces structured feedback, and an editor that turns _accumulated_ feedback on the current best candidates into concrete revisions.
+Both lines demonstrate the same underlying principle: textual feedback can serve as structured supervision, often far more informative than scalar rewards. In the remainder of this post, we build a single, domain-agnostic loop around the two primitives these approaches rely on: an evaluator that produces structured feedback, and an editor that turns _accumulated_ feedback on the current best candidates into concrete revisions. We will demonstrate how this loop can sustain meaningful improvement for up to 1000 iterations, far beyond the stability range of standard self-refinement methods.
 
 ## Example Domain: Drug Discovery
 
@@ -43,8 +43,8 @@ A scalar reward like this hides almost everything about _why_ one molecule is be
 | Property            | Molecule 1 | Molecule 2 | Implication                                      |
 | ------------------- | ---------- | ---------- | ------------------------------------------------ |
 | Core scaffold       | macrocycle | benzene    | Rigid fused system vs. flexible benzene          |
-| Docking score       | −6.8       | −7.1       | Macrocycle binds _weaker_ despite higher reward  |
-| Drug-likeness (QED) | 0.824      | 0.714      | Macrocycle is more drug-like                     |
+| Docking score       | −6.8       | −7.1       | Molecule 1 binds _weaker_                        |
+| Drug-likeness (QED) | 0.824      | 0.714      | Molecule 1 is more drug-like                     |
 | Basic amines        | 0          | 1          | No salt bridge with Asp138—explains weak binding |
 | Rotatable bonds     | 1          | 9          | Rigidity boosts QED but pre-organizes wrong pose |
 | LogP                | 4.3        | 1.6        | Too lipophilic, solubility risk                  |
@@ -74,11 +74,13 @@ Over many iterations, the candidate population continually improves as useful fe
 
 ## Does Feedback Descent Work?
 
-We were able to get the same Feedback Descent framework to work in three fundamentally different domains: molecular design, SVG image optimization, and prompt optimization.
+We applied the same Feedback Descent framework to three fundamentally different domains: molecular design, SVG image optimization, and prompt optimization.
 
-**Molecular Design.** We compared Feedback Descent with specialized graph-based molecular optimizers that explicitly encode chemical structures, as well as REINVENT, a reinforcement learning method specifically designed for molecular optimization. Feedback Descent, operating purely on text representations (SMILES strings), matched or exceeded these specialized methods. On multiple targets, our text-based approach identified molecules surpassing the 99.9th percentile of DOCKSTRING's 260,000-compound database. In several cases, we matched or exceeded the best molecule in the entire database. In this domain, Feedback Descent achieved an average 3.8x speedup over reinforcement learning (REINVENT).
+**Molecular Design.** We compared Feedback Descent with specialized graph-based molecular optimizers that explicitly encode chemical structures, as well as REINVENT, a reinforcement learning method specifically designed for molecular optimization. Feedback Descent, operating purely on text representations (SMILES strings), matched or exceeded these specialized methods. On multiple targets, our text-based approach identified molecules surpassing the 99.9th percentile of DOCKSTRING's 260,000-compound database. In several cases, we matched or exceeded the best molecule in the entire database. In this domain, Feedback Descent achieved an average 3.8x reduction in docking calls relative to reinforcement learning (REINVENT).
 
+![Molecular design](/assets/img/feedback-descent/molecule.png)
 <video autoplay loop muted playsinline style="width: 100%;">
+
   <source src="/assets/img/feedback-descent/PPARA-compressed.mp4" type="video/mp4">
 </video>
 
@@ -91,7 +93,7 @@ We were able to get the same Feedback Descent framework to work in three fundame
 
 ![Prompt optimization](/assets/img/feedback-descent/prompt_optimization.png)
 
-Together, these results demonstrate that the same evaluator-editor loop can drive continual improvement in domains that differ in representation, evaluation, and failure modes. The only requirement is that we can obtain and express informative feedback in text; no task-specific optimizers, mutation rules, or architectural changes are needed. The signal lives in the textual feedback itself; the editor LLM activates and applies its relevant background knowledge through in-context learning.
+Together, these results demonstrate that the same evaluator-editor loop can drive continual improvement in domains that differ in representation, evaluation, and failure modes. The only requirement is that we can obtain and express informative feedback in text; no task-specific optimizers, mutation rules, or architectural changes are needed. The informative signal is carried by the textual feedback itself, and the editor LLM uses this feedback to guide its next revisions through in-context learning.
 
 ## Is Text a Viable Medium for Learning?
 
@@ -99,15 +101,15 @@ In conventional gradient-based learning, progress accumulates in the model's wei
 
 Text-based optimization suggests a complementary substrate: **semantic space**.
 
-This is especially promising for **continual learning**, where parameter updates often struggle. Because all knowledge is entangled in the weights, new updates risk catastrophic forgetting and require careful access to past data. In contrast, textual artifacts _persist_. They accumulate naturally as the system operates, and grow in a form that LLMs can readily condition on. New feedback can be integrated immediately without retraining the underlying model.
+This is especially promising for **continual learning**, where parameter updates often struggle because the knowledge stored inside the weights is highly entangled, new updates risk catastrophic forgetting and require careful regularization or access to past data. In contrast, textual artifacts _persist_. They accumulate naturally as the system operates, and grow in a form that LLMs can readily condition on. New feedback can be integrated immediately without retraining the underlying model.
 
-This is early territory. We don't yet know the full limits of what can be stored or refined in semantic space. But the evidence so far suggests that text-level artifacts can absorb detailed feedback from the environment and unlock forms of improvement that are difficult or inefficient to achieve through weight updates alone. Understanding how to best optimize, structure, and scale this semantic layer—and how to integrate it cleanly with parameter learning—is an exciting direction for future work.
+This is early territory. We don't yet know the full limits of what can be stored or refined in semantic space. But the evidence so far suggests that text-level artifacts can absorb detailed feedback from the environment and unlock forms of improvement that are difficult or inefficient to achieve through weight updates alone. Understanding how to organize and scale this semantic layer, and how to integrate it cleanly with parameter learning, is an exciting direction for future work.
 
 ---
 
 This post is based on our recent work "[Feedback Descent: Open-Ended Text Optimization via Pairwise Comparison](https://arxiv.org/abs/2511.07919)."
 
-We thank Anikait Singh, Henrik Marklund, Mert Yuksekgonul, Jubayer Ibn Hamid, Allen Nie, Omar Khattab, Sergey Levine, the SAIL blog editors, and anonymous ICLR reviewers for feedback on earlier drafts.
+We thank Anikait Singh, Henrik Marklund, Mert Yuksekgonul, Jubayer Ibn Hamid, Allen Nie, Omar Khattab, Sergey Levine, SAIL blog editors (James Burgess, Megha Srivastava), and anonymous ICLR reviewers for their helpful feedback on earlier drafts.
 
 ### Footnotes
 
