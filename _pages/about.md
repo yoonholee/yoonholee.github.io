@@ -13,7 +13,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true
 ---
 
-I'm a Ph.D. candidate at Stanford CS, advised by [Chelsea Finn](https://ai.stanford.edu/~cbfinn/). My research is supported by [OpenAI](https://openai.com/index/superalignment-fast-grants/) and [KFAS](https://eng.kfas.or.kr/theme/kfaschanel/intl_scholarship_5.php).
+I'm a final-year PhD student at Stanford CS, advised by [Chelsea Finn](https://ai.stanford.edu/~cbfinn/).
 
 My research focuses on **operationalizing text as a substrate for learning**.
 As tasks grow more complex, low-bandwidth scalar signals can't keep up.
@@ -129,7 +129,6 @@ Learns from structured disagreement signals between diverse models; working at a
 My name (윤호) is pronounced like 'you-know' said quickly (with stress on 'you').
 [This](https://ipa-reader.com/?text=%2Fju%3Ano%CA%8A%2F) is a good approximation.
 
-Feel free to reach out via [email](mailto:yoonho@cs.stanford.edu)—I'm always happy to connect!
-I plan to be on the academic and industry job markets in the late 2026-early 2027 cycle, so please let me know if you think I'd be a good fit for your organization.
+Feel free to reach out via [email](mailto:yoonho@cs.stanford.edu) if you'd like to chat. I'm on the 2026-27 academic and industry job markets, and open to collaborations that align with my research interests.
 
 </div>
