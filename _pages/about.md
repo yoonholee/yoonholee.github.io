@@ -13,18 +13,16 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true
 ---
 
-I'm a final-year PhD student at Stanford CS, advised by [Chelsea Finn](https://ai.stanford.edu/~cbfinn/).
+I'm a final-year PhD student at Stanford CS, advised by [Chelsea Finn](https://ai.stanford.edu/~cbfinn/). My research focuses on building systems that learn from text directly and continually.
 
-My research focuses on **operationalizing text as a substrate for learning**.
-As tasks grow more complex, low-bandwidth scalar signals can't keep up.
-These require learning from higher-bandwidth feedback that preserves the structure of what went wrong.
-I develop methods that enable models to extract _[massive amounts of information](https://youtu.be/Ount2Y4qxQo?si=LFsjABD1OT6QLZgU&t=1205)_ from _[direct experience](https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf)_ through structured textual feedback such as natural-language corrections, pairwise comparisons with "why better" explanations, and reasoning traces.
+Scalar rewards collapse feedback into a single number. A score gives a verdict, not a diagnosis.
+What went wrong, why, and what to change is often better expressed in text.
 
-Rather than treating text as throwaway scaffolding, I view it as a persistent store to optimize, where models accumulate experience at increasing levels of abstraction, similar to how humans write papers and books.
-This combines parametric models (for inductive biases and in-context understanding) with nonparametric text storage (for persistence and interpretability).
-Looking forward, I'm focused on scaling these methods to scientific discovery and other open-ended domains that require continual learning across long horizons.
+In many settings, we already have access to this kind of feedback: natural-language corrections, pairwise comparisons with explanations, stack traces, and reflections on what worked.
+Now that models can read text well enough to use it for decision-making, I believe we can do better than learning from scalar rewards alone.
+My research develops methods that leverage such structured feedback to enable models to continually improve.
 
-Recent papers along these lines:
+The best way to learn more about the technical side of these ideas is to read my [blog post](https://ai.stanford.edu/blog/feedback-descent/) or the selected papers below.
 
 <div class="selected-papers">
 <div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2025">
