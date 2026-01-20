@@ -28,24 +28,8 @@
   <!-- Footer -->
   {%- include footer.html %}
 
-  <!-- JavaScripts -->
-  {% comment %}jQuery removed - site now uses vanilla JavaScript{% endcomment %}
-  {% include scripts/bootstrap.html %}
-  {% include scripts/misc.html %}
-  {% include scripts/mathjax.html %}
-  {% include scripts/analytics.html %}
-  {% include scripts/progressBar.html %}
-  {% include scripts/littlefoot.html %}
-  <script src="{{ '/assets/js/performance.js' | relative_url }}" defer></script>
-
-  <!-- Core Web Vitals tracking -->
-  <script src="{{ '/assets/js/web-vitals.js' | relative_url }}" defer></script>
-
-  <!-- Loading skeleton screens -->
-  <script src="{{ '/assets/js/skeleton.js' | relative_url }}"></script>
-
-  <!-- Service Worker -->
-  {% include service_worker.html %}
+  <!-- JavaScripts - see _includes/scripts.html for loading order -->
+  {% include scripts.html %}
 
 </body>
 

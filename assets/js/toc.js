@@ -1,7 +1,13 @@
 /**
  * Table of Contents (ToC) Generator with Scrollspy
  * Generates ToC from headings and highlights active sections during scroll
+ *
+ * Layout values sync with _variables.scss:
+ * - SCROLL_OFFSET (150px) = $toc-scroll-offset
  */
+
+// sync with _variables.scss: $toc-scroll-offset
+const SCROLL_OFFSET = 150;
 
 document.addEventListener("DOMContentLoaded", () => {
   const toc = document.getElementById("toc");
@@ -127,9 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (targetElement) {
         // Account for fixed header offset
-        const offset = 150; // Large offset to position heading properly
         const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        const offsetPosition = elementPosition + window.pageYOffset - SCROLL_OFFSET;
 
         // Add highlight effect to the target heading
         targetElement.classList.add("toc-highlight");

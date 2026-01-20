@@ -3,13 +3,20 @@
 ---
 @charset "utf-8";
 
-// Dimensions
-
+// Foundation
 @use "fonts" as *;
 @use "variables" as *;
 @use "themes" as *;
 @use "layout" as *;
-@use "base" as *;
-@use "distill" as *;
+
+// Core styles
+@use "typography" as *;
+@use "components" as *;
+@use "navigation" as *;
+
+// Page-specific
+@use "about" as *;
+@use "publications" as *;
+@use "blog" as *;
 @use "toc" as *;
 @use "print" as *;

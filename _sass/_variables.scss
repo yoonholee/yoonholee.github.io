@@ -4,6 +4,39 @@
  ******************************************************************************/
 
 @use "sass:color";
+@use "sass:math";
+
+// =============================================================================
+// Typography - Modular Scale (1.25 Major Third)
+// =============================================================================
+// Base: 17px (1.0625rem), Scale: 1.25
+// This creates a harmonious progression: 17 → 21 → 27 → 33 → 42
+
+$type-scale-ratio: 1.25;
+$type-base-size: 1.0625rem;  // 17px
+
+// Scale steps (using Major Third ratio)
+$type-size-caption: 0.875rem;                              // 14px - metadata, captions
+$type-size-sm: 0.85rem;                                    // ~14px
+$type-size-base: $type-base-size;                          // 17px
+$type-size-md: $type-base-size * $type-scale-ratio;        // 21px (h3)
+$type-size-lg: $type-base-size * math.pow($type-scale-ratio, 2);   // 27px (h2)
+$type-size-xl: $type-base-size * math.pow($type-scale-ratio, 3);   // 33px (h1)
+$type-size-2xl: $type-base-size * math.pow($type-scale-ratio, 4);  // 42px (display)
+
+// Content measure (optimal line length for reading)
+$content-measure: 70ch;
+$content-measure-narrow: 60ch;
+$content-measure-wide: 80ch;
+
+// Font stacks
+$font-sans: "Source Sans 3", system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
+$font-serif: "Source Serif 4", charter, "Iowan Old Style", "Palatino Linotype", palatino, georgia, serif;
+$font-mono: "Source Code Pro", ui-monospace, sfmono-regular, "SF Mono", menlo, consolas, monospace;
+
+// =============================================================================
+// Colors
+// =============================================================================
 
 // Core colors
 $cyan-color: #2698BA !default;
@@ -23,3 +56,17 @@ $theme-color-dark: color.scale($theme-color, $lightness: -12%);
 // Code background colors
 $code-bg-color-light: rgba($purple-color, 0.05);
 $code-bg-color-dark: #2c3237 !default;
+
+// =============================================================================
+// Layout Measurements
+// =============================================================================
+// These values are used in both SCSS and JS. Keep them in sync.
+// JS files reference these via comments (search: "sync with _variables.scss")
+
+$navbar-height: 56px;           // Bootstrap default navbar height
+$post-content-width: 880px;     // Max width of blog post content
+$toc-sidebar-width: 250px;      // Width of ToC sidebar
+$toc-sidebar-offset: 710px;     // Distance from center to ToC (half of viewport breakpoint)
+$toc-scroll-offset: 150px;      // Offset when clicking ToC links (accounts for navbar + breathing room)
+$toc-sidebar-top: 6rem;         // Top position of ToC sidebar
+$toc-breakpoint: 1280px;        // Hide ToC below this viewport width

@@ -2,6 +2,7 @@
  * Themes
  ******************************************************************************/
 
+@use "sass:meta";
 @use "variables" as *;
 
 :root {
@@ -10,6 +11,26 @@
   --space-sigma: 0.5rem;    // 8px
   --space-tau: 1rem;        // 16px
   --space-2tau: 2rem;       // 32px
+
+  // Typography - Modular Scale (1.25 Major Third)
+  --type-scale-ratio: #{$type-scale-ratio};
+  --type-size-caption: #{$type-size-caption};
+  --type-size-sm: #{$type-size-sm};
+  --type-size-base: #{$type-base-size};
+  --type-size-md: #{$type-size-md};
+  --type-size-lg: #{$type-size-lg};
+  --type-size-xl: #{$type-size-xl};
+  --type-size-2xl: #{$type-size-2xl};
+
+  // Font stacks (use inspect to preserve quotes)
+  --font-sans: #{meta.inspect($font-sans)};
+  --font-serif: #{meta.inspect($font-serif)};
+  --font-mono: #{meta.inspect($font-mono)};
+
+  // Content measure (optimal line length)
+  --content-measure: #{$content-measure};
+  --content-measure-narrow: #{$content-measure-narrow};
+  --content-measure-wide: #{$content-measure-wide};
 
   // Background colors
   --global-bg-color: #{$white-color};

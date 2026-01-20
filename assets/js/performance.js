@@ -1,51 +1,50 @@
-// Performance optimizations
+/**
+ * Performance optimizations
+ *
+ * Handles:
+ * - Animation triggers via IntersectionObserver
+ * - Deferred resource loading (scripts, stylesheets)
+ *
+ * Note: Lazy image loading is handled by skeleton.js
+ */
+
 document.addEventListener("DOMContentLoaded", () => {
   // Mark document as loaded
   document.body.classList.add("loaded");
 
-  // Lazy load images
-  const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-  if ("loading" in HTMLImageElement.prototype) {
-    lazyImages.forEach((img) => {
-      img.src = img.dataset.src;
-    });
-  } else {
-    // Fallback for browsers that don't support lazy loading
-    const lazyLoadScript = document.createElement("script");
-    lazyLoadScript.src = "/assets/js/lazysizes.min.js";
-    document.body.appendChild(lazyLoadScript);
-  }
-
   // Defer non-critical resources
   const deferredResources = document.querySelectorAll("[data-defer]");
-  requestIdleCallback(() => {
-    deferredResources.forEach((resource) => {
-      if (resource.tagName === "SCRIPT") {
-        const script = document.createElement("script");
-        script.src = resource.dataset.defer;
-        document.body.appendChild(script);
-      } else if (resource.tagName === "LINK") {
-        resource.rel = "stylesheet";
-        resource.href = resource.dataset.defer;
-      }
+  if (deferredResources.length > 0 && "requestIdleCallback" in window) {
+    requestIdleCallback(() => {
+      deferredResources.forEach((resource) => {
+        if (resource.tagName === "SCRIPT") {
+          const script = document.createElement("script");
+          script.src = resource.dataset.defer;
+          document.body.appendChild(script);
+        } else if (resource.tagName === "LINK") {
+          resource.rel = "stylesheet";
+          resource.href = resource.dataset.defer;
+        }
+      });
     });
-  });
+  }
 });
 
-// Add intersection observer for animations
+// Add intersection observer for scroll-triggered animations
+// Usage: add data-animate attribute to elements
 const observeElements = document.querySelectorAll("[data-animate]");
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("animated");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  {
-    threshold: 0.1,
-  }
-);
+if (observeElements.length > 0) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animated");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
 
-observeElements.forEach((element) => observer.observe(element));
+  observeElements.forEach((element) => observer.observe(element));
+}

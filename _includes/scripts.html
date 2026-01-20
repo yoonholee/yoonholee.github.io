@@ -1,0 +1,44 @@
+<!--
+  Scripts Manifest
+  ================
+  Single entry point for all JavaScript loading.
+  Edit this file to change script loading order or add new scripts.
+
+  Loading order matters:
+  1. Framework (Bootstrap) - required by other scripts
+  2. Core functionality - common.js, page-specific (toc.js, zoom.js)
+  3. Performance & UX - skeleton.js, performance.js, web-vitals.js
+  4. Optional features - MathJax, analytics, progress bar, footnotes
+  5. Service worker - registers last, after page load
+-->
+
+<!-- 1. Framework -->
+{% include scripts/bootstrap.html %}
+
+<!-- 2. Core functionality -->
+<script defer src="{{ '/assets/js/common.js' | relative_url }}"></script>
+
+{% if page.layout == 'post' %}
+<!-- ToC generation and scrollspy (post layout only) -->
+<script defer src="{{ '/assets/js/toc.js' | relative_url }}"></script>
+{% endif %}
+
+{%- if site.enable_medium_zoom %}
+<!-- Image zoom -->
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@{{ site.medium_zoom.version }}/dist/medium-zoom.min.js" integrity="{{ site.medium_zoom.integrity.js }}" crossorigin="anonymous"></script>
+<script defer src="{{ '/assets/js/zoom.js' | relative_url }}"></script>
+{%- endif %}
+
+<!-- 3. Performance & UX -->
+<script defer src="{{ '/assets/js/skeleton.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/performance.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/web-vitals.js' | relative_url }}"></script>
+
+<!-- 4. Optional features -->
+{% include scripts/mathjax.html %}
+{% include scripts/analytics.html %}
+{% include scripts/progressBar.html %}
+{% include scripts/littlefoot.html %}
+
+<!-- 5. Service worker (registers on load, production only) -->
+{% include service_worker.html %}

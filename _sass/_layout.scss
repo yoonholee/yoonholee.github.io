@@ -21,7 +21,7 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: var(--content-measure-wide);  // ~80ch for optimal reading
   position: relative;
   min-height: calc(100% - 15rem);
 }

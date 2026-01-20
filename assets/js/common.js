@@ -1,15 +1,10 @@
-// Old jQuery implementation (commented out)
-// $(document).ready(function() {
-//     $('a.abstract').click(function() {
-//         $(this).parent().parent().find(".abstract.hidden").toggleClass('open');
-//     });
-//     $('a.bibtex').click(function() {
-//         $(this).parent().parent().find(".bibtex.hidden").toggleClass('open');
-//     });
-//     $('a').removeClass('waves-effect waves-light');
-// });
+/**
+ * Common functionality for publications page
+ * - Abstract/BibTeX toggle buttons
+ * - More authors expansion
+ * - URL hash targeting
+ */
 
-// Vanilla JS implementation (jQuery removed)
 document.addEventListener("DOMContentLoaded", function () {
   // Delegated event listeners for abstract/bib toggles
   document.body.addEventListener("click", function (e) {
