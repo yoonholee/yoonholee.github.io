@@ -1,68 +1,71 @@
----
-layout: default
-title: blog
-pagination:
-  enabled: true
-  collection: posts
-  permalink: /page/:num/
-  per_page: 5
-  sort_field: date
-  sort_reverse: true
-  trail:
-    before: 1 # The number of links before the current page
-    after: 3  # The number of links after the current page
----
-
-<div class="post">
-
-  {% if site.display_tags.size > 0 %}
-  <div class="tag-list">
-    <ul class="p-0 m-0">
-      {% for tag in site.display_tags %}
-      <li>
-        <i class="fas fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">{{ tag
-          }}</a>
-      </li>
-      {% unless forloop.last %}
-      <p>&bull;</p>
-      {% endunless %}
-      {% endfor %}
-    </ul>
-  </div>
-  {% endif %}
-
-  <ul class="post-list">
-    {% for post in paginator.posts %}
-
-    {% if post.external_source == blank %}
-    {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
-    {% else %}
-    {% assign read_time = post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
-    {% endif %}
-    {% assign year = post.date | date: "%Y" %}
-    {% assign tags = post.tags | join: "" %}
-    {% assign categories = post.categories | join: "" %}
-
-    <li>
-      <h3>
-        {% if post.redirect == blank %}
-        <a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        {% else %}
-        {% if post.redirect contains '://' %}
-        <a class="post-title" href="{{ post.redirect }}" target="_blank">{{ post.title }}</a>
-        {% else %}
-        <a class="post-title" href="{{ post.redirect | relative_url }}">{{ post.title }}</a>
-        {% endif %}
-        {% endif %}
-      </h3>
-      <span class="post-meta">
-        {{ read_time }} min read &nbsp; · &nbsp; {{ post.date | date: "%Y-%m-%d" }}
-      </span>
-    </li>
-
-    {% endfor %}
-  </ul>
-
-  {% include pagination.html %}
-
-</div>
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <link rel="canonical" href="https://www.yoonholee.com/blog/index.html"/> <meta name="robots" content="index, follow"/> <title>Blog | Yoonho Lee</title> <meta name="author" content="Yoonho Lee"/> <meta name="description" content="Personal website of Yoonho Lee, Ph.D. candidate at Stanford CS."/> <meta name="keywords" content="Yoonho Lee, Stanford, Machine Learning, Text-based Knowledge, Reward Modeling, Reinforcement Learning, RLAD, Test-Time Alignment, Clarify, Chelsea Finn, IRIS Lab, Language Models, Direct Experience Learning, Abstractions, Hypothesis Reweighting"/> <meta property="og:site_name" content="Yoonho Lee"/> <meta property="og:type" content="default"/> <meta property="og:title" content="blog"/> <meta property="og:url" content="https://www.yoonholee.com/blog/index.html"/> <meta property="og:description" content="Personal website of Yoonho Lee, Ph.D. candidate at Stanford CS."/> <meta property="og:locale" content="en"/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:url" content="https://www.yoonholee.com/blog/index.html"/> <meta name="twitter:title" content="blog"/> <meta name="twitter:description" content="Personal website of Yoonho Lee, Ph.D. candidate at Stanford CS."/> <meta name="twitter:site" content="@yoonholeee"/> <meta name="twitter:creator" content="@yoonholeee"/> <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Yoonho Lee",
+  "alternateName": "윤호",
+  "givenName": "Yoonho",
+  "familyName": "Lee",
+  "email": "yoonho@cs.stanford.edu",
+  "url": "https://www.yoonholee.com",
+  "jobTitle": "Ph.D. Candidate",
+  "affiliation": [
+    {
+      "@type": "Organization",
+      "name": "Stanford University",
+      "department": "Computer Science",
+      "subOrganization": [
+        {"@type": "Organization", "name": "IRIS Lab"},
+        {"@type": "Organization", "name": "Stanford Artificial Intelligence Laboratory (SAIL)"},
+        {"@type": "Organization", "name": "Center for Research on Foundation Models (CRFM)"},
+        {"@type": "Organization", "name": "Machine Learning Group"}
+      ]
+    }
+  ],
+  "alumniOf": {
+    "@type": "Organization",
+    "name": "Stanford University"
+  },
+  "knowsAbout": [
+    "Machine Learning",
+    "Reinforcement Learning",
+    "Reward Modeling",
+    "Text-based Knowledge Representation",
+    "Language Models",
+    "Test-Time Alignment",
+    "Learning from Direct Experience",
+    "Artificial Intelligence",
+    "Abstraction Discovery",
+    "Hypothesis Reweighting"
+  ],
+  "award": [
+    "OpenAI Fellowship",
+    "KFAS Fellowship"
+  ],
+  
+  "sameAs": [
+    "https://twitter.com/yoonholeee",
+    "https://github.com/yoonholee",
+    "https://scholar.google.com/citations?user=BAAZ_ysAAAAJ"
+  ],
+  
+  "description": "Personal website of Yoonho Lee, Ph.D. candidate at Stanford CS."
+}
+</script> <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.yoonholee.com/"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.yoonholee.com/blog/"
+    }]
+}
+</script> <meta http-equiv="Content-Security-Policy" content=" default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data: https: http:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://cdn.jsdelivr.net; base-uri 'self'; form-action 'self'; "/> <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin> <link rel="preload" href="/assets/fonts/SourceSerif4-Regular-subset.woff2" as="font" type="font/woff2" crossorigin> <link rel="preload" href="/assets/fonts/SourceSerif4-Semibold-subset.woff2" as="font" type="font/woff2" crossorigin> <link rel="preload" href="/assets/fonts/SourceSans3-Variable-subset.woff2" as="font" type="font/woff2" crossorigin> <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" media="print" onload="this.media='all'; this.onload=null;"> <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous"></noscript> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css" crossorigin="anonymous" media="print" onload="this.media='all'; this.onload=null;"> <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css" crossorigin="anonymous"></noscript> <link rel="stylesheet" href="/assets/css/syntax/light.css" media="" id="highlight_theme_light"/> <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>YL</text></svg>"> <link rel="stylesheet" href="/assets/css/main.css"> <link rel="canonical" href="https://www.yoonholee.com/blog/"> </head> <body class="fixed-top-nav sticky-bottom-footer"> <a href="#main-content" class="skip-link">Skip to main content</a> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top"> <div class="container"> <a class="navbar-brand title fw-light" href="/">Yoonho Lee</a> <button class="navbar-toggler collapsed ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="visually-hidden">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ms-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About</a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">Blog</a> </li> <li class="nav-item "> <a class="nav-link" href="/papers/">Papers</a> </li><li class="nav-item"> <a class="nav-link" href="/assets/pdf/CV.pdf">CV </a> </li> </ul> </div> </div> </nav> <progress id="progress" value="0" max="100" aria-label="Page scroll progress"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <main class="container mt-5" id="main-content"> <div class="post"> <ul class="post-list"> <li> <h3> <a class="post-title" href="/blog/2025/feedback-descent/">Following the Text Gradient at Scale</a> </h3> <span class="post-meta"> 13 min read &nbsp; · &nbsp; 2025-12-01 </span> </li> </ul> </div> </main> <footer id="footer"> <div class="contact-note"> </div> </footer> <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> <script defer src="/assets/js/common.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js"></script> <script defer src="/assets/js/skeleton.js"></script> <script defer src="/assets/js/performance.js"></script> <script defer src="/assets/js/web-vitals.js"></script> <script type="text/javascript">window.MathJax={tex:{tags:"ams",inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]]}};</script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-FS7MW2SLV7"></script> <script>function gtag(){window.dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-FS7MW2SLV7");</script> <script>!function(){"use strict";function e(){const e=window.pageYOffset||document.documentElement.scrollTop,n=document.documentElement.scrollHeight-window.innerHeight;if(n>0){const o=e/n*100;t.value=o}o=!1}function n(){o||(window.requestAnimationFrame(e),o=!0)}const t=document.getElementById("progress");if(!t)return;let o=!1;window.addEventListener("scroll",n,{passive:!0}),window.addEventListener("load",e),window.addEventListener("resize",e),e()}();</script> <script>if("serviceWorker"in navigator){Boolean("localhost"===window.location.hostname||"[::1]"===window.location.hostname||window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/))||window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js").catch(()=>{})})}</script> </body> </html>
