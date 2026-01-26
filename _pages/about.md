@@ -44,8 +44,8 @@ Operationalizes the core text optimization loop, accumulating "why better" signa
 {% include paper_schema.html title="Feedback Descent: Open-Ended Text Optimization via Pairwise Comparison" authors="Yoonho Lee, Joseph Boen, Chelsea Finn" year="2025" url="https://arxiv.org/abs/2511.07919" venue="preprint" %}
 </div>
 
-<div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2025">
-<span class="paper-year">2025</span>
+<div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2026">
+<span class="paper-year">2026</span>
 <div class="paper-content">
 <a main-paper-link href="https://arxiv.org/abs/2510.02263" itemprop="url">
 <span itemprop="name">RLAD: Training LLMs to Discover Abstractions for Solving Reasoning Problems</span>
@@ -54,13 +54,13 @@ Operationalizes the core text optimization loop, accumulating "why better" signa
 Yuxiao Qu*, Anikait Singh*, Yoonho Lee*, Amrith Setlur, Ruslan Salakhutdinov, Chelsea Finn, Aviral Kumar
 </p>
 <p class="venue" itemprop="publisher">
-ICML 2025 workshops: AI for Math, PRAL, ES-FoMo
+ICLR 2026 · ES-FoMo @ ICML 2025 (Spotlight) · Ram2 @ CoLM 2025 (Oral)
 </p>
 <div class="paper-tooltip">
 A hierarchical RL framework for training LLMs to discover and use textual abstractions for solving complex reasoning problems. Demonstrates that useful information for solving reasoning problems can be represented in pure text form.
 </div>
 </div>
-{% include paper_schema.html title="RLAD: Training LLMs to Discover Abstractions for Solving Reasoning Problems" authors="Yuxiao Qu, Anikait Singh, Yoonho Lee, Amrith Setlur, Ruslan Salakhutdinov, Chelsea Finn, Aviral Kumar" year="2025" url="https://arxiv.org/abs/2510.02263" venue="ICML 2025 workshops" %}
+{% include paper_schema.html title="RLAD: Training LLMs to Discover Abstractions for Solving Reasoning Problems" authors="Yuxiao Qu, Anikait Singh, Yoonho Lee, Amrith Setlur, Ruslan Salakhutdinov, Chelsea Finn, Aviral Kumar" year="2026" url="https://arxiv.org/abs/2510.02263" venue="ICLR 2026" %}
 </div>
 
 <div class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle" data-year="2025">
